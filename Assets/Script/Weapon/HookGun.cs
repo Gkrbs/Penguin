@@ -154,7 +154,7 @@ public class HookGun : MonoBehaviour
     }
     private void graple()
     {
-        if (BULLET_DISTANCE > MAX_DISTANCE)
+        if (!_hook.IS_GRAPPLE && BULLET_DISTANCE > MAX_DISTANCE)
         {
             Reloading();
         }

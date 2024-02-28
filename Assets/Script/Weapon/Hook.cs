@@ -65,8 +65,10 @@ public class Hook : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
+            if (!_is_shooting) return;
             if (_rd.velocity != Vector3.zero)
                 _rd.velocity = Vector3.zero;
             _rd.isKinematic = true;
