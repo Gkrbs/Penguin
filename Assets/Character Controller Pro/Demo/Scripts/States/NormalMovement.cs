@@ -19,7 +19,6 @@ namespace Lightbug.CharacterControllerPro.Demo
 
         public LookingDirectionParameters lookingDirectionParameters = new LookingDirectionParameters();
 
-
         [Header("Animation")]
 
         [SerializeField]
@@ -381,22 +380,29 @@ namespace Lightbug.CharacterControllerPro.Demo
 
             if (!CharacterActor.IsStable)
                 CharacterActor.VerticalVelocity += CustomUtilities.Multiply(-CharacterActor.Up, gravity, dt);
-
-            if (verticalMovementParameters.parachuting)
+            
+            if (verticalMovementParameters.parachuting && !verticalMovementParameters.isGrappled)
             {
-                if (rb == null)
-                    rb = GetComponentInParent<Rigidbody>();
-                Vector3 vel = new Vector3(0f, rb.velocity.y, 0f);
-
-                // limit velocity if needed
-                if (vel.magnitude > verticalMovementParameters.paraSpeed)
-                {
-                    Vector3 limitedVel = vel.normalized * verticalMovementParameters.paraSpeed;
-                    rb.velocity = new Vector3(rb.velocity.x, limitedVel.y, rb.velocity.z);
-                }
+                YSpeedControl(verticalMovementParameters.paraSpeed);
+            }
+            else if (verticalMovementParameters.isGrappled)
+            {
+                YSpeedControl(verticalMovementParameters.grappleSpeed);
             }
         }
+        void YSpeedControl(float speed)
+        {
+            if (rb == null)
+                rb = GetComponentInParent<Rigidbody>();
+            Vector3 vel = new Vector3(0f, rb.velocity.y, 0f);
 
+            // limit velocity if needed
+            if (vel.magnitude > speed)
+            {
+                Vector3 limitedVel = vel.normalized * speed;
+                rb.velocity = new Vector3(rb.velocity.x, limitedVel.y, rb.velocity.z);
+            }
+        }
 
         protected bool UnstableGroundedJumpAvailable => !verticalMovementParameters.canJumpOnUnstableGround && CharacterActor.CurrentState == CharacterActorState.UnstableGrounded;
 
@@ -455,7 +461,13 @@ namespace Lightbug.CharacterControllerPro.Demo
             return jumpResult;
         }
 
-
+        public void Grappling(bool isOn)
+        {
+            verticalMovementParameters.isGrappled = isOn;
+            verticalMovementParameters.parachuting = false;
+            verticalMovementParameters.canParachute = !isOn;
+            verticalMovementParameters.autoCalculate = isOn;
+        }
 
         protected virtual void ProcessJump(float dt)
         {
@@ -531,6 +543,7 @@ namespace Lightbug.CharacterControllerPro.Demo
 
                 groundedJumpAvailable = true;
                 verticalMovementParameters.canParachute = false;
+                verticalMovementParameters.parachuting = false;
                 verticalMovementParameters.autoCalculate = true;
                 // 여기에 낙하산 초기화 해야함 땅에 떨어졌을때
             }

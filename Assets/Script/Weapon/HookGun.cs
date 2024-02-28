@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Lightbug.CharacterControllerPro.Demo;
+using Lightbug.CharacterControllerPro.Core;
 public class HookGun : MonoBehaviour
 {
+    public CharacterActor characterActor;
     enum GUN_STATES
     {
         IDLE,
@@ -79,6 +81,8 @@ public class HookGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Max " + MAX_DISTANCE);
+        Debug.Log("Bul " + BULLET_DISTANCE);
         switch (state)
         {
             case GUN_STATES.IDLE:
@@ -161,7 +165,14 @@ public class HookGun : MonoBehaviour
 
         if (_hook.IS_SHOOTING) return;
 
-
+        //if (MAX_DISTANCE > BULLET_DISTANCE)
+        //{
+        //    characterActor.alwaysNotGrounded = true;
+        //}
+        //else
+        //{
+        //    characterActor.alwaysNotGrounded = false;
+        //}
         if (Input.GetButtonDown("Fire1"))
         {
             Reloading();
@@ -172,6 +183,7 @@ public class HookGun : MonoBehaviour
     {
         _hook.Reloading();
         state = GUN_STATES.IDLE;
+        characterActor.alwaysNotGrounded = false;
     }
 
 }

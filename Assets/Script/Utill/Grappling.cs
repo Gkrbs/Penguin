@@ -8,7 +8,8 @@ public class Grappling : ActionInterface
     {
         SPRING,
         DAMPER,
-        MASS_SCALE
+        MASS_SCALE,
+        MAX_DISTANCE
     }
 
     //
@@ -82,12 +83,13 @@ public class Grappling : ActionInterface
             _s_joint.connectedAnchor = _grapple_point;
 
             float distanceFromPoint = Vector3.Distance(_player.position, _grapple_point);
-            _s_joint.maxDistance = 2.5f;//distanceFromPoint * 0.25f;
+            _s_joint.maxDistance = _hook_info.FLOAT_PARAMS_ARR[(int)F_PARAMS.MAX_DISTANCE];//distanceFromPoint * 0.25f;
             _s_joint.minDistance = 0.0f;
 
             _s_joint.spring = _hook_info.FLOAT_PARAMS_ARR[(int)F_PARAMS.SPRING];
             _s_joint.damper = _hook_info.FLOAT_PARAMS_ARR[(int)F_PARAMS.DAMPER];
             _s_joint.massScale = _hook_info.FLOAT_PARAMS_ARR[(int)F_PARAMS.MASS_SCALE];
+
         }
         else
         {

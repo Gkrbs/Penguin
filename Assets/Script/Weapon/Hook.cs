@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Lightbug.CharacterControllerPro.Demo;
 
 public class Hook : MonoBehaviour
 {
+    public NormalMovement normalMovement;
+
     private bool _is_grapple = false;
     private bool _is_shooting = false;
     private bool _is_reloading = false;
@@ -55,6 +58,7 @@ public class Hook : MonoBehaviour
         _rd.isKinematic = false;
         _rd.velocity = Vector3.zero;
         _is_grapple = false;
+        normalMovement.Grappling(false);
         _is_shooting = false;
         transform.parent = _parents.transform;
         transform.position = _parents.transform.position;
@@ -65,7 +69,6 @@ public class Hook : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
             if (!_is_shooting) return;
@@ -74,8 +77,9 @@ public class Hook : MonoBehaviour
             _rd.isKinematic = true;
             _grapple_point = other.transform.position;
             _is_grapple = true;
+            normalMovement.Grappling(true);
             _is_shooting = false;
-            if(_active != null)
+            if (_active != null)
                 _active.ActiveAction(other.gameObject);
         }
     }
@@ -87,7 +91,7 @@ public class Hook : MonoBehaviour
     private void Update()
     {
         DrawRope();
-        if(_active!= null)
+        if (_active != null)
             _active.ActiveAction();
         if (!IS_SHOOTING && !IS_GRAPPLE)
         {

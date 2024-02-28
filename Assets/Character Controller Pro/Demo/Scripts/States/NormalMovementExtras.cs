@@ -91,6 +91,12 @@ namespace Lightbug.CharacterControllerPro.Demo
         
         public bool parachuting = false;
 
+        [Header("Grapple")]
+
+        public float grappleSpeed = 8.0f;
+
+        public bool isGrappled = false;
+
         [Space(10f)]
 
         [Tooltip("The gravity magnitude and the jump speed will be automatically calculated based on the jump apex height and duration. Set this to false if you want to manually " +
