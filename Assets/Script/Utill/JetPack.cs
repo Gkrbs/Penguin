@@ -19,13 +19,14 @@ public class JetPack : ActionInterface
     private async void RaiseUp()
     {
         float play_time = _data.FLOAT_PARAMS_ARR[(int)PARAMS.PLAY_TIME];
+        float player_mass = _rd.mass;
         _do_coroutine = true;
         _rd.useGravity = false;
         while (play_time > 0)
         {
             float time = Time.deltaTime;
             play_time -= time;
-            _rd.velocity = _user.transform.up * time * _data.FLOAT_PARAMS_ARR[(int)PARAMS.JET_SPEED];
+            _rd.velocity = _user.transform.up * time * _data.FLOAT_PARAMS_ARR[(int)PARAMS.JET_SPEED]* player_mass;
             //_rd.AddForce(_user.transform.up * time * _data.FLOAT_PARAMS_ARR[(int)PARAMS.JET_SPEED]);
             await System.Threading.Tasks.Task.Delay((int)(time * 1000));
         }

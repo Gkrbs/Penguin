@@ -6,7 +6,6 @@ using Lightbug.CharacterControllerPro.Core;
 public class HookGun : MonoBehaviour
 {
     public CharacterActor characterActor;
-    public NormalMovement normalMovement;
     enum GUN_STATES
     {
         IDLE,
