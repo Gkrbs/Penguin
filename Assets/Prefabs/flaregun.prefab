@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 23633327783519796}
   - component: {fileID: 463709265219292626}
   - component: {fileID: 3425864207102991003}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1300207063277784413}
   - component: {fileID: 2738188364934727926}
   - component: {fileID: 4382826125520737601}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: flaregun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.99634904, z: 0, w: 0.08537353}
   m_LocalPosition: {x: 0.493, y: 0, z: 0.19}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.09999999}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 23633327783519796}
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 4580087717846785991}
   - component: {fileID: 8638880661008049288}
   - component: {fileID: 198645064804728858}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 8358668746403980694}
   - component: {fileID: 6526191579578834312}
   - component: {fileID: 1775882333543831557}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 7836287009110805206}
   - component: {fileID: 8506835516578344173}
   - component: {fileID: 2653865198708476512}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 5776983250370217726}
   - component: {fileID: 9122108897533708267}
   - component: {fileID: 1798172143216280799}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,7 +624,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3420742423213113446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: 8290950563814823244}
   - component: {fileID: 5551170175350920898}
   - component: {fileID: 9003404085081216311}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HookBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,7 +725,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -862,7 +862,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 641040688964484394}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: barrelend
   m_TagString: Untagged
   m_Icon: {fileID: 0}
