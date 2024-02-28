@@ -6,6 +6,7 @@ using Lightbug.CharacterControllerPro.Core;
 public class HookGun : MonoBehaviour
 {
     public CharacterActor characterActor;
+    public NormalMovement normalMovement;
     enum GUN_STATES
     {
         IDLE,
@@ -81,8 +82,6 @@ public class HookGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Max " + MAX_DISTANCE);
-        Debug.Log("Bul " + BULLET_DISTANCE);
         switch (state)
         {
             case GUN_STATES.IDLE:
@@ -168,16 +167,19 @@ public class HookGun : MonoBehaviour
         SpringJoint joint = transform.parent.GetComponent<SpringJoint>();
         if (joint != null)
         {
-            if (joint.maxDistance > BULLET_DISTANCE)
+            if (joint.maxDistance < BULLET_DISTANCE && characterActor.IsGrounded)
             {
-                characterActor.;
+                characterActor.alwaysNotGrounded = true;
+                characterActor.stableLayerMask = 0;
             }
-            elses
+            else
             {
-                characterActor.IsGrounded = true;
+                characterActor.alwaysNotGrounded = false;
+                characterActor.stableLayerMask = 1 << LayerMask.NameToLayer("Ground") | 1 << LayerMask.NameToLayer("Wall");
             }
+            Debug.Log("Max " + joint.maxDistance);
+        Debug.Log("Bul " + BULLET_DISTANCE);
         }
-
         //if (MAX_DISTANCE > BULLET_DISTANCE)
         //{
         //    characterActor.alwaysNotGrounded = true;
@@ -197,6 +199,7 @@ public class HookGun : MonoBehaviour
         _hook.Reloading();
         state = GUN_STATES.IDLE;
         characterActor.alwaysNotGrounded = false;
+        characterActor.stableLayerMask = 1 << LayerMask.NameToLayer("Ground") | 1 << LayerMask.NameToLayer("Wall");
     }
 
 }

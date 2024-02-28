@@ -387,7 +387,19 @@ namespace Lightbug.CharacterControllerPro.Demo
             }
             else if (verticalMovementParameters.isGrappled)
             {
-                YSpeedControl(verticalMovementParameters.grappleSpeed);
+                verticalMovementParameters.canParachute = false;
+                SpeedControl(verticalMovementParameters.grappleSpeed);
+            }
+        }
+        void SpeedControl(float speed)
+        {
+            if (rb == null)
+                rb = GetComponentInParent<Rigidbody>();
+            // limit velocity if needed
+            if (rb.velocity.magnitude > speed)
+            {
+                Vector3 limitedVel = rb.velocity.normalized * speed;
+                rb.velocity = limitedVel;
             }
         }
         void YSpeedControl(float speed)
