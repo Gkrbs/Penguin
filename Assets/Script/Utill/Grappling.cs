@@ -33,6 +33,7 @@ public class Grappling : ActionInterface
     private bool _do_spring = false;
     [SerializeField]
     private Transform _player;
+
     public Grappling(bool do_spring = true)
     {
         _do_spring = do_spring;
@@ -67,7 +68,7 @@ public class Grappling : ActionInterface
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            
+
         }
     }
 

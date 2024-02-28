@@ -165,6 +165,19 @@ public class HookGun : MonoBehaviour
 
         if (_hook.IS_SHOOTING) return;
 
+        SpringJoint joint = transform.parent.GetComponent<SpringJoint>();
+        if (joint != null)
+        {
+            if (joint.maxDistance > BULLET_DISTANCE)
+            {
+                characterActor.;
+            }
+            elses
+            {
+                characterActor.IsGrounded = true;
+            }
+        }
+
         //if (MAX_DISTANCE > BULLET_DISTANCE)
         //{
         //    characterActor.alwaysNotGrounded = true;

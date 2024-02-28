@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class QualitySetting : MonoBehaviour
+public class GraphicSetting : MonoBehaviour
 {
     public Toggle toggle;
     public Dropdown resolutionDropdown;
