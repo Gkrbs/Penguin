@@ -8,11 +8,7 @@ public class SoundSetting : MonoBehaviour
 {
     public static SoundSetting instance;
 
-    [SerializeField] AudioSource backgroundSource;
-    [SerializeField] AudioSource EffectSource;
-    [SerializeField] AudioSource CharacterSource;
-
-    public Sound[] sounds;
+    public AudioClip[] clips;
     public AudioMixer audioMixer;
 
     public Slider masterSlider;
@@ -32,15 +28,7 @@ public class SoundSetting : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
-        foreach (Sound s in sounds)
-        {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
-            s.source.outputAudioMixerGroup = audioMixer.outputAudioMixerGroup;
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-            s.source.loop = s.loop;
-        }
+
     }
     private void Start()
     {
@@ -91,41 +79,4 @@ public class SoundSetting : MonoBehaviour
         EffectSlider.value = PlayerPrefs.GetFloat("EffectVolume");
         CharacterSlider.value = PlayerPrefs.GetFloat("CharacterVolume");
     }
-    public void PlayEffect(AudioClip clip)
-    {
-        EffectSource.PlayOneShot(clip);
-    }
-    public void PlayCharacter(AudioClip clip)
-    {
-        CharacterSource.PlayOneShot(clip);
-    }
-
-    public void Play(string name)
-    {
-        //Sound s = Array.Find(sounds, sound => sound.name == name);
-        //if(s == null)
-        //{
-        //    Debug.Log("no sound name");
-        //    return;
-        //}
-        //s.source.Play();
-    }
-    //public void EffectPlay(string name)
-    //{
-    //    Sound s = Array.Find(sounds, sound => sound.name == name);
-    //    if (s == null)
-    //    {
-    //        Debug.Log("no sound name");
-    //        return;
-    //    }
-    //    //s.source.PlayOneShot();
-    //}
-
-    //public void StopAll()
-    //{
-    //    foreach(Sound s in sounds)
-    //    {
-    //        s.source.Stop();
-    //    }
-    //}
 }
