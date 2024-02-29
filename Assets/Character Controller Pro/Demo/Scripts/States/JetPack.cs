@@ -40,7 +40,8 @@ namespace Lightbug.CharacterControllerPro.Demo
         {
             CharacterActor.alwaysNotGrounded = true;
             CharacterActor.UseRootMotion = false;
-
+            CharacterStateController.Animator.SetFloat("VerticalSpeed", 0);
+            CharacterStateController.Animator.SetFloat("PlanarSpeed", 0);
             smoothDampVelocity = CharacterActor.VerticalVelocity;
 
         }
