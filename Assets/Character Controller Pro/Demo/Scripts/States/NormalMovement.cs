@@ -560,6 +560,11 @@ namespace Lightbug.CharacterControllerPro.Demo
                 verticalMovementParameters.autoCalculate = true;
                 // 여기에 낙하산 초기화 해야함 땅에 떨어졌을때
             }
+            else if(!CharacterActor.IsGrounded)
+            {
+                groundedJumpAvailable = false;
+                verticalMovementParameters.canParachute = true;
+            }
             
 
             if (isAllowedToCancelJump)
