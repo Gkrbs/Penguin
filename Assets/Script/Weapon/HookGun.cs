@@ -176,17 +176,7 @@ public class HookGun : MonoBehaviour
                 characterActor.alwaysNotGrounded = false;
                 characterActor.stableLayerMask = 1 << LayerMask.NameToLayer("Ground") | 1 << LayerMask.NameToLayer("Wall");
             }
-            Debug.Log("Max " + joint.maxDistance);
-        Debug.Log("Bul " + BULLET_DISTANCE);
         }
-        //if (MAX_DISTANCE > BULLET_DISTANCE)
-        //{
-        //    characterActor.alwaysNotGrounded = true;
-        //}
-        //else
-        //{
-        //    characterActor.alwaysNotGrounded = false;
-        //}
         if (Input.GetButtonDown("Fire1"))
         {
             Reloading();

@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 6863292720929571416}
   - component: {fileID: 6355676417040418751}
   - component: {fileID: 3214870271715171955}
-  - component: {fileID: 7480223601280568450}
+  - component: {fileID: 4744711090750114538}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -415,7 +415,7 @@ MonoBehaviour:
   horizontalAxisParameter: HorizontalAxis
   verticalAxisParameter: VerticalAxis
   heightParameter: Height
---- !u!114 &7480223601280568450
+--- !u!114 &4744711090750114538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -424,42 +424,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5277007774261085475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de174a927f9d1a44b933feb53ca447ff, type: 3}
+  m_Script: {fileID: 11500000, guid: dccef5b1af5fd8d44a522157e01ee6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   overrideAnimatorController: 1
   runtimeAnimatorController: {fileID: 0}
-  initialVelocity: 30
-  duration: 0.5
-  movementCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: -1
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -1
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  availableNotGroundedDashes: 1
-  ignoreSpeedMultipliers: 0
-  forceNotGrounded: 1
-  cancelOnContact: 1
-  contactVelocityTolerance: 5
+  targetPlanarSpeed: 5
+  targetVerticalSpeed: 5
+  duration: 1
 --- !u!1 &7434469429973856857
 GameObject:
   m_ObjectHideFlags: 0
