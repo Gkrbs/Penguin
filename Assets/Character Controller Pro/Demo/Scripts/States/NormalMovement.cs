@@ -151,7 +151,8 @@ namespace Lightbug.CharacterControllerPro.Demo
 
             if (CharacterActions.jetPack.value)
             {
-                CharacterStateController.EnqueueTransition<JetPack>();
+                //CharacterStateController.EnqueueTransition<JetPack>();
+                CharacterStateController.EnqueueTransition<JetPackAlpha>();
             }
             else if (CharacterActions.dash.Started)
             {

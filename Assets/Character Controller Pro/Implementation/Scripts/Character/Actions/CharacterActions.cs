@@ -25,7 +25,6 @@ namespace Lightbug.CharacterControllerPro.Implementation
         // Vector2 actions
         public Vector2Action @movement;
 
-        private float @delaytime;
         //public delegate bool JetpackEventDelegate();
         //public event JetpackEventDelegate JetpackEvent;
         /// <summary>
@@ -75,39 +74,12 @@ namespace Lightbug.CharacterControllerPro.Implementation
             @roll = new FloatAction();
 
             @movement = new Vector2Action();
-            @delaytime = 3.0f;
-
-        }
-
-        private bool input_jetpack(InputHandler inputHandler, float dt)
-        {
-
-            bool res = inputHandler.GetBool("Jet Pack");//JetpackEvent();
-            if (res)
-            {
-                delaytime -= dt;
-            }
-
-            if (@delaytime < 0.0f)
-            {
-                @delaytime = 3.0f;
-                return false;
-            }
-
-            if (@delaytime < 3.0f)
-            {
-                delaytime -= dt;
-                return true;
-            }
-
-
-            return false ;
         }
 
         /// <summary>
         /// Updates the values of all the actions based on the current input handler (human).
         /// </summary>
-        public void SetValues(InputHandler inputHandler, float dt)
+        public void SetValues(InputHandler inputHandler)
         {
             if (inputHandler == null)
                 return;
@@ -115,7 +87,7 @@ namespace Lightbug.CharacterControllerPro.Implementation
             @jump.value = inputHandler.GetBool("Jump");
             @run.value = inputHandler.GetBool("Run");
             @interact.value = inputHandler.GetBool("Interact");
-            @jetPack.value = input_jetpack(inputHandler, dt);//inputHandler.GetBool("Jet Pack");
+            @jetPack.value = inputHandler.GetBool("Jet Pack");
             @dash.value = inputHandler.GetBool("Dash");
             @crouch.value = inputHandler.GetBool("Crouch");
 

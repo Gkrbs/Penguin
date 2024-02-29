@@ -89,7 +89,7 @@ namespace Lightbug.CharacterControllerPro.Implementation
 
         void UpdateHumanBrainValues(float dt)
         {
-            characterActions.SetValues(inputHandlerSettings.InputHandler,dt);
+            characterActions.SetValues(inputHandlerSettings.InputHandler);
             characterActions.Update(dt);
         }
 
