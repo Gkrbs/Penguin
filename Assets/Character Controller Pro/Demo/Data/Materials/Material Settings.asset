@@ -39,13 +39,18 @@ MonoBehaviour:
   - tagName: Boost
     accelerationMultiplier: 1
     decelerationMultiplier: 1
-    speedMultiplier: 3
+    speedMultiplier: 4
     color: {r: 0.5591397, g: 0, b: 1, a: 1}
   - tagName: Grass
     accelerationMultiplier: 5
     decelerationMultiplier: 5
     speedMultiplier: 1
     color: {r: 0, g: 1, b: 0.2941177, a: 1}
+  - tagName: Slider
+    accelerationMultiplier: 10
+    decelerationMultiplier: 0.01
+    speedMultiplier: 20
+    color: {r: 0.92176664, g: 1, b: 0, a: 1}
   volumes:
   - tagName: Water
     accelerationMultiplier: 0.5

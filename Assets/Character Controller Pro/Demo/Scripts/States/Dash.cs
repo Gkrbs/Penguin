@@ -188,7 +188,7 @@ namespace Lightbug.CharacterControllerPro.Demo
 
         public override void UpdateBehaviour(float dt)
         {
-            Vector3 dashVelocity = initialVelocity * currentSpeedMultiplier * movementCurve.Evaluate(dashCursor) * dashDirection;
+            Vector3 dashVelocity = initialVelocity * currentSpeedMultiplier * movementCurve.Evaluate(dashCursor) * (dashDirection-Vector3.up);
 
             CharacterActor.Velocity = dashVelocity;
 

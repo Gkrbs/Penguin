@@ -1634,7 +1634,7 @@ GameObject:
   - component: {fileID: 264543762}
   m_Layer: 3
   m_Name: Plane (1)
-  m_TagString: Boost
+  m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5408,7 +5408,7 @@ GameObject:
   - component: {fileID: 1231551076}
   m_Layer: 3
   m_Name: Plane (6)
-  m_TagString: Boost
+  m_TagString: Slider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5422,7 +5422,7 @@ Transform:
   m_GameObject: {fileID: 1231551074}
   serializedVersion: 2
   m_LocalRotation: {x: 0.47536004, y: 0.00021920563, z: -0.006544307, w: 0.879767}
-  m_LocalPosition: {x: 0.06, y: -1.34, z: 2.35}
+  m_LocalPosition: {x: 0.44, y: -1.86, z: 8.776}
   m_LocalScale: {x: 1, y: 0.5219289, z: 1.3993886}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6579,7 +6579,7 @@ GameObject:
   - component: {fileID: 1513833016}
   m_Layer: 3
   m_Name: Plane (4)
-  m_TagString: Boost
+  m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6808,7 +6808,6 @@ Transform:
   - {fileID: 124134340}
   - {fileID: 1906602880}
   - {fileID: 1513833015}
-  - {fileID: 1791388228}
   - {fileID: 1231551075}
   - {fileID: 1624635072}
   - {fileID: 264543761}
@@ -7053,7 +7052,7 @@ GameObject:
   - component: {fileID: 1624635073}
   m_Layer: 3
   m_Name: Plane (7)
-  m_TagString: Boost
+  m_TagString: Slider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7067,7 +7066,7 @@ Transform:
   m_GameObject: {fileID: 1624635071}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6134277, y: 0.0004618382, z: -0.0137880305, w: 0.7896305}
-  m_LocalPosition: {x: 0.09, y: 4.56, z: -1.13}
+  m_LocalPosition: {x: 0.42, y: 0.56, z: 6.07}
   m_LocalScale: {x: 1, y: 0.5219289, z: 1.3993886}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7844,7 +7843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1778057997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7960,7 +7959,7 @@ GameObject:
   - component: {fileID: 1783320790}
   m_Layer: 3
   m_Name: Plane (2)
-  m_TagString: Boost
+  m_TagString: Slider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8046,118 +8045,12 @@ Transform:
   m_GameObject: {fileID: 1783320789}
   serializedVersion: 2
   m_LocalRotation: {x: -0.17137296, y: -0, z: -0, w: 0.9852062}
-  m_LocalPosition: {x: 0, y: 1.7100954, z: 7.351712}
+  m_LocalPosition: {x: 0, y: 1.67, z: 7.31}
   m_LocalScale: {x: 1, y: 0.7987692, z: 1.085183}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1579926815}
   m_LocalEulerAnglesHint: {x: -45.511, y: 0, z: 0}
---- !u!1 &1791388227
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1791388228}
-  - component: {fileID: 1791388231}
-  - component: {fileID: 1791388230}
-  - component: {fileID: 1791388229}
-  m_Layer: 3
-  m_Name: Plane (5)
-  m_TagString: Boost
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1791388228
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791388227}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.67698663, y: 0.0062561836, z: -0.011925247, w: 0.73587215}
-  m_LocalPosition: {x: -0.09, y: -0.86, z: -1.33}
-  m_LocalScale: {x: 1, y: 0.3387725, z: 2.5520728}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1579926815}
-  m_LocalEulerAnglesHint: {x: 85.205, y: -4.762, z: -6.236}
---- !u!64 &1791388229
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791388227}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1791388230
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791388227}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1791388231
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791388227}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1794040875
 GameObject:
   m_ObjectHideFlags: 0
@@ -8588,7 +8481,7 @@ GameObject:
   - component: {fileID: 1906602881}
   m_Layer: 3
   m_Name: Plane (3)
-  m_TagString: Boost
+  m_TagString: Slider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8602,7 +8495,7 @@ Transform:
   m_GameObject: {fileID: 1906602879}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2272002, y: -0, z: -0, w: 0.9738481}
-  m_LocalPosition: {x: 0, y: 1.68, z: 0.09}
+  m_LocalPosition: {x: 0.39, y: 1.5, z: 6.99}
   m_LocalScale: {x: 1, y: 0.78417856, z: 1.093798}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9959,8 +9852,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overrideAnimatorController: 1
   runtimeAnimatorController: {fileID: 0}
-  initialVelocity: 12
-  duration: 0.4
+  initialVelocity: 5
+  duration: 0
   movementCurve:
     serializedVersion: 2
     m_Curve:
