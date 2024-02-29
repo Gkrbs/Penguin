@@ -21,7 +21,6 @@ public class GraphicSetting : MonoBehaviour
         {
             if (resolutions[i].width % 16 == 0 && resolutions[i].height % 9 == 0)
             {
-                index++;
                 string option = resolutions[i].width + " x " + resolutions[i].height;
                 if (!options.Contains(option))
                 {
@@ -33,6 +32,7 @@ public class GraphicSetting : MonoBehaviour
                 {
                     currentResolutionIndex = index;
                 }
+                index++;
             }
         }
         resolutionDropdown.AddOptions(options);
