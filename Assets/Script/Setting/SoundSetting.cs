@@ -46,8 +46,6 @@ public class SoundSetting : MonoBehaviour
         //Play("background");
     }
 
-    // 저장 기능 추가해야함.
-    // 볼륨 조절
     public void SetMaster()
     {
         float volume = masterSlider.value;
@@ -99,6 +97,27 @@ public class SoundSetting : MonoBehaviour
             Debug.Log("no clip name");
             return;
         }
+        audio.loop = false;
         audio.PlayOneShot(clip);
+    }
+    public void PlayLoop(AudioSource audio, string name)
+    {
+        AudioClip clip = null;
+        foreach (AudioClip audioClip in clips)
+        {
+            if (audioClip.name == name)
+            {
+                clip = audioClip;
+                break;
+            }
+        }
+        if (clip == null)
+        {
+            Debug.Log("no clip name");
+            return;
+        }
+        audio.clip = clip;
+        audio.loop = true;
+        audio.Play();
     }
 }

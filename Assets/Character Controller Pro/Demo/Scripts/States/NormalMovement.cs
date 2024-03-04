@@ -284,8 +284,10 @@ namespace Lightbug.CharacterControllerPro.Demo
                         currentPlanarSpeedLimit = Mathf.Max(CharacterActor.PlanarVelocity.magnitude, planarMovementParameters.baseSpeedLimit);
 
 
-                    needToAccelerate = CustomUtilities.Multiply(CharacterStateController.InputMovementReference, currentPlanarSpeedLimit).sqrMagnitude >= CharacterActor.PlanarVelocity.sqrMagnitude;
-                    targetPlanarVelocity = CustomUtilities.Multiply(CharacterStateController.InputMovementReference, speedMultiplier, currentPlanarSpeedLimit);
+                    //needToAccelerate = CustomUtilities.Multiply(CharacterStateController.InputMovementReference, currentPlanarSpeedLimit).sqrMagnitude >= CharacterActor.PlanarVelocity.sqrMagnitude;
+                    targetPlanarVelocity = !verticalMovementParameters.isGrappled ? 
+                        CustomUtilities.Multiply(CharacterStateController.InputMovementReference, speedMultiplier, currentPlanarSpeedLimit)
+                        : CustomUtilities.Multiply(CharacterStateController.InputMovementReference, speedMultiplier * 10f, currentPlanarSpeedLimit * 10f);
 
                     //GetAccelerationBoost(targetPlanarVelocity)
                     break;
