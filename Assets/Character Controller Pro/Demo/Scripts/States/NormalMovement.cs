@@ -212,7 +212,13 @@ namespace Lightbug.CharacterControllerPro.Demo
                     break;
 
                 case CharacterActorState.NotGrounded:
-
+                    if (verticalMovementParameters.isGrappled)
+                    {
+                        verticalMovementParameters.canParachute = false;
+                        verticalMovementParameters.parachuting = false;
+                    }
+                    else
+                        verticalMovementParameters.canParachute = true;
                     if (reducedAirControlFlag)
                     {
                         float time = Time.time - reducedAirControlInitialTime;
@@ -287,7 +293,7 @@ namespace Lightbug.CharacterControllerPro.Demo
                     //needToAccelerate = CustomUtilities.Multiply(CharacterStateController.InputMovementReference, currentPlanarSpeedLimit).sqrMagnitude >= CharacterActor.PlanarVelocity.sqrMagnitude;
                     targetPlanarVelocity = !verticalMovementParameters.isGrappled ? 
                         CustomUtilities.Multiply(CharacterStateController.InputMovementReference, speedMultiplier, currentPlanarSpeedLimit)
-                        : CustomUtilities.Multiply(CharacterStateController.InputMovementReference, speedMultiplier * 10f, currentPlanarSpeedLimit * 10f);
+                        : CustomUtilities.Multiply(CharacterStateController.InputMovementReference, speedMultiplier * 15f, currentPlanarSpeedLimit * 15f);
 
                     //GetAccelerationBoost(targetPlanarVelocity)
                     break;
@@ -386,7 +392,7 @@ namespace Lightbug.CharacterControllerPro.Demo
             
             if (verticalMovementParameters.parachuting && !verticalMovementParameters.isGrappled)
             {
-                YSpeedControl(verticalMovementParameters.paraSpeed);
+                SpeedControl(verticalMovementParameters.paraSpeed);
             }
             else if (verticalMovementParameters.isGrappled)
             {
@@ -552,6 +558,8 @@ namespace Lightbug.CharacterControllerPro.Demo
 
         protected virtual void ProcessRegularJump(float dt)
         {
+            if (verticalMovementParameters.isGrappled)
+                return;
             if (CharacterActor.IsGrounded)
             {
                 notGroundedJumpsLeft = verticalMovementParameters.availableNotGroundedJumps;
