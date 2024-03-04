@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GraphicSetting : MonoBehaviour
 {
-    public Toggle toggle;
+    public Toggle screenMode;
     public Dropdown resolutionDropdown;
+    public Dropdown qualityDropdown;
 
     Resolution[] resolutions;
     List<Resolution> res = new();
     List<string> options = new();
+
     private void Start()
     {
         resolutions = Screen.resolutions;
@@ -36,30 +38,49 @@ public class GraphicSetting : MonoBehaviour
             }
         }
         resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
 
-        // 세이브 데이터 있을 때 저장된 데이터를 읽어서 세팅해야함
-        SetResolution(currentResolutionIndex);
-
-        SetFullScreen(toggle.isOn);
-        // .
+        if (PlayerPrefs.HasKey("Resolution"))
+        {
+            LoadValue();
+            RefreshSetting();
+        }
+        else
+        {
+            resolutionDropdown.value = currentResolutionIndex;
+            SetResolution(currentResolutionIndex);
+            SetQuality(2);
+            SetFullScreen(true);
+            RefreshSetting();
+        }
     }
-
+    public void RefreshSetting()
+    {
+        resolutionDropdown.RefreshShownValue();
+        qualityDropdown.RefreshShownValue();
+    }
     // 해상도 설정
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = res[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        PlayerPrefs.SetInt("Resolution", resolutionIndex);
     }
     // 그래픽 설정 low standard high 기본 유니티 제공
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+        PlayerPrefs.SetInt("Quality", qualityIndex);
     }
     // 전체화면 설정. 체크박스를 체크할때 적용
     public void SetFullScreen(bool isFull)
     {
         Screen.fullScreen = isFull;
+        PlayerPrefs.SetInt("ScreenMode", System.Convert.ToInt32(isFull));
+    }
+    private void LoadValue()
+    {
+        resolutionDropdown.value = PlayerPrefs.GetInt("Resolution");
+        qualityDropdown.value = PlayerPrefs.GetInt("Quality");
+        screenMode.isOn = System.Convert.ToBoolean(PlayerPrefs.GetInt("ScreenMode"));
     }
 }

@@ -59,7 +59,9 @@ namespace Lightbug.CharacterControllerPro.Demo
             // Planar movement
             CharacterActor.PlanarVelocity = Vector3.Lerp(CharacterActor.PlanarVelocity, targetPlanarSpeed * CharacterStateController.InputMovementReference, 7f * dt);
 
-            // Looking direction
+            // Looking
+            // 
+
             CharacterActor.SetYaw(CharacterActor.PlanarVelocity);
         }
 

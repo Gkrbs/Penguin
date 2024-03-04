@@ -78,6 +78,10 @@ public class SoundSetting : MonoBehaviour
         BackgroundSlider.value = PlayerPrefs.GetFloat("BackgroundVolume");
         EffectSlider.value = PlayerPrefs.GetFloat("EffectVolume");
         CharacterSlider.value = PlayerPrefs.GetFloat("CharacterVolume");
+        SetMaster();
+        SetBackground();
+        SetEffect();
+        SetCharacter();
     }
     public void PlayOneShot(AudioSource audio, string name)
     {
