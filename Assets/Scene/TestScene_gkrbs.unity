@@ -4457,7 +4457,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1102788664}
         m_TargetAssemblyTypeName: CameraSetting, Assembly-CSharp
         m_MethodName: SetXAxisSpeed
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5128,7 +5128,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 515070489}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.81333333
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5520,9 +5520,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cinemachineFreeLook: {fileID: 495243759}
-  fovSlider: {fileID: 0}
-  xAxisSlider: {fileID: 0}
-  yAxisSlider: {fileID: 0}
+  fovSlider: {fileID: 1147325877}
+  xAxisSlider: {fileID: 878903935}
+  yAxisSlider: {fileID: 2013316021}
   defaultXAxis: 0
   defaultYAxis: 0
 --- !u!1 &1122792072
@@ -5949,7 +5949,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1102788664}
         m_TargetAssemblyTypeName: CameraSetting, Assembly-CSharp
         m_MethodName: SetFov
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9891,7 +9891,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1102788664}
         m_TargetAssemblyTypeName: CameraSetting, Assembly-CSharp
         m_MethodName: SetYAxisSpeed
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

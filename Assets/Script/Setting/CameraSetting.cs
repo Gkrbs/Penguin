@@ -18,7 +18,7 @@ public class CameraSetting : MonoBehaviour
     {
         defaultXAxis = cinemachineFreeLook.m_XAxis.m_MaxSpeed;
         defaultYAxis = cinemachineFreeLook.m_YAxis.m_MaxSpeed;
-        if (PlayerPrefs.HasKey("masterVolume"))
+        if (PlayerPrefs.HasKey("FOV"))
         {
             LoadValue();
         }
