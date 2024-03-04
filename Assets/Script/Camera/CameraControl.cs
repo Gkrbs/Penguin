@@ -14,6 +14,17 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (!Cursor.visible)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            Cursor.visible = !Cursor.visible;
+        }
     }
 }

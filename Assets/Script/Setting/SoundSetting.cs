@@ -79,4 +79,22 @@ public class SoundSetting : MonoBehaviour
         EffectSlider.value = PlayerPrefs.GetFloat("EffectVolume");
         CharacterSlider.value = PlayerPrefs.GetFloat("CharacterVolume");
     }
+    public void PlayOneShot(AudioSource audio, string name)
+    {
+        AudioClip clip = null;
+        foreach(AudioClip audioClip in clips)
+        {
+            if(audioClip.name == name)
+            {
+                clip = audioClip;
+                break;
+            }
+        }
+        if(clip == null)
+        {
+            Debug.Log("no clip name");
+            return;
+        }
+        audio.PlayOneShot(clip);
+    }
 }
