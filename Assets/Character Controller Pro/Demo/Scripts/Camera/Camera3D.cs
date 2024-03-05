@@ -75,7 +75,7 @@ namespace Lightbug.CharacterControllerPro.Demo
 
 
         [Header("Zoom (Third person)")]
-
+        [SerializeField]
         public bool updateZoom = true;
 
         [Min(0f)]
@@ -83,16 +83,16 @@ namespace Lightbug.CharacterControllerPro.Demo
         float distanceToTarget = 5f;
 
         [Min(0f)]
-        public float zoomInOutSpeed = 40f;
+        public float zoomInOutSpeed = 10f;
 
         [Min(0f)]
         public float zoomInOutLerpSpeed = 5f;
 
         [Min(0f)]
-        public float minZoom = 2f;
+        public float minZoom = 5f;
 
         [Min(0.001f)]
-        public float maxZoom = 12f;
+        public float maxZoom = 5f;
 
 
         [Header("Collision")]
@@ -111,8 +111,9 @@ namespace Lightbug.CharacterControllerPro.Demo
 
         CharacterActor characterActor = null;
         Rigidbody characterRigidbody = null;
-
+        [SerializeField]
         float currentDistanceToTarget;
+        [SerializeField]
         float smoothedDistanceToTarget;
 
         float deltaYaw = 0f;
@@ -125,6 +126,7 @@ namespace Lightbug.CharacterControllerPro.Demo
         Renderer[] bodyRenderers = null;
         RaycastHit[] hitsBuffer = new RaycastHit[10];
         RaycastHit[] validHits = new RaycastHit[10];
+        [SerializeField]
         Vector3 characterPosition = default(Vector3);
         float lerpedHeight;
 

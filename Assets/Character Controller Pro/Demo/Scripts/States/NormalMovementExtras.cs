@@ -93,7 +93,7 @@ namespace Lightbug.CharacterControllerPro.Demo
 
         [Header("Grapple")]
 
-        public float grappleSpeed = 100.0f;
+        public float grappleSpeed = 1000.0f;
 
         public bool isGrappled = false;
 
