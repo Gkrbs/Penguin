@@ -5235,7 +5235,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 515070489}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.81333333
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10869,6 +10869,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915338143797716596, guid: 19929b281d95ac84ea4e5f3243c86b67,
+        type: 3}
+      propertyPath: slideOnWalls
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915338143797716596, guid: 19929b281d95ac84ea4e5f3243c86b67,
+        type: 3}
+      propertyPath: alwaysNotGrounded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915338143797716596, guid: 19929b281d95ac84ea4e5f3243c86b67,
+        type: 3}
+      propertyPath: supportDynamicGround
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915338143797716596, guid: 19929b281d95ac84ea4e5f3243c86b67,
+        type: 3}
+      propertyPath: resetVelocityOnTeleport
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6355676417040418751, guid: 19929b281d95ac84ea4e5f3243c86b67,
         type: 3}

@@ -373,7 +373,6 @@ namespace Lightbug.CharacterControllerPro.Demo
             if (!verticalMovementParameters.useGravity)
                 return;
 
-
             verticalMovementParameters.UpdateParameters();
 
 
@@ -484,6 +483,7 @@ namespace Lightbug.CharacterControllerPro.Demo
 
         public void Grappling(bool isOn)
         {
+            //CharacterActor.alwaysNotGrounded = isOn;
             verticalMovementParameters.isGrappled = isOn;
             verticalMovementParameters.parachuting = false;
             verticalMovementParameters.canParachute = !isOn;
@@ -558,8 +558,13 @@ namespace Lightbug.CharacterControllerPro.Demo
 
         protected virtual void ProcessRegularJump(float dt)
         {
-            if (verticalMovementParameters.isGrappled)
-                return;
+            //if (verticalMovementParameters.isGrappled)
+            //{
+            //    CharacterActor.alwaysNotGrounded = true;
+            //    return;
+            //}
+            //else
+            //    CharacterActor.alwaysNotGrounded = false;
             if (CharacterActor.IsGrounded)
             {
                 notGroundedJumpsLeft = verticalMovementParameters.availableNotGroundedJumps;
@@ -568,7 +573,6 @@ namespace Lightbug.CharacterControllerPro.Demo
                 verticalMovementParameters.canParachute = false;
                 verticalMovementParameters.parachuting = false;
                 verticalMovementParameters.autoCalculate = true;
-                // 여기에 낙하산 초기화 해야함 땅에 떨어졌을때
             }
             else if(!CharacterActor.IsGrounded)
             {
@@ -645,12 +649,12 @@ namespace Lightbug.CharacterControllerPro.Demo
                     CharacterActor.Velocity -= Vector3.Project(CharacterActor.Velocity, jumpDirection);
                     CharacterActor.Velocity += CustomUtilities.Multiply(jumpDirection, verticalMovementParameters.jumpSpeed);
                 }
-                else if (!verticalMovementParameters.parachuting)
-                {
-                    verticalMovementParameters.autoCalculate = false;
-                    verticalMovementParameters.gravity = 2.0f;
-                    verticalMovementParameters.parachuting = true;
-                }
+                //else if (!verticalMovementParameters.parachuting)
+                //{
+                //    verticalMovementParameters.autoCalculate = false;
+                //    verticalMovementParameters.gravity = 2.0f;
+                //    verticalMovementParameters.parachuting = true;
+                //}
                 else
                 {
                     verticalMovementParameters.parachuting = false;
