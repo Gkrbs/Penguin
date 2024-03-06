@@ -623,12 +623,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _gun
       value: 
-      objectReference: {fileID: 1565856877}
+      objectReference: {fileID: 0}
     - target: {fileID: 4938871111940677869, guid: bcbbf924149d42040b83c5a937147467,
         type: 3}
       propertyPath: _fire_point_tr
       value: 
-      objectReference: {fileID: 1042968070}
+      objectReference: {fileID: 543650944}
     - target: {fileID: 5020055877606109970, guid: bcbbf924149d42040b83c5a937147467,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -4946,64 +4946,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3214870271715171955, guid: 19929b281d95ac84ea4e5f3243c86b67,
+    - target: {fileID: 1451908412979666755, guid: 19929b281d95ac84ea4e5f3243c86b67,
         type: 3}
-      propertyPath: verticalMovementParameters.gravity
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3214870271715171955, guid: 19929b281d95ac84ea4e5f3243c86b67,
+      propertyPath: _aim_tr
+      value: 
+      objectReference: {fileID: 1525624453}
+    - target: {fileID: 1451908412979666755, guid: 19929b281d95ac84ea4e5f3243c86b67,
         type: 3}
-      propertyPath: verticalMovementParameters.jumpSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3214870271715171955, guid: 19929b281d95ac84ea4e5f3243c86b67,
-        type: 3}
-      propertyPath: verticalMovementParameters.jumpApexHeight
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3214870271715171955, guid: 19929b281d95ac84ea4e5f3243c86b67,
-        type: 3}
-      propertyPath: verticalMovementParameters.jumpApexDuration
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3214870271715171955, guid: 19929b281d95ac84ea4e5f3243c86b67,
-        type: 3}
-      propertyPath: verticalMovementParameters.cancelJumpOnRelease
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3214870271715171955, guid: 19929b281d95ac84ea4e5f3243c86b67,
-        type: 3}
-      propertyPath: verticalMovementParameters.cancelJumpMultiplier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3214870271715171955, guid: 19929b281d95ac84ea4e5f3243c86b67,
-        type: 3}
-      propertyPath: planarMovementParameters.notGroundedAcceleration
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3214870271715171955, guid: 19929b281d95ac84ea4e5f3243c86b67,
-        type: 3}
-      propertyPath: planarMovementParameters.notGroundedDeceleration
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: _cam_tr
+      value: 
+      objectReference: {fileID: 1773857504}
     - target: {fileID: 5119868832631064401, guid: 19929b281d95ac84ea4e5f3243c86b67,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5915338143797716596, guid: 19929b281d95ac84ea4e5f3243c86b67,
+        type: 3}
+      propertyPath: stableLayerMask.m_Bits
+      value: 520
+      objectReference: {fileID: 0}
     - target: {fileID: 6355676417040418751, guid: 19929b281d95ac84ea4e5f3243c86b67,
         type: 3}
       propertyPath: movementReferenceParameters.externalReference
-      value: 
-      objectReference: {fileID: 1773857504}
-    - target: {fileID: 6756946150585327418, guid: 19929b281d95ac84ea4e5f3243c86b67,
-        type: 3}
-      propertyPath: _aim_tr
-      value: 
-      objectReference: {fileID: 1525624453}
-    - target: {fileID: 6756946150585327418, guid: 19929b281d95ac84ea4e5f3243c86b67,
-        type: 3}
-      propertyPath: _cam_tr
       value: 
       objectReference: {fileID: 1773857504}
     - target: {fileID: 8673601949801421678, guid: 19929b281d95ac84ea4e5f3243c86b67,
@@ -5136,6 +5101,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531731542}
   m_CullTransparentMesh: 1
+--- !u!4 &543650944 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2940076693414902323, guid: 19929b281d95ac84ea4e5f3243c86b67,
+    type: 3}
+  m_PrefabInstance: {fileID: 527803331}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &545399239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 607044178667357680, guid: 10233d11fdc83144c9e7702449b4d862,
@@ -9652,12 +9623,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 527803331}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1042968070 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5651868576850233885, guid: 19929b281d95ac84ea4e5f3243c86b67,
-    type: 3}
-  m_PrefabInstance: {fileID: 527803331}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1046117573
 GameObject:
   m_ObjectHideFlags: 0
@@ -12619,18 +12584,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527368210}
   m_CullTransparentMesh: 1
---- !u!114 &1565856877 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6756946150585327418, guid: 19929b281d95ac84ea4e5f3243c86b67,
-    type: 3}
-  m_PrefabInstance: {fileID: 527803331}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0fee34e0a2b1a442bd0134128e29c84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1574665210
 PrefabInstance:
   m_ObjectHideFlags: 0
