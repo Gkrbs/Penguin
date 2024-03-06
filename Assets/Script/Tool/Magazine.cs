@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Magazine : MonoBehaviour
+{
+    enum INFO
+    {
+        MAX_COUNT,
+        RELOAD_SPEED
+    }
+    private float _max_count = 0.0f;
+    private float _default_max_count = 0.0f;
+    private float _reload_speed = 0.0f;
+    private Queue<GameObject> _bullet = new Queue<GameObject>();
+    [SerializeField]
+    private ToolInfo _data;
+    private GameObject _parent;
+    public void Init(GameObject parent_gun, string bullet_name)
+    {
+        _default_max_count = _data.f_datas[(int)INFO.MAX_COUNT];
+        _max_count = _default_max_count;
+        _reload_speed = _data.f_datas[(int)INFO.RELOAD_SPEED];
+        _parent = parent_gun;
+        if (_bullet.Count < 1)
+        {
+            for (int i = 0; i < _max_count; i++)
+            {
+                GameObject bullet = Instantiate(Resources.Load<GameObject>("Prefabs\\" + bullet_name), transform.position, transform.rotation,transform);
+                bullet.name = bullet_name;
+                bullet.SetActive(false);
+                _bullet.Enqueue(bullet);
+            }
+        }
+    }
+
+    public GameObject GetBullet()
+    {
+        GameObject bullet = null;
+        if (_bullet.Count < 1)
+            return bullet;
+
+        if (_bullet.TryDequeue(out bullet))
+        {
+           // _max_count--;
+        }
+        return bullet;
+    }
+
+    public void SetBullet(GameObject bullet)
+    {
+        if (_bullet.Count + 1 > _default_max_count)
+            return;
+        bullet.transform.position = transform.position;
+        bullet.transform.rotation = transform.rotation;
+        bullet.transform.parent = transform;
+        bullet.SetActive(false);
+        _bullet.Enqueue(bullet);
+    }
+}
