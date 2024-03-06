@@ -27,7 +27,7 @@ public class Magazine : MonoBehaviour
         {
             for (int i = 0; i < _max_count; i++)
             {
-                GameObject bullet = Instantiate(Resources.Load<GameObject>("Prefabs\\" + bullet_name), transform.position, transform.rotation, transform);
+                GameObject bullet = Instantiate(Resources.Load<GameObject>("Prefabs\\Gun\\" + bullet_name), transform.position, transform.rotation, transform);
                 bullet.name = bullet_name;
                 bullet.SetActive(false);
                 _bullet.Enqueue(bullet);

@@ -46,7 +46,7 @@ public class Hook : MonoBehaviour
     {
         _ir = GetComponent<LineRenderer>();
         _rd = GetComponent<Rigidbody>();
-        _active = new Grappling();
+        //_active = new Grappling();
     }
     private void Start()
     {
