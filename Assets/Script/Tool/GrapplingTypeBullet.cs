@@ -44,7 +44,7 @@ public class GrapplingTypeBullet : ActiveTool
         _joint.connectedAnchor = grapple_point;
 
         float distanceFromPoint = Vector3.Distance(_user.transform.position, grapple_point);
-        _joint.maxDistance = _data.f_datas[(int)INFO.MAX_DISTANCE];//distanceFromPoint * 0.25f;
+        _joint.maxDistance = distanceFromPoint;//_data.f_datas[(int)INFO.MAX_DISTANCE];//distanceFromPoint * 0.25f;
         _joint.minDistance = 0.0f;
 
         _joint.spring = _data.f_datas[(int)INFO.SPRING];

@@ -27,7 +27,6 @@ public class GrapplingTypeGun : ActiveTool
     private LineRenderer _ir;
     private GrapplingTypeBullet _glapple_bullet;
     private Gun _gun;
-    private SpringJoint _joint;
     [SerializeField]
     public float BULLET_DISTANCE
     {
@@ -71,13 +70,15 @@ public class GrapplingTypeGun : ActiveTool
     }
     public override void Init(GameObject obj)
     {
+        base.Init(obj);
         _is_trigger = true;
         if (_ir == null)
             _ir = GetComponent<LineRenderer>();
         if (_fire_point == null)
-            _fire_point = obj.transform;
+            _fire_point = _target.transform;
         if (_gun == null)
             _gun = GetComponent<Gun>();
+        characterActor = _user.GetComponent<CharacterActor>();
         _gun.is_tool_control = true;
     }
 
@@ -85,44 +86,38 @@ public class GrapplingTypeGun : ActiveTool
     {
         if (!_is_trigger) return;
 
+        SpringJoint joint = transform.GetComponentInParent<SpringJoint>();
 
-        SpringJoint joint = transform.parent.GetComponent<SpringJoint>();
-
-        if (_joint == null)
+        if (joint == null)
             return;
 
-        if (_joint != null)
+        if (joint.maxDistance < BULLET_DISTANCE && characterActor.IsGrounded)
         {
-            if (_joint.maxDistance < BULLET_DISTANCE && characterActor.IsGrounded)
-            {
-                characterActor.alwaysNotGrounded = true;
-                characterActor.stableLayerMask = 0;
-            }
-            else
-            {
-                characterActor.alwaysNotGrounded = false;
-                characterActor.stableLayerMask = 1 << LayerMask.NameToLayer("Ground") | 1 << LayerMask.NameToLayer("Wall");
-            }
-
-            if (Input.GetKey(KeyCode.Q))
-            {
-                _joint.maxDistance -= Time.deltaTime * _data.f_datas[(int)INFO.ANC_SPEED];
-                if (_joint.maxDistance < _min_dist)
-                    _joint.maxDistance = _min_dist;
-            }
-            else if (Input.GetKey(KeyCode.E))
-            {
-                _joint.maxDistance += Time.deltaTime * _data.f_datas[(int)INFO.ANC_SPEED];
-                if (_joint.maxDistance > _max_dist)
-                    _joint.maxDistance = _max_dist;
-            }
-            else if (Input.GetKeyDown(KeyCode.Space))
-            {
-
-            }
+            characterActor.alwaysNotGrounded = true;
+            characterActor.stableLayerMask = 0;
+        }
+        else
+        {
+            characterActor.alwaysNotGrounded = false;
+            characterActor.stableLayerMask = 1 << LayerMask.NameToLayer("Ground") | 1 << LayerMask.NameToLayer("Wall");
         }
 
+        if (Input.GetKey(KeyCode.Q))
+        {
+            joint.maxDistance -= Time.deltaTime * _data.f_datas[(int)INFO.ANC_SPEED];
+            if (joint.maxDistance < _min_dist)
+                joint.maxDistance = _min_dist;
+        }
+        else if (Input.GetKey(KeyCode.E))
+        {
+            joint.maxDistance += Time.deltaTime * _data.f_datas[(int)INFO.ANC_SPEED];
+            if (joint.maxDistance > _max_dist)
+                joint.maxDistance = _max_dist;
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
 
+        }
     }
 
     public override void StopAction()
