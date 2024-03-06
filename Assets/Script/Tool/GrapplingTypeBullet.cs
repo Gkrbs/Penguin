@@ -38,6 +38,8 @@ public class GrapplingTypeBullet : ActiveTool
         Vector3 grapple_point = _gpgun.HIT_POS;
         if (grapple_point == Vector3.zero)
         {
+            _is_trigger = false;
+            normalMovement.Grappling(false);
             return;
         }
         transform.position = grapple_point;
@@ -77,9 +79,9 @@ public class GrapplingTypeBullet : ActiveTool
     }
     public override void StopAction()
     {
+        _is_trigger = false;
         if (_joint != null)
         {
-            _is_trigger = false;
             MonoBehaviour.Destroy(_joint);
             normalMovement.Grappling(false);
             _joint = null;
