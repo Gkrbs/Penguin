@@ -93,9 +93,8 @@ public class GrapplingTypeBullet : ActiveTool
     void Update()
     {
         float max_dist = _gpgun.BULLET_DISTANCE;
-        float limit_dist = _data.f_datas[(int)INFO.LIMIT_DIST];
-        if (!_is_trigger &&
-         max_dist > limit_dist)
+        float limit_dist = _gpgun.MAX_DISTANCE;
+        if (!_is_trigger && max_dist > limit_dist)
         {
             StopAction();
             _gpgun.StopAction();

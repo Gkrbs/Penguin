@@ -14,6 +14,12 @@ public class GrapplingTypeGun : ActiveTool
         ANC_SPEED,
         JUMP_FORCE
     }
+
+    private float _max_dist = 0f;
+    private float _min_dist = 0f;
+    private float _anc_speed = 0f;
+    private float _jump_force = 0f;
+
     public CharacterActor characterActor;
     [SerializeField]
     private Transform _fire_point, _bullet;
@@ -36,12 +42,32 @@ public class GrapplingTypeGun : ActiveTool
 
         }
     }
+
+    public float MAX_DISTANCE
+    {
+        get
+        {
+            return _max_dist;
+        }
+    }
+    public float MIN_DISTANCE
+    {
+        get
+        {
+            return _max_dist;
+        }
+    }
     private void Start()
     {
         if (_data == null)
         {
             _data = Resources.Load<ToolInfo>(GRAPPLING_TYPE_GUN_DATA_PATH);
+
         }
+        _max_dist = _data.f_datas[(int)INFO.MAX_DISTINCE];
+        _min_dist = _data.f_datas[(int)INFO.MIN_DISTINCE];
+        _anc_speed = _data.f_datas[(int)INFO.ANC_SPEED];
+        _jump_force = _data.f_datas[(int)INFO.JUMP_FORCE];
     }
     public override void Init(GameObject obj)
     {
@@ -59,8 +85,8 @@ public class GrapplingTypeGun : ActiveTool
     {
         if (!_is_trigger) return;
 
-        //SpringJoint joint = transform.parent.GetComponent<SpringJoint>();
 
+        SpringJoint joint = transform.parent.GetComponent<SpringJoint>();
 
         if (_joint == null)
             return;
@@ -77,24 +103,25 @@ public class GrapplingTypeGun : ActiveTool
                 characterActor.alwaysNotGrounded = false;
                 characterActor.stableLayerMask = 1 << LayerMask.NameToLayer("Ground") | 1 << LayerMask.NameToLayer("Wall");
             }
+
+            if (Input.GetKey(KeyCode.Q))
+            {
+                _joint.maxDistance -= Time.deltaTime * _data.f_datas[(int)INFO.ANC_SPEED];
+                if (_joint.maxDistance < _min_dist)
+                    _joint.maxDistance = _min_dist;
+            }
+            else if (Input.GetKey(KeyCode.E))
+            {
+                _joint.maxDistance += Time.deltaTime * _data.f_datas[(int)INFO.ANC_SPEED];
+                if (_joint.maxDistance > _max_dist)
+                    _joint.maxDistance = _max_dist;
+            }
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+
+            }
         }
 
-        if (Input.GetKey(KeyCode.Q))
-        {
-            _joint.maxDistance -= Time.deltaTime * _data.f_datas[(int)INFO.ANC_SPEED];
-            if (_joint.maxDistance < _data.f_datas[(int)INFO.MIN_DISTINCE])
-                _joint.maxDistance = _data.f_datas[(int)INFO.MIN_DISTINCE];
-        }
-        else if (Input.GetKey(KeyCode.E))
-        {
-            _joint.maxDistance += Time.deltaTime * _data.f_datas[(int)INFO.ANC_SPEED];
-            if (_joint.maxDistance > _data.f_datas[(int)INFO.MAX_DISTINCE])
-                _joint.maxDistance = _data.f_datas[(int)INFO.MAX_DISTINCE];
-        }
-        else if (Input.GetKeyDown(KeyCode.Space))
-        {
-
-        }
 
     }
 

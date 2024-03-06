@@ -9,7 +9,7 @@ public class AimObject : MonoBehaviour
     [SerializeField]
     private Transform _fire_point_tr;
     [SerializeField]
-    private HookGun _gun;
+    private GrapplingTypeGun _gun;
 
     // Update is called once per frame
     void Update()
