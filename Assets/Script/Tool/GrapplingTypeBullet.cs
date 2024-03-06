@@ -38,7 +38,6 @@ public class GrapplingTypeBullet : ActiveTool
         Vector3 grapple_point = _gpgun.HIT_POS;
         if (grapple_point == Vector3.zero)
         {
-            StopAction();
             return;
         }
         transform.position = grapple_point;
