@@ -26,8 +26,19 @@ public class GrapplingTypeGun : ActiveTool
     [SerializeField]
     private LineRenderer _ir;
     private GrapplingTypeBullet _glapple_bullet;
-    private Gun _gun;
     [SerializeField]
+    private Gun _gun;
+
+    public Vector3 HIT_POS
+    { 
+        get
+        {
+            if(_gun != null)
+                return _gun.HIT_POS;
+            return Vector3.zero;
+        } 
+    }
+
     public float BULLET_DISTANCE
     {
         get
@@ -127,6 +138,8 @@ public class GrapplingTypeGun : ActiveTool
         _is_trigger = false;
         _bullet = null;
         _glapple_bullet = null;
+        characterActor.alwaysNotGrounded = false;
+        characterActor.stableLayerMask = 1 << LayerMask.NameToLayer("Ground") | 1 << LayerMask.NameToLayer("Wall");
     }
 
     public override void ActiveAction(GameObject target)

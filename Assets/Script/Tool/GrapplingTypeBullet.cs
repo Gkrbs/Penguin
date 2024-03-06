@@ -35,8 +35,8 @@ public class GrapplingTypeBullet : ActiveTool
         _rd.isKinematic = true;
         _is_trigger = true;
         normalMovement.Grappling(true);
-        Vector3 grapple_point = target.transform.position;
-
+        Vector3 grapple_point = _gpgun.HIT_POS ==Vector3.zero? target.transform.position : _gpgun.HIT_POS;
+        transform.position = grapple_point;
         if (_joint == null)
             _joint = _user.gameObject.AddComponent<SpringJoint>();
         _joint.autoConfigureConnectedAnchor = false;
