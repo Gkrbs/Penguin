@@ -179,11 +179,11 @@ MonoBehaviour:
   slopeLimit: 65.5
   stableLayerMask:
     serializedVersion: 2
-    m_Bits: 520
+    m_Bits: 8
   allowCharactersAsStableSurfaces: 1
   preventUnstableClimbing: 1
   preventBadSteps: 1
-  stepUpDistance: 0.6
+  stepUpDistance: 0.5
   stepDownDistance: 0.5
   alwaysNotGrounded: 0
   forceGroundedAtStart: 1
@@ -229,7 +229,6 @@ GameObject:
   - component: {fileID: 6863292720929571416}
   - component: {fileID: 6355676417040418751}
   - component: {fileID: 3214870271715171955}
-  - component: {fileID: 4744711090750114538}
   - component: {fileID: 476923773548260281}
   - component: {fileID: 1400428661400543817}
   m_Layer: 0
@@ -286,10 +285,10 @@ MonoBehaviour:
   runtimeAnimatorController: {fileID: 9100000, guid: 57343b9f3d4feb24bb6f83ec7b20a13e,
     type: 2}
   planarMovementParameters:
-    baseSpeedLimit: 3
-    canRun: 1
+    baseSpeedLimit: 4
+    canRun: 0
     runInputMode: 1
-    boostSpeedLimit: 5
+    boostSpeedLimit: 10
     stableGroundedAcceleration: 30
     stableGroundedDeceleration: 20
     stableGroundedAngleAccelerationBoost:
@@ -342,8 +341,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    notGroundedAcceleration: 10
-    notGroundedDeceleration: 3
+    notGroundedAcceleration: 30
+    notGroundedDeceleration: 20
     notGroundedAngleAccelerationBoost:
       serializedVersion: 2
       m_Curve:
@@ -374,20 +373,20 @@ MonoBehaviour:
     paraSpeed: 3
     canParachute: 0
     parachuting: 0
-    grappleSpeed: 8
+    grappleSpeed: 20
     isGrappled: 0
     autoCalculate: 1
-    jumpApexHeight: 1.5
-    jumpApexDuration: 0.5
-    jumpSpeed: 6
-    gravity: 12
+    jumpApexHeight: 3
+    jumpApexDuration: 0.75
+    jumpSpeed: 8
+    gravity: 10.666667
     cancelJumpOnRelease: 1
     cancelJumpMultiplier: 0.5
     cancelJumpMinTime: 0.1
     cancelJumpMaxTime: 0.3
     preGroundedJumpTime: 0.2
     postGroundedJumpTime: 0.1
-    availableNotGroundedJumps: 6
+    availableNotGroundedJumps: 0
     canJumpOnUnstableGround: 0
     canJumpDown: 1
     filterByTag: 0
@@ -395,7 +394,7 @@ MonoBehaviour:
     jumpDownDistance: 0.05
     jumpDownVerticalVelocity: 0.5
   crouchParameters:
-    enableCrouch: 1
+    enableCrouch: 0
     notGroundedCrouch: 0
     heightRatio: 0.75
     speedMultiplier: 0.3
@@ -417,23 +416,6 @@ MonoBehaviour:
   horizontalAxisParameter: HorizontalAxis
   verticalAxisParameter: VerticalAxis
   heightParameter: Height
---- !u!114 &4744711090750114538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5277007774261085475}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dccef5b1af5fd8d44a522157e01ee6ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideAnimatorController: 1
-  runtimeAnimatorController: {fileID: 0}
-  targetPlanarSpeed: 5
-  targetVerticalSpeed: 5
-  duration: 1
 --- !u!114 &476923773548260281
 MonoBehaviour:
   m_ObjectHideFlags: 0

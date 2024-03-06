@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using Lightbug.CharacterControllerPro.Demo;
+
 public class CameraSetting : MonoBehaviour
 {
     public CinemachineFreeLook cinemachineFreeLook;
-
+    public Camera3D came3d;
     public Slider fovSlider;
     public Slider xAxisSlider;
     public Slider yAxisSlider;
@@ -16,8 +18,8 @@ public class CameraSetting : MonoBehaviour
 
     private void Start()
     {
-        defaultXAxis = cinemachineFreeLook.m_XAxis.m_MaxSpeed;
-        defaultYAxis = cinemachineFreeLook.m_YAxis.m_MaxSpeed;
+        defaultXAxis = came3d.yawSpeed;//cinemachineFreeLook.m_XAxis.m_MaxSpeed;
+        defaultYAxis = came3d.pitchSpeed;//cinemachineFreeLook.m_YAxis.m_MaxSpeed;
         if (PlayerPrefs.HasKey("FOV"))
         {
             LoadValue();
@@ -39,13 +41,15 @@ public class CameraSetting : MonoBehaviour
     public void SetXAxisSpeed()
     {
         float value = xAxisSlider.value;
-        cinemachineFreeLook.m_XAxis.m_MaxSpeed = defaultXAxis * value;
+        came3d.yawSpeed = defaultXAxis * value;
+        //cinemachineFreeLook.m_XAxis.m_MaxSpeed = defaultXAxis * value;
         PlayerPrefs.SetFloat("XSpeed", value);
     }
     public void SetYAxisSpeed()
     {
         float value = yAxisSlider.value;
-        cinemachineFreeLook.m_YAxis.m_MaxSpeed = defaultYAxis * value;
+        came3d.pitchSpeed = defaultYAxis * value;
+        //cinemachineFreeLook.m_YAxis.m_MaxSpeed = defaultYAxis * value;
         PlayerPrefs.SetFloat("YSpeed", value);
     }
     private void LoadValue()
