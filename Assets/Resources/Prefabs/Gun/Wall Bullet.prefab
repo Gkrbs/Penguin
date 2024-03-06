@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2731592573745321889}
   - component: {fileID: 2680414470377520666}
   - component: {fileID: 298650511667157108}
-  - component: {fileID: 7718230116278141426}
+  - component: {fileID: -7864607181847434359}
   m_Layer: 11
   m_Name: Wall Bullet
   m_TagString: Untagged
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_tool_control: 0
   _data: {fileID: 11400000, guid: 8bcc5562831b28d4dba7957cf4f4de4a, type: 2}
---- !u!114 &7718230116278141426
+--- !u!114 &-7864607181847434359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,14 +109,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2218904653270359153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d027f476ac5c2e41980af23abbc6f3d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b0d26ae07bb4064bbae59e0004a53e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data: {fileID: 11400000, guid: 340aafc258847174e9ba5e467767d0e0, type: 2}
+  _data: {fileID: 0}
   _target: {fileID: 0}
   _user: {fileID: 0}
   _start_point: {x: 0, y: 0, z: 0}
-  normalMovement: {fileID: 0}
 --- !u!1 &8924554905191726865
 GameObject:
   m_ObjectHideFlags: 0

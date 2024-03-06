@@ -12,7 +12,6 @@ public class GrapplingTypeBullet : ActiveTool
         MIN_DISTANCE,
         MAX_DISTANCE,
         MASS_SCALE,
-        LIMIT_DIST
     }
 
     private Rigidbody _rd;
