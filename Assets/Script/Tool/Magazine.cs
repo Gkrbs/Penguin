@@ -13,9 +13,16 @@ public class Magazine : MonoBehaviour
     private float _default_max_count = 0.0f;
     private float _reload_speed = 0.0f;
     private Queue<GameObject> _bullet = new Queue<GameObject>();
+
     [SerializeField]
     private ToolInfo _data;
     private GameObject _parent;
+    
+    public bool IS_EMPTY
+    {
+        get { return _bullet.Count <= 0; }
+    }
+    
     public void Init(GameObject parent_gun, string magazine_data_path,string bullet_name)
     {
         _data = Resources.Load<ToolInfo>("ScriptableOBjects\\"+ magazine_data_path);
