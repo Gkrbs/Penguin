@@ -75,7 +75,7 @@ namespace Lightbug.CharacterControllerPro.Demo
                 if (CharacterActions.interact.Started)
                     CharacterStateController.EnqueueTransition<LadderClimbing>();
             }
-            else if (!_do_jetpack&& CharacterActions.jetPack.value)
+            else if (!_do_jetpack&& CharacterActions.skill.value)
             {
                 _do_jetpack = true;
 

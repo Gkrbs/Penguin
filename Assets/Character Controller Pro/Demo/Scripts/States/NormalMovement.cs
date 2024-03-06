@@ -89,6 +89,12 @@ namespace Lightbug.CharacterControllerPro.Demo
         float reducedAirControlInitialTime = 0f;
         float reductionDuration = 0.5f;
 
+        public bool jetpackSelected = false;
+        public bool foundationSelected = false;
+        public int jetpackCount =0;
+        public int foundationCount = 0;
+
+
         protected override void Awake()
         {
             base.Awake();
@@ -149,10 +155,12 @@ namespace Lightbug.CharacterControllerPro.Demo
         public override void CheckExitTransition()
         {
 
-            if (CharacterActions.jetPack.value)
+            if (CharacterActions.skill.value)
             {
-                //CharacterStateController.EnqueueTransition<JetPack>();
-                CharacterStateController.EnqueueTransition<JetPackAlpha>();
+                if (jetpackCount == 1 && jetpackSelected)
+                    CharacterStateController.EnqueueTransition<JetPackAlpha>();
+                else if (foundationCount == 1 && foundationSelected)
+                    Debug.Log("발판 총알로 전환");
             }
             else if (CharacterActions.dash.Started)
             {

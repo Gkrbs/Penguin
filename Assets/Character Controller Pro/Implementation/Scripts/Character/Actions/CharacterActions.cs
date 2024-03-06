@@ -12,7 +12,7 @@ namespace Lightbug.CharacterControllerPro.Implementation
         public BoolAction @jump;
         public BoolAction @run;
         public BoolAction @interact;
-        public BoolAction @jetPack;
+        public BoolAction @skill;
         public BoolAction @dash;
         public BoolAction @crouch;
 
@@ -35,7 +35,7 @@ namespace Lightbug.CharacterControllerPro.Implementation
             @jump.Reset();
             @run.Reset();
             @interact.Reset();
-            @jetPack.Reset();
+            @skill.Reset();
             @dash.Reset();
             @crouch.Reset();
 
@@ -60,8 +60,8 @@ namespace Lightbug.CharacterControllerPro.Implementation
             @interact = new BoolAction();
             @interact.Initialize();
 
-            @jetPack = new BoolAction();
-            @jetPack.Initialize();
+            @skill = new BoolAction();
+            @skill.Initialize();
 
             @dash = new BoolAction();
             @dash.Initialize();
@@ -87,7 +87,7 @@ namespace Lightbug.CharacterControllerPro.Implementation
             @jump.value = inputHandler.GetBool("Jump");
             @run.value = inputHandler.GetBool("Run");
             @interact.value = inputHandler.GetBool("Interact");
-            @jetPack.value = inputHandler.GetBool("Jet Pack");
+            @skill.value = inputHandler.GetBool("Jet Pack");
             @dash.value = inputHandler.GetBool("Dash");
             @crouch.value = inputHandler.GetBool("Crouch");
 
@@ -106,7 +106,7 @@ namespace Lightbug.CharacterControllerPro.Implementation
             @jump.value = characterActions.jump.value;
             @run.value = characterActions.run.value;
             @interact.value = characterActions.interact.value;
-            @jetPack.value = characterActions.jetPack.value;
+            @skill.value = characterActions.skill.value;
             @dash.value = characterActions.dash.value;
             @crouch.value = characterActions.crouch.value;
 
@@ -127,7 +127,7 @@ namespace Lightbug.CharacterControllerPro.Implementation
             @jump.Update(dt);
             @run.Update(dt);
             @interact.Update(dt);
-            @jetPack.Update(dt);
+            @skill.Update(dt);
             @dash.Update(dt);
             @crouch.Update(dt);
 
