@@ -129,6 +129,7 @@ public class Gun : MonoBehaviour
     }
 
 
+
     private void Start()
     {
         _tool = GetComponent<ActiveTool>();

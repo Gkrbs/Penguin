@@ -57,20 +57,24 @@ public class Bullet : MonoBehaviour
             magazine.DestroyBulletEvent -= DestroyBullet;
         Destroy(gameObject, delay);
     }
-    private void OnTriggerEnter(Collider other)
+
+    public void CollisionObject()
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        RaycastHit hit;
+        int layer = LayerMask.GetMask("Wall");
+
+        if (Physics.SphereCast(transform.position, 0.5f, GetComponent<Rigidbody>().velocity, out hit, 0.5f, layer))
         {
-            if (_tool != null)
-                _tool.ActiveAction(other.gameObject);
+             if (_tool != null)
+                _tool.ActiveAction(hit.collider.gameObject);
         }
     }
-
 
     // Update is called once per frame
     void Update()
     {
         if (is_tool_control) return;
+        CollisionObject();
 
     }
 }
