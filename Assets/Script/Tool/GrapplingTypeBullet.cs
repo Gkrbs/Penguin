@@ -30,18 +30,16 @@ public class GrapplingTypeBullet : ActiveTool
 
     public override void ActiveAction(GameObject target)
     {
+        Vector3 grapple_point = _gpgun.HIT_POS;
+        if (grapple_point == Vector3.zero)
+        {
+            return;
+        }
         if (_rd.velocity != Vector3.zero)
             _rd.velocity = Vector3.zero;
         _rd.isKinematic = true;
         _is_trigger = true;
         normalMovement.Grappling(true);
-        Vector3 grapple_point = _gpgun.HIT_POS;
-        if (grapple_point == Vector3.zero)
-        {
-            _is_trigger = false;
-            normalMovement.Grappling(false);
-            return;
-        }
         transform.position = grapple_point;
         if (_joint == null)
             _joint = _user.gameObject.AddComponent<SpringJoint>();
