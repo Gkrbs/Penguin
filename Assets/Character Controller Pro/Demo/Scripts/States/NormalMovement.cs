@@ -19,6 +19,7 @@ namespace Lightbug.CharacterControllerPro.Demo
 
         public LookingDirectionParameters lookingDirectionParameters = new LookingDirectionParameters();
 
+        //public ItemCheck itemCheck = new ItemCheck();
         [Header("Animation")]
 
         [SerializeField]
@@ -89,12 +90,6 @@ namespace Lightbug.CharacterControllerPro.Demo
         float reducedAirControlInitialTime = 0f;
         float reductionDuration = 0.5f;
 
-        public bool jetpackSelected = false;
-        public bool foundationSelected = false;
-        public int jetpackCount =0;
-        public int foundationCount = 0;
-
-
         protected override void Awake()
         {
             base.Awake();
@@ -157,10 +152,10 @@ namespace Lightbug.CharacterControllerPro.Demo
 
             if (CharacterActions.skill.value)
             {
-                if (jetpackCount == 1 && jetpackSelected)
-                    CharacterStateController.EnqueueTransition<JetPackAlpha>();
-                else if (foundationCount == 1 && foundationSelected)
-                    Debug.Log("발판 총알로 전환");
+                //if (itemCheck.jetpackCount == 1 && itemCheck.jetpackSelected)
+                //    CharacterStateController.EnqueueTransition<JetPackAlpha>();
+                //else if (itemCheck.wallCount == 1 && itemCheck.wallSelected)
+                //    Debug.Log("발판 총알로 전환");
             }
             else if (CharacterActions.dash.Started)
             {
