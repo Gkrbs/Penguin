@@ -29,7 +29,10 @@ public class Bullet : MonoBehaviour
         if (!_initialize_complete) return;
         transform.parent = null;
     }
-   
+    public void DestroyBullet()
+    {
+        Destroy(gameObject);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))

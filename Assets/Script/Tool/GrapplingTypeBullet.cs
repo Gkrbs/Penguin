@@ -65,7 +65,7 @@ public class GrapplingTypeBullet : ActiveTool
     }
     public override void Init(GameObject obj)
     {
-        //_target and obj is magazine object
+        //_target and obj is magazine object 
         base.Init(obj);
         _magazine = _target.GetComponent<Magazine>();
         _gpgun = _user.GetComponentInChildren<GrapplingTypeGun>();
