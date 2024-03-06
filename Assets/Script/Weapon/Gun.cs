@@ -88,7 +88,7 @@ public class Gun : MonoBehaviour
         float cam_dist = Vector3.Distance(_cam_tr.position, _aim_tr.position);
         if (Physics.Raycast(_cam_tr.position, _cam_tr.forward, out hit, cam_dist, _target_layer))
         {
-            if (Physics.Linecast(_fire_point.position, hit.point, out hit, _target_layer))
+            if (Physics.Raycast(_fire_point.position, (hit.point - _fire_point.position).normalized, out hit, cam_dist, _target_layer))
             {
                 dir = (hit.point - _fire_point.position).normalized;
                 _hit_position = hit.point;
