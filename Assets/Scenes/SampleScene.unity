@@ -4503,20 +4503,10 @@ PrefabInstance:
       propertyPath: _cam_tr
       value: 
       objectReference: {fileID: 1773857504}
-    - target: {fileID: 3214870271715171955, guid: 19929b281d95ac84ea4e5f3243c86b67,
-        type: 3}
-      propertyPath: planarMovementParameters.notGroundedDeceleration
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5119868832631064401, guid: 19929b281d95ac84ea4e5f3243c86b67,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915338143797716596, guid: 19929b281d95ac84ea4e5f3243c86b67,
-        type: 3}
-      propertyPath: stableLayerMask.m_Bits
-      value: 520
       objectReference: {fileID: 0}
     - target: {fileID: 6355676417040418751, guid: 19929b281d95ac84ea4e5f3243c86b67,
         type: 3}
@@ -12878,7 +12868,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 253426733}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.81333333
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

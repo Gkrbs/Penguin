@@ -7,15 +7,10 @@ public class AimCheck : MonoBehaviour
     public Image aimImage;
     public Transform firePoint;
     public Transform targetPoint;
+    [SerializeField]
+    LayerMask _target_layer;
     void Update()
     {
-        RaycastHit hit;
-        if(Physics.Raycast(firePoint.position,targetPoint.position,out hit, 15.0f))
-        {
-            if(hit.collider.gameObject.layer == LayerMask.NameToLayer("Wall"))
-                aimImage.color = Color.blue;
-        }
-        else
-            aimImage.color = Color.red;
+        aimImage.color = Physics.Linecast(firePoint.position, targetPoint.position, _target_layer) ? Color.blue : Color.red;
     }
 }
