@@ -16,8 +16,9 @@ public class Magazine : MonoBehaviour
     [SerializeField]
     private ToolInfo _data;
     private GameObject _parent;
-    public void Init(GameObject parent_gun, string bullet_name)
+    public void Init(GameObject parent_gun, string magazine_data_path,string bullet_name)
     {
+        _data = Resources.Load<ToolInfo>("ScriptableOBjects\\"+ magazine_data_path);
         _default_max_count = _data.f_datas[(int)INFO.MAX_COUNT];
         _max_count = _default_max_count;
         _reload_speed = _data.f_datas[(int)INFO.RELOAD_SPEED];
@@ -26,7 +27,23 @@ public class Magazine : MonoBehaviour
         {
             for (int i = 0; i < _max_count; i++)
             {
-                GameObject bullet = Instantiate(Resources.Load<GameObject>("Prefabs\\Gun\\" + bullet_name), transform.position, transform.rotation,transform);
+                GameObject bullet = Instantiate(Resources.Load<GameObject>("Prefabs\\" + bullet_name), transform.position, transform.rotation, transform);
+                bullet.name = bullet_name;
+                bullet.SetActive(false);
+                _bullet.Enqueue(bullet);
+            }
+        }
+        else
+        {
+            GameObject bullet;
+            if(_bullet.TryDequeue(out bullet))
+                Destroy(bullet);
+            _bullet.Clear();
+            bullet = null;
+
+            for (int i = 0; i < _max_count; i++)
+            {
+                bullet = Instantiate(Resources.Load<GameObject>("Prefabs\\Gun\\" + bullet_name), transform.position, transform.rotation, transform);
                 bullet.name = bullet_name;
                 bullet.SetActive(false);
                 _bullet.Enqueue(bullet);
