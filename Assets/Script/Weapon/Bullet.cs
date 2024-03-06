@@ -39,15 +39,6 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    
-    private void Start()
-    {
-        //_initialize_complete = true;
-        //if (_tool == null)
-        //    _tool = GetComponent<ActiveTool>();
-        //_tool.Init(transform.parent.gameObject);
-        
-    }
     // Update is called once per frame
     void Update()
     {

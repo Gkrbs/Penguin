@@ -64,11 +64,11 @@ public class Gun : MonoBehaviour
         _tool.ActiveAction();
     }
 
-    public void Reload(string bullet_name)
+    public void Reload(string magazine_path,string bullet_name)
     {
         if (_tool != null)
             _tool.StopAction();
-        _magazine.Init(gameObject, bullet_name);
+        _magazine.Init(gameObject, magazine_path, bullet_name);
     }
 
     public void Shoot()
@@ -133,7 +133,7 @@ public class Gun : MonoBehaviour
     {
         _tool = GetComponent<ActiveTool>();
         _magazine ??= GetComponentInChildren<Magazine>();
-        _magazine.Init(gameObject, "Grappling Bullet");
+        _magazine.Init(gameObject, "GrapplingBulletMagazine", "Grappling Bullet");
         _default_delay_time = _data.f_datas[(int)INFO.COOL_TIME];
         _delay_time = _default_delay_time;
     }

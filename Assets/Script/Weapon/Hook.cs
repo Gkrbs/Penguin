@@ -21,9 +21,9 @@ public class Hook : MonoBehaviour
     [SerializeField]
     private GameObject _parents;
     [SerializeField]
-    private ActionInterface _active;
+    private ToolInterface _active;
     [SerializeField]
-    private ActiveObjectsScriptable _data;
+    private ToolInfo _data;
 
     private Rigidbody _rd;
 
