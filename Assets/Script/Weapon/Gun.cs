@@ -52,16 +52,10 @@ public class Gun : MonoBehaviour
         _audio = GetComponent<AudioSource>();
     }
     
-    public void wait()
-    {
-        if (_tool.IS_TRIGGER)
-            return;
-
-
-    }
     public void ActiveTool()
     {
-        _tool.ActiveAction();
+        if(_tool != null)
+            _tool.ActiveAction();
     }
 
     public void Reload(string magazine_path,string bullet_name)
@@ -144,12 +138,12 @@ public class Gun : MonoBehaviour
         {
             if (is_tool_control)
             {
-                if (!_tool.IS_TRIGGER)
+                if (!_tool.IS_TRIGGER && !_ani.isPlaying)
                     Shoot();
             }
             else
             {
-                if (_delay_time == _default_delay_time)
+                if (_delay_time == _default_delay_time && !_ani.isPlaying)
                 {
                     Shoot();
                     _delay_time -= Time.deltaTime;

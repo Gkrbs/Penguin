@@ -80,6 +80,7 @@ public class GrapplingTypeGun : ActiveTool
             _gun = GetComponent<Gun>();
         characterActor = _user.GetComponent<CharacterActor>();
         _gun.is_tool_control = true;
+
     }
 
     public override void ActiveAction()
@@ -161,6 +162,15 @@ public class GrapplingTypeGun : ActiveTool
         _ir.endWidth = 0.1f;
         _ir.SetPosition(0, _fire_point.position);
         _ir.SetPosition(1, _bullet.position);
+    }
+    private void OnEnable()
+    {
+        if(_gun != null)
+            _gun.is_tool_control = true;
+    }
+    private void OnDisable()
+    {
+        _gun.is_tool_control = false;
     }
     // Update is called once per frame
     void LateUpdate()

@@ -53,16 +53,26 @@ public class Magazine : MonoBehaviour
         }
         else
         {
-            GameObject bullet;
-            if (_bullet.TryDequeue(out bullet))
-                Destroy(bullet);
-            _bullet.Clear();
+            GameObject bullet = null;
+
+            for (int i = 0; i < _max_count; i++)
+            {
+                if (_bullet.TryDequeue(out bullet))
+                {
+                    Destroy(bullet);
+                    bullet = null;
+                }
+            }
+
+
             if (DestroyBulletEvent != null)
             {
                 DestroyBulletEvent();
                 DestroyBulletEvent = null;
             }
-            bullet = null;
+
+            _bullet.Clear();
+
             for (int i = 0; i < _max_count; i++)
             {
                 bullet = Instantiate(Resources.Load<GameObject>("Prefabs\\Gun\\" + bullet_name), transform.position, transform.rotation, transform);
