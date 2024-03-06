@@ -20,13 +20,13 @@ public class Bullet : MonoBehaviour
 
     private void OnEnable()
     {
-        //if (!_initialize_complete) return;
 
         if (_tool == null)
             _tool = GetComponent<ActiveTool>();
         if(magazine == null)
             magazine = GetComponentInParent<Magazine>();
         _tool.Init(transform.parent.gameObject);
+        if (!_initialize_complete) return;
         transform.parent = null;
     }
    
@@ -38,7 +38,10 @@ public class Bullet : MonoBehaviour
                 _tool.ActiveAction(other.gameObject);
         }
     }
-
+    private void Start()
+    {
+        _initialize_complete = true;
+    }
     // Update is called once per frame
     void Update()
     {
