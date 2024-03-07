@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_tool_control: 0
+  _layer_mask:
+    serializedVersion: 2
+    m_Bits: 520
   _data: {fileID: 11400000, guid: 8bcc5562831b28d4dba7957cf4f4de4a, type: 2}
 --- !u!114 &7718230116278141426
 MonoBehaviour:
@@ -216,7 +219,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

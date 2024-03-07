@@ -11,7 +11,13 @@ public class Bullet : MonoBehaviour
     }
 
     public bool is_tool_control = false;
+    [SerializeField]
+    [Range(0.0f,2.0f)]private float _radian = 0.5f;
+    [SerializeField]
+    [Range(0.0f, 2.0f)] private float _sphare_cast_max_dist = 0.5f;
 
+    [SerializeField]
+    LayerMask _layer_mask;
     [SerializeField]
     ToolInfo _data;
     private ActiveTool _tool;
@@ -61,9 +67,8 @@ public class Bullet : MonoBehaviour
     public void CollisionObject()
     {
         RaycastHit hit;
-        int layer = LayerMask.GetMask("Wall");
 
-        if (Physics.SphereCast(transform.position, 0.5f, GetComponent<Rigidbody>().velocity, out hit, 0.5f, layer))
+        if (Physics.SphereCast(transform.position, _radian, GetComponent<Rigidbody>().velocity, out hit, _sphare_cast_max_dist, _layer_mask))
         {
              if (_tool != null)
                 _tool.ActiveAction(hit.collider.gameObject);
