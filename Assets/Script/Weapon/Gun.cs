@@ -55,14 +55,14 @@ public class Gun : MonoBehaviour
         _ani = GetComponent<Animation>();
         _audio = GetComponent<AudioSource>();
     }
-    
+
     public void ActiveTool()
     {
-        if(_tool != null)
+        if (_tool != null)
             _tool.ActiveAction();
     }
 
-    public void Reload(string magazine_path,string bullet_name)
+    public void Reload(string magazine_path, string bullet_name)
     {
         if (_tool != null)
             _tool.StopAction();
@@ -88,15 +88,8 @@ public class Gun : MonoBehaviour
         float cam_dist = Vector3.Distance(_cam_tr.position, _aim_tr.position);
         if (Physics.Raycast(_cam_tr.position, _cam_tr.forward, out hit, cam_dist, _target_layer))
         {
-            if (Physics.Raycast(_fire_point.position, (hit.point - _fire_point.position).normalized, out hit, cam_dist, _target_layer))
-            {
-                dir = (hit.point - _fire_point.position).normalized;
-                _hit_position = hit.point;
-            }
-            else
-            {
-                dir = (_aim_tr.position - _fire_point.position).normalized;
-            }
+            dir = (hit.point - _fire_point.position).normalized;
+            _hit_position = hit.point;
         }
         else
         {

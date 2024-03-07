@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
 
     public bool is_tool_control = false;
     [SerializeField]
-    [Range(0.0f,2.0f)]private float _radian = 0.5f;
+    [Range(0.0f, 2.0f)] private float _radian = 0.5f;
     [SerializeField]
     [Range(0.0f, 2.0f)] private float _sphare_cast_max_dist = 0.5f;
 
@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
         {
             if (_data != null)
                 return _data.f_datas[(int)INFO.ATK];
-            
+
             return 5.0f;
         }
 
@@ -36,7 +36,8 @@ public class Bullet : MonoBehaviour
 
     public float MAX_DISTANCE
     {
-        get {
+        get
+        {
             if (_data != null)
                 return _data.f_datas[(int)INFO.MAX_DISTANCE];
             return 15.0f;
@@ -68,11 +69,17 @@ public class Bullet : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.SphereCast(transform.position, _radian, GetComponent<Rigidbody>().velocity, out hit, _sphare_cast_max_dist, _layer_mask))
+        if (Physics.Raycast(transform.position, GetComponent<Rigidbody>().velocity, out hit, _sphare_cast_max_dist, _layer_mask))
         {
-             if (_tool != null)
+            if (_tool != null)
                 _tool.ActiveAction(hit.collider.gameObject);
         }
+
+        //if (Physics.SphereCast(transform.position, _radian, GetComponent<Rigidbody>().velocity, out hit, _sphare_cast_max_dist, _layer_mask))
+        //{
+        //     if (_tool != null)
+        //        _tool.ActiveAction(hit.collider.gameObject);
+        //}
     }
 
     // Update is called once per frame
