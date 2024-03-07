@@ -64,25 +64,14 @@ public class Bullet : MonoBehaviour
             magazine.DestroyBulletEvent -= DestroyBullet;
         Destroy(gameObject, delay);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        print("triger");
-    }
     public void CollisionObject()
     {
         RaycastHit hit;
-
         if (Physics.Raycast(transform.position, GetComponent<Rigidbody>().velocity, out hit, _sphare_cast_max_dist, _layer_mask))
         {
             if (_tool != null)
                 _tool.ActiveAction(hit.collider.gameObject);
         }
-
-        //if (Physics.SphereCast(transform.position, _radian, GetComponent<Rigidbody>().velocity, out hit, _sphare_cast_max_dist, _layer_mask))
-        //{
-        //     if (_tool != null)
-        //        _tool.ActiveAction(hit.collider.gameObject);
-        //}
     }
 
     // Update is called once per frame
