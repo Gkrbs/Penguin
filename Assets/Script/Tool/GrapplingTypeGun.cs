@@ -116,13 +116,13 @@ public class GrapplingTypeGun : ActiveTool
 
         if (Input.GetKey(KeyCode.Q))
         {
-            joint.maxDistance -= Time.deltaTime * _data.f_datas[(int)INFO.ANC_SPEED];
+            joint.maxDistance -= Time.deltaTime * _anc_speed;
             if (joint.maxDistance < _min_dist)
                 joint.maxDistance = _min_dist;
         }
         else if (Input.GetKey(KeyCode.E))
         {
-            joint.maxDistance += Time.deltaTime * _data.f_datas[(int)INFO.ANC_SPEED];
+            joint.maxDistance += Time.deltaTime * _anc_speed;
             if (joint.maxDistance > _max_dist)
                 joint.maxDistance = _max_dist;
         }
@@ -171,8 +171,8 @@ public class GrapplingTypeGun : ActiveTool
             return;
         }
         _ir.enabled = true;
-        _ir.startWidth = 0.1f;
-        _ir.endWidth = 0.1f;
+        _ir.startWidth = 0.05f;
+        _ir.endWidth = 0.05f;
         _ir.SetPosition(0, _fire_point.position);
         _ir.SetPosition(1, _bullet.position);
     }
