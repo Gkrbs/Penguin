@@ -20,14 +20,28 @@ public class GrapplingTypeBullet : ActiveTool
     private Vector3 _start_point = Vector3.zero;
     private Magazine _magazine;
     private GrapplingTypeGun _gpgun;
-    //[SerializeField]
-    //private Transform _parent;
+
     public NormalMovement normalMovement;
+    private Vector3 _dir = Vector3.zero;
     public override void ActiveAction()
     {
         base.ActiveAction();
     }
+    private bool change_trigger()
+    {
+        bool res = _is_trigger;
+        if (res)
+        {
+            if (_rd.isKinematic)
+            {
+                _rd.isKinematic = false;
+                _rd.velocity = _dir;
+                _dir = Vector3.zero;
+            }
+        }
 
+        return !res;
+    }
     public override void ActiveAction(GameObject target)
     {
         Vector3 grapple_point = _gpgun.HIT_POS;
@@ -35,10 +49,13 @@ public class GrapplingTypeBullet : ActiveTool
         {
             return;
         }
+        _dir = _rd.velocity;
         if (_rd.velocity != Vector3.zero)
+        {
             _rd.velocity = Vector3.zero;
+        }
         _rd.isKinematic = true;
-        _is_trigger = true;
+        _is_trigger = change_trigger();
         normalMovement.Grappling(true);
         transform.position = grapple_point;
         if (_joint == null)
@@ -58,6 +75,7 @@ public class GrapplingTypeBullet : ActiveTool
     private void OnEnable()
     {
         _start_point = transform.position;
+        _is_trigger = false;
     }
     private void OnDisable()
     {
@@ -77,7 +95,7 @@ public class GrapplingTypeBullet : ActiveTool
     }
     public override void StopAction()
     {
-        _is_trigger = false;
+        _is_trigger = change_trigger();
         if (_joint != null)
         {
             MonoBehaviour.Destroy(_joint);

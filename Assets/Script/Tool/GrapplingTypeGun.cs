@@ -30,13 +30,13 @@ public class GrapplingTypeGun : ActiveTool
     private Gun _gun;
 
     public Vector3 HIT_POS
-    { 
+    {
         get
         {
-            if(_gun != null)
+            if (_gun != null)
                 return _gun.HIT_POS;
             return Vector3.zero;
-        } 
+        }
     }
 
     public float BULLET_DISTANCE
@@ -156,8 +156,11 @@ public class GrapplingTypeGun : ActiveTool
         {
             if (Input.GetMouseButtonDown(0))
             {
-                _glapple_bullet.StopAction();
-                StopAction();
+                if (GetComponentInParent<SpringJoint>() != null)
+                {
+                    _glapple_bullet.StopAction();
+                    StopAction();
+                }
             }
         }
     }
@@ -178,7 +181,7 @@ public class GrapplingTypeGun : ActiveTool
     }
     private void OnEnable()
     {
-        if(_gun != null)
+        if (_gun != null)
             _gun.is_tool_control = true;
     }
     private void OnDisable()
