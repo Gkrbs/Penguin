@@ -12,9 +12,9 @@ public class Bullet : MonoBehaviour
 
     public bool is_tool_control = false;
     [SerializeField]
-    [Range(0.0f, 2.0f)] private float _radian = 0.5f;
+    [Range(0.0f, 10.0f)] private float _radian = 0.5f;
     [SerializeField]
-    [Range(0.0f, 2.0f)] private float _sphare_cast_max_dist = 0.5f;
+    [Range(0.0f, 10.0f)] private float _sphare_cast_max_dist = 0.5f;
 
     [SerializeField]
     LayerMask _layer_mask;
@@ -64,7 +64,10 @@ public class Bullet : MonoBehaviour
             magazine.DestroyBulletEvent -= DestroyBullet;
         Destroy(gameObject, delay);
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        print("triger");
+    }
     public void CollisionObject()
     {
         RaycastHit hit;

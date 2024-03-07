@@ -36,8 +36,8 @@ public class GrapplingTypeBullet : ActiveTool
         {
             return;
         }
-        if (_rd.velocity != Vector3.zero)
-            _rd.velocity = Vector3.zero;
+        //if (_rd.velocity != Vector3.zero)
+        //    _rd.velocity = Vector3.zero;
         _rd.isKinematic = true;
         _is_trigger = true;
         normalMovement.Grappling(true);

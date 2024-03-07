@@ -82,8 +82,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Height: 0.05
+  m_Radius: 0.13
+  m_Height: 0.45
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &298650511667157108
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_tool_control: 0
   _radian: 0.1
-  _sphare_cast_max_dist: 0.1
+  _sphare_cast_max_dist: 0.5
   _layer_mask:
     serializedVersion: 2
     m_Bits: 520
