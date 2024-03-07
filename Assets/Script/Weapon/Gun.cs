@@ -117,10 +117,10 @@ public class Gun : MonoBehaviour
         Rigidbody bullet_rd = bullet.GetComponent<Rigidbody>();
         bullet.transform.position = _fire_point.position;
         bullet.transform.rotation = _fire_point.rotation;
-        bullet.SetActive(true);
-        bullet.transform.parent = null;
         float force = _data.f_datas[(int)INFO.FORCE];
         bullet_rd.velocity = dir * force;     //AddForce(dir * force);
+        bullet.SetActive(true);
+        bullet.transform.parent = null;
 
         _muzzleParticles.transform.position = _fire_point.position;
         _muzzleParticles.transform.rotation = _fire_point.rotation;

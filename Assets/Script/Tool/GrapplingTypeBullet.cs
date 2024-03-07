@@ -23,6 +23,7 @@ public class GrapplingTypeBullet : ActiveTool
     //[SerializeField]
     //private Transform _parent;
     public NormalMovement normalMovement;
+    private Vector3 default_valocity = Vector3.zero;
     public override void ActiveAction()
     {
         base.ActiveAction();
@@ -58,6 +59,7 @@ public class GrapplingTypeBullet : ActiveTool
     private void OnEnable()
     {
         _start_point = transform.position;
+        default_valocity = _rd.velocity;
     }
     private void OnDisable()
     {
@@ -65,6 +67,7 @@ public class GrapplingTypeBullet : ActiveTool
         if (_rd.velocity != Vector3.zero)
             _rd.velocity = Vector3.zero;
         if (_rd.isKinematic) _rd.isKinematic = false;
+        default_valocity = Vector3.zero;
     }
     public override void Init(GameObject obj)
     {
@@ -98,6 +101,12 @@ public class GrapplingTypeBullet : ActiveTool
         float max_dist = _gpgun.BULLET_DISTANCE;
         float limit_dist = _gpgun.MAX_DISTANCE;
         if (!_is_trigger && max_dist > limit_dist)
+        {
+            StopAction();
+            _gpgun.StopAction();
+        }
+
+        if (!_is_trigger&&!_rd.isKinematic && _rd.velocity != default_valocity)
         {
             StopAction();
             _gpgun.StopAction();
