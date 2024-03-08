@@ -1666,7 +1666,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 205794965}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.81333333
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4567,7 +4567,7 @@ GameObject:
   - component: {fileID: 964649611}
   - component: {fileID: 964649610}
   - component: {fileID: 964649609}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Kinematic platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4595,7 +4595,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -8447597221599961519, guid: 2e5b67a27228a6f498d79ce087bcd934, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &964649610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4723,7 +4723,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     targetTime: 2
-  - position: {x: -4.0478473, y: 0, z: -1.5794601}
+  - position: {x: 0.86102533, y: 0, z: 0.54242706}
     eulerAngles: {x: 0, y: 0, z: 0}
     movementCurve:
       serializedVersion: 2
@@ -4853,7 +4853,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964649608}
-  m_Mesh: {fileID: -8447597221599961519, guid: 2e5b67a27228a6f498d79ce087bcd934, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &964649614
 Transform:
   m_ObjectHideFlags: 0
@@ -4863,8 +4863,8 @@ Transform:
   m_GameObject: {fileID: 964649608}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.00000017881393}
-  m_LocalPosition: {x: -6.31, y: 1.73, z: -106.99}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.31, y: 0.49, z: -106.99}
+  m_LocalScale: {x: 2, y: 0.1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -8752,6 +8752,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915338143797716596, guid: 19929b281d95ac84ea4e5f3243c86b67,
+        type: 3}
+      propertyPath: dynamicGroundLayerMask.m_Bits
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6355676417040418751, guid: 19929b281d95ac84ea4e5f3243c86b67,
         type: 3}
