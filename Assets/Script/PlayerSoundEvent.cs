@@ -9,7 +9,7 @@ public class PlayerSoundEvent : MonoBehaviour
     public void SoundEvent(string clipName)
     {
         Debug.Log("SoundEvent" + clipName);
-        SoundSetting.instance.PlayOneShot(audio, clipName);
+        SoundManager.instance.PlayOneShot(audio, clipName);
     }
 
 

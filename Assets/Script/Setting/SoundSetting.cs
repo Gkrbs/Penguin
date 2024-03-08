@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-using System;
 public class SoundSetting : MonoBehaviour
 {
-    public static SoundSetting instance;
-
-    public AudioClip[] clips;
     public AudioMixer audioMixer;
 
     public Slider masterSlider;
@@ -16,20 +12,6 @@ public class SoundSetting : MonoBehaviour
     public Slider EffectSlider;
     public Slider CharacterSlider;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
-
-    }
     private void Start()
     {
         if (PlayerPrefs.HasKey("masterVolume"))
@@ -49,7 +31,7 @@ public class SoundSetting : MonoBehaviour
     public void SetMaster()
     {
         float volume = masterSlider.value;
-        audioMixer.SetFloat("Master", Mathf.Log10(volume)*20);
+        audioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("masterVolume", volume);
     }
     public void SetBackground()
@@ -80,44 +62,5 @@ public class SoundSetting : MonoBehaviour
         SetBackground();
         SetEffect();
         SetCharacter();
-    }
-    public void PlayOneShot(AudioSource audio, string name)
-    {
-        AudioClip clip = null;
-        foreach(AudioClip audioClip in clips)
-        {
-            if(audioClip.name == name)
-            {
-                clip = audioClip;
-                break;
-            }
-        }
-        if(clip == null)
-        {
-            Debug.Log("no clip name");
-            return;
-        }
-        audio.loop = false;
-        audio.PlayOneShot(clip);
-    }
-    public void PlayLoop(AudioSource audio, string name)
-    {
-        AudioClip clip = null;
-        foreach (AudioClip audioClip in clips)
-        {
-            if (audioClip.name == name)
-            {
-                clip = audioClip;
-                break;
-            }
-        }
-        if (clip == null)
-        {
-            Debug.Log("no clip name");
-            return;
-        }
-        audio.clip = clip;
-        audio.loop = true;
-        audio.Play();
     }
 }
