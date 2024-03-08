@@ -192,7 +192,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 689645523}
+      - m_Target: {fileID: 689645525}
         m_TargetAssemblyTypeName: SoundSetting, Assembly-CSharp
         m_MethodName: SetBackground
         m_Mode: 1
@@ -1496,7 +1496,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 689645523}
+      - m_Target: {fileID: 689645525}
         m_TargetAssemblyTypeName: SoundSetting, Assembly-CSharp
         m_MethodName: SetCharacter
         m_Mode: 1
@@ -1666,7 +1666,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 205794965}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.81333333
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2029,7 +2029,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 689645523}
+      - m_Target: {fileID: 689645525}
         m_TargetAssemblyTypeName: SoundSetting, Assembly-CSharp
         m_MethodName: SetMaster
         m_Mode: 1
@@ -3698,6 +3698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 689645524}
   - component: {fileID: 689645523}
+  - component: {fileID: 689645525}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -3723,11 +3724,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  audioMixer: {fileID: 24100000, guid: c50dd96c726209e4c989a91fcd96c2c5, type: 2}
-  masterSlider: {fileID: 251715122}
-  BackgroundSlider: {fileID: 10937282}
-  EffectSlider: {fileID: 2048908885}
-  CharacterSlider: {fileID: 165898014}
 --- !u!4 &689645524
 Transform:
   m_ObjectHideFlags: 0
@@ -3746,6 +3742,23 @@ Transform:
   - {fileID: 1456287239}
   m_Father: {fileID: 1050573917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &689645525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689645522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0eabe189c1c52b4b957a1757a16dbdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: c50dd96c726209e4c989a91fcd96c2c5, type: 2}
+  masterSlider: {fileID: 251715122}
+  BackgroundSlider: {fileID: 10937282}
+  EffectSlider: {fileID: 2048908885}
+  CharacterSlider: {fileID: 165898014}
 --- !u!1 &695103925
 GameObject:
   m_ObjectHideFlags: 0
@@ -11371,7 +11384,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 689645523}
+      - m_Target: {fileID: 689645525}
         m_TargetAssemblyTypeName: SoundSetting, Assembly-CSharp
         m_MethodName: SetEffect
         m_Mode: 1

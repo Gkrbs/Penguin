@@ -23,23 +23,21 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3558962395692259187}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6282947271369808225}
   - {fileID: 10905926564337795}
   - {fileID: 5258032066214228208}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2121495047483709859
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 4743751023075831988}
     m_Modifications:
     - target: {fileID: 2282344013784332547, guid: 2ea86ee321aae3847b07168b13f09c73,
@@ -51,21 +49,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163555212159854931, guid: 2ea86ee321aae3847b07168b13f09c73,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163555212159854931, guid: 2ea86ee321aae3847b07168b13f09c73,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163555212159854931, guid: 2ea86ee321aae3847b07168b13f09c73,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6163555212159854931, guid: 2ea86ee321aae3847b07168b13f09c73,
         type: 3}
@@ -118,9 +101,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ea86ee321aae3847b07168b13f09c73, type: 3}
 --- !u!4 &5258032066214228208 stripped
 Transform:
@@ -133,7 +113,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 4743751023075831988}
     m_Modifications:
     - target: {fileID: 1179028531108225333, guid: 9b8031373d991e84d8ca7772eff14c86,
@@ -212,9 +191,6 @@ PrefabInstance:
       value: AncientArc001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b8031373d991e84d8ca7772eff14c86, type: 3}
 --- !u!4 &6282947271369808225 stripped
 Transform:
@@ -227,7 +203,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 4743751023075831988}
     m_Modifications:
     - target: {fileID: 4692431311637235878, guid: 2acbc829d358382428b3524e114cc7ac,
@@ -243,21 +218,6 @@ PrefabInstance:
     - target: {fileID: 9174456838307638198, guid: 2acbc829d358382428b3524e114cc7ac,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9174456838307638198, guid: 2acbc829d358382428b3524e114cc7ac,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9174456838307638198, guid: 2acbc829d358382428b3524e114cc7ac,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9174456838307638198, guid: 2acbc829d358382428b3524e114cc7ac,
-        type: 3}
-      propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9174456838307638198, guid: 2acbc829d358382428b3524e114cc7ac,
@@ -311,9 +271,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2acbc829d358382428b3524e114cc7ac, type: 3}
 --- !u!4 &10905926564337795 stripped
 Transform:
