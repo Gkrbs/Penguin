@@ -159,6 +159,10 @@ namespace Lightbug.CharacterControllerPro.Demo
                 if (jetpackCount == 1 && jetpackSelected)
                 {
                     CharacterStateController.EnqueueTransition<JetPackAlpha>();
+                    CharacterStateController.Animator.SetBool(groundedParameter, false);
+                    CharacterStateController.Animator.SetBool(stableParameter, false);
+                    CharacterStateController.Animator.SetFloat(horizontalAxisParameter, 0);
+                    CharacterStateController.Animator.SetFloat(verticalAxisParameter, 0);
                     jetpackCount = 0;
                 }
                 else if (wallCount == 1 && wallSelected)
