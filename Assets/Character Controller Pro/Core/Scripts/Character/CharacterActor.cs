@@ -1316,7 +1316,7 @@ namespace Lightbug.CharacterControllerPro.Core
                 Position = targetPosition;
                 Vector3 position = Position;
                 bool overlapDetected = RemovePenetration(ref position);
-                Position = position;
+                //Position = position;
 
                 if (!overlapDetected)
                     Rotation = targetRotation;
