@@ -9,7 +9,6 @@ public class CameraSetting : MonoBehaviour
 {
     public CinemachineFreeLook cinemachineFreeLook;
     public Camera3D came3d;
-    public Slider fovSlider;
     public Slider xAxisSlider;
     public Slider yAxisSlider;
 
@@ -18,26 +17,19 @@ public class CameraSetting : MonoBehaviour
 
     private void Start()
     {
-        defaultXAxis = came3d.yawSpeed;//cinemachineFreeLook.m_XAxis.m_MaxSpeed;
-        defaultYAxis = came3d.pitchSpeed;//cinemachineFreeLook.m_YAxis.m_MaxSpeed;
-        if (PlayerPrefs.HasKey("FOV"))
+        defaultXAxis = came3d.yawSpeed;
+        defaultYAxis = came3d.pitchSpeed;
+        if (PlayerPrefs.HasKey("XSpeed"))
         {
             LoadValue();
         }
         else
         {
-            SetFov();
             SetXAxisSpeed();
             SetYAxisSpeed();
         }
     }
-    public void SetFov()
-    {
-        float value = fovSlider.value;
-        cinemachineFreeLook.m_Lens.FieldOfView = value;
-        PlayerPrefs.SetFloat("FOV", value);
 
-    }
     public void SetXAxisSpeed()
     {
         float value = xAxisSlider.value;
@@ -54,7 +46,6 @@ public class CameraSetting : MonoBehaviour
     }
     private void LoadValue()
     {
-        fovSlider.value = PlayerPrefs.GetFloat("FOV");
         xAxisSlider.value = PlayerPrefs.GetFloat("XSpeed");
         yAxisSlider.value = PlayerPrefs.GetFloat("YSpeed");
     }
