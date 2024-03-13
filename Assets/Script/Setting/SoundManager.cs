@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance;
 
     public AudioClip[] clips;
+    public Dictionary<string, AudioClip> clipsDict;
 
     private void Awake()
     {
@@ -23,37 +24,29 @@ public class SoundManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
+        foreach(AudioClip clip in clips)
+        {
+            if(!clipsDict.ContainsKey(clip.name))
+                clipsDict.Add(clip.name, clip);
+        }
     }
     public void PlayOneShot(AudioSource audio, string name)
     {
         AudioClip clip = null;
-        foreach(AudioClip audioClip in clips)
-        {
-            if(audioClip.name == name)
-            {
-                clip = audioClip;
-                break;
-            }
-        }
-        if(clip == null)
+        clipsDict.TryGetValue(name, out clip);
+        if (clip == null)
         {
             Debug.Log("no clip name");
             return;
         }
+        audio.clip = clip;
         audio.loop = false;
         audio.PlayOneShot(clip);
     }
     public void PlayLoop(AudioSource audio, string name)
     {
         AudioClip clip = null;
-        foreach (AudioClip audioClip in clips)
-        {
-            if (audioClip.name == name)
-            {
-                clip = audioClip;
-                break;
-            }
-        }
+        clipsDict.TryGetValue(name, out clip);
         if (clip == null)
         {
             Debug.Log("no clip name");
@@ -63,4 +56,43 @@ public class SoundManager : MonoBehaviour
         audio.loop = true;
         audio.Play();
     }
+    //public void PlayOneShot(AudioSource audio, string name)
+    //{
+    //    AudioClip clip = null;
+    //    foreach(AudioClip audioClip in clips)
+    //    {
+    //        if(audioClip.name == name)
+    //        {
+    //            clip = audioClip;
+    //            break;
+    //        }
+    //    }
+    //    if(clip == null)
+    //    {
+    //        Debug.Log("no clip name");
+    //        return;
+    //    }
+    //    audio.loop = false;
+    //    audio.PlayOneShot(clip);
+    //}
+    //public void PlayLoop(AudioSource audio, string name)
+    //{
+    //    AudioClip clip = null;
+    //    foreach (AudioClip audioClip in clips)
+    //    {
+    //        if (audioClip.name == name)
+    //        {
+    //            clip = audioClip;
+    //            break;
+    //        }
+    //    }
+    //    if (clip == null)
+    //    {
+    //        Debug.Log("no clip name");
+    //        return;
+    //    }
+    //    audio.clip = clip;
+    //    audio.loop = true;
+    //    audio.Play();
+    //}
 }
