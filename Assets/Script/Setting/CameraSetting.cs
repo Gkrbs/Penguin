@@ -7,7 +7,6 @@ using Lightbug.CharacterControllerPro.Demo;
 
 public class CameraSetting : MonoBehaviour
 {
-    public CinemachineFreeLook cinemachineFreeLook;
     public Camera3D came3d;
     public Slider xAxisSlider;
     public Slider yAxisSlider;
