@@ -30,7 +30,7 @@ namespace Lightbug.CharacterControllerPro.Demo
 
         [Min(0f)]
         [SerializeField]
-        protected int availableNotGroundedDashes = 1;
+        protected int availableNotGroundedDashes = 0;
 
         [SerializeField]
         protected bool ignoreSpeedMultipliers = false;
@@ -53,6 +53,8 @@ namespace Lightbug.CharacterControllerPro.Demo
 
         protected MaterialController materialController = null;
 
+        protected int dashesLeft;
+        protected int delayMilliSeconds = 1000;
         protected int airDashesLeft;
         protected float dashCursor = 0;
 
@@ -113,6 +115,7 @@ namespace Lightbug.CharacterControllerPro.Demo
 
             materialController = this.GetComponentInBranch<CharacterActor, MaterialController>();
             airDashesLeft = availableNotGroundedDashes;
+            dashesLeft = 1;
 
         }
 
@@ -121,7 +124,8 @@ namespace Lightbug.CharacterControllerPro.Demo
         {
             if (!CharacterActor.IsGrounded && airDashesLeft <= 0)
                 return false;
-
+            if (dashesLeft <= 0)
+                return false;
             return true;
         }
 
@@ -151,6 +155,7 @@ namespace Lightbug.CharacterControllerPro.Demo
                 if (!ignoreSpeedMultipliers)
                 {
                     currentSpeedMultiplier = materialController != null ? materialController.CurrentSurface.speedMultiplier * materialController.CurrentVolume.speedMultiplier : 1f;
+                    dashesLeft--;
                 }
 
             }
@@ -171,6 +176,7 @@ namespace Lightbug.CharacterControllerPro.Demo
             dashDirection = CharacterActor.Forward;
 
             ResetDash();
+            resetDashesLeft();
 
             //Execute the event
             if (OnDashStart != null)
@@ -215,7 +221,11 @@ namespace Lightbug.CharacterControllerPro.Demo
             dashCursor = 0;
         }
 
-
+        async void resetDashesLeft()
+        {
+            await System.Threading.Tasks.Task.Delay(delayMilliSeconds);
+            dashesLeft = 1;
+        }
 
     }
 
