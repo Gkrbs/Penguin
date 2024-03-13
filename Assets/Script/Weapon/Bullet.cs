@@ -22,6 +22,11 @@ public class Bullet : MonoBehaviour
     ToolInfo _data;
     private ActiveTool _tool;
     private Magazine magazine;
+    private Vector3 _hit_point = Vector3.zero;
+    public Vector3 HIT_POINT
+    {
+        get { return _hit_point; }
+    }
     public float ATK
     {
         get
@@ -67,8 +72,9 @@ public class Bullet : MonoBehaviour
     public void CollisionObject()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, GetComponent<Rigidbody>().velocity, out hit, _sphare_cast_max_dist, _layer_mask))
+        if (Physics.Raycast(transform.position, GetComponent<Rigidbody>().velocity, out hit, _sphare_cast_max_dist+0.5f, _layer_mask))
         {
+            _hit_point = hit.point;
             if (_tool != null)
                 _tool.ActiveAction(hit.collider.gameObject);
         }

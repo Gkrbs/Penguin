@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 977178947870900407}
+  - component: {fileID: 6424823546704286219}
   m_Layer: 0
   m_Name: IceShuriken
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -37.00962, y: 24.13, z: -17.141218}
-  m_LocalScale: {x: 0.7, y: 0.46, z: 0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4084512741570074931}
@@ -39,6 +40,22 @@ Transform:
   - {fileID: 6731472494626532444}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6424823546704286219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8992719473349885466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4f1e3e51283ac42be10163e4a9fad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  _target_layer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &1660195491755218530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47,6 +64,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5359509580403489342, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -112,10 +139,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -136,6 +183,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5359509580403489342, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -201,10 +258,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -225,6 +302,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5359509580403489342, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -290,10 +377,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -314,6 +421,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5359509580403489342, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -379,10 +496,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -403,6 +540,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5359509580403489342, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -468,10 +615,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -492,6 +659,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5359509580403489342, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -557,10 +734,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -581,6 +778,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5359509580403489342, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -646,10 +853,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -670,6 +897,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5359509580403489342, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -735,10 +972,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449477243185265187, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

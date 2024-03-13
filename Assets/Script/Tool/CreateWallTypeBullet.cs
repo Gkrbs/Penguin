@@ -12,6 +12,7 @@ public class CreateWallTypeBullet : ActiveTool
     private Magazine _magazine;
     [SerializeField]
     private GameObject _wall;
+    private Bullet _bullet;
     public override void ActiveAction()
     {
         base.ActiveAction();
@@ -23,7 +24,11 @@ public class CreateWallTypeBullet : ActiveTool
             _rd.velocity = Vector3.zero;
         _rd.isKinematic = true;
         _is_trigger = true;
-        Vector3 col_point = target.transform.position;
+        Vector3 col_point = _bullet.HIT_POINT;
+        //if (_wall == null)
+        //{
+        //    _wall = Resources.Load<GameObject>("Prefabs\\Ground\\IceShuriken");
+        //}
         GameObject wall = Instantiate(_wall, col_point, transform.rotation);
         StopAction();
 
@@ -43,13 +48,12 @@ public class CreateWallTypeBullet : ActiveTool
         //_target and obj is magazine object 
         base.Init(obj);
         _magazine = _target.GetComponent<Magazine>();
-        _wall = Resources.Load<GameObject>("Wall");
-
-
+        _bullet = GetComponent<Bullet>();
+        _wall = Resources.Load<GameObject>("Prefabs\\Ground\\IceShuriken");
     }
     public override void StopAction()
     {
-        GetComponent<Bullet>().DelayDestroyBullet(1.0f);
+        _bullet.DelayDestroyBullet(1.0f);
     }
     private void Awake()
     {

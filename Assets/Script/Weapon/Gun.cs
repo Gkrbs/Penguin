@@ -44,11 +44,7 @@ public class Gun : MonoBehaviour
     [SerializeField]
     Transform _aim_tr;
     private ActiveTool _tool;
-    private Vector3 _hit_position = Vector3.zero;
-    public Vector3 HIT_POS
-    {
-        get { return _hit_position; }
-    }
+
     private void Awake()
     {
         _data = _data == null ? Resources.Load<ToolInfo>(GUN_DATA_PATH) : _data;
@@ -82,14 +78,12 @@ public class Gun : MonoBehaviour
             }
             return;
         }
-        _hit_position = Vector3.zero;
         RaycastHit hit;
         Vector3 dir;
         float cam_dist = Vector3.Distance(_cam_tr.position, _aim_tr.position);
         if (Physics.Raycast(_cam_tr.position, _cam_tr.forward, out hit, cam_dist, _target_layer))
         {
             dir = (hit.point - _fire_point.position).normalized;
-            _hit_position = hit.point;
         }
         else
         {
@@ -127,7 +121,6 @@ public class Gun : MonoBehaviour
     {
         _tool = GetComponent<ActiveTool>();
         _magazine ??= GetComponentInChildren<Magazine>();
-        _magazine.Init(gameObject, "GrapplingBulletMagazine", "Grappling Bullet");
         _default_delay_time = _data.f_datas[(int)INFO.COOL_TIME];
         _delay_time = _default_delay_time;
     }

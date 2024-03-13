@@ -31,7 +31,7 @@ public class GrapplingTypeBullet : ActiveTool
 
     public override void ActiveAction(GameObject target)
     {
-        Vector3 grapple_point = _gpgun.HIT_POS;
+        Vector3 grapple_point = GetComponent<Bullet>().HIT_POINT;
         if (grapple_point == Vector3.zero)
         {
             return;

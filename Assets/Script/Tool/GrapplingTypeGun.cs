@@ -29,16 +29,6 @@ public class GrapplingTypeGun : ActiveTool
     [SerializeField]
     private Gun _gun;
 
-    public Vector3 HIT_POS
-    {
-        get
-        {
-            if (_gun != null)
-                return _gun.HIT_POS;
-            return Vector3.zero;
-        }
-    }
-
     public float BULLET_DISTANCE
     {
         get
@@ -186,7 +176,8 @@ public class GrapplingTypeGun : ActiveTool
     }
     private void OnDisable()
     {
-        _gun.is_tool_control = false;
+        if(_gun != null)
+            _gun.is_tool_control = false;
     }
     // Update is called once per frame
     void LateUpdate()
