@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class GraphicSetting : MonoBehaviour
 {
     public Toggle screenMode;
-    public Dropdown resolutionDropdown;
-    public Dropdown qualityDropdown;
+    public TMP_Dropdown resolutionDropdown;
+    public TMP_Dropdown qualityDropdown;
 
     Resolution[] resolutions;
     List<Resolution> res = new();
