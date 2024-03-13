@@ -156,7 +156,7 @@ namespace Lightbug.CharacterControllerPro.Demo
 
             if (CharacterActions.skill.value)
             {
-                if (jetpackCount == 1 && jetpackSelected)
+                if (jetpackCount <= 1 && jetpackSelected)
                 {
                     CharacterStateController.EnqueueTransition<JetPackAlpha>();
                     CharacterStateController.Animator.SetBool(groundedParameter, false);
@@ -165,7 +165,7 @@ namespace Lightbug.CharacterControllerPro.Demo
                     CharacterStateController.Animator.SetFloat(verticalAxisParameter, 0);
                     jetpackCount = 0;
                 }
-                else if (wallCount == 1 && wallSelected)
+                else if (wallCount <= 1 && wallSelected)
                 {
                     Debug.Log("발판 총알로 전환");
                     wallCount = 0;
