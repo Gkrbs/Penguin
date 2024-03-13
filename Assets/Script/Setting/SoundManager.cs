@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance;
 
     public AudioClip[] clips;
-    public Dictionary<string, AudioClip> clipsDict;
+    Dictionary<string, AudioClip> clipsDict;
 
     private void Awake()
     {
