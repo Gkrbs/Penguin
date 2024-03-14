@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 977178947870900407}
   - component: {fileID: 6424823546704286219}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: IceShuriken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,10 +52,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b4f1e3e51283ac42be10163e4a9fad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  _max_distanse: 15
+  _cam_tr: {fileID: 0}
+  _aim_tr: {fileID: 0}
   _target_layer:
     serializedVersion: 2
     m_Bits: 512
+  radian: 0.5
 --- !u!1001 &1660195491755218530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64,6 +67,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 2325202645136419392, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Convex
@@ -149,10 +157,25 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6385155664557560266, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247391775759809359, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
@@ -183,6 +206,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 2325202645136419392, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Convex
@@ -268,10 +296,25 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6385155664557560266, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247391775759809359, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
@@ -302,6 +345,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 2325202645136419392, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Convex
@@ -387,10 +435,25 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6385155664557560266, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247391775759809359, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
@@ -421,6 +484,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 2325202645136419392, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Convex
@@ -506,10 +574,25 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6385155664557560266, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247391775759809359, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
@@ -540,6 +623,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 2325202645136419392, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Convex
@@ -625,10 +713,25 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6385155664557560266, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247391775759809359, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
@@ -659,6 +762,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 2325202645136419392, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Convex
@@ -744,10 +852,25 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6385155664557560266, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247391775759809359, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
@@ -778,6 +901,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 2325202645136419392, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Convex
@@ -863,10 +991,25 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6385155664557560266, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247391775759809359, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
@@ -897,6 +1040,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977178947870900407}
     m_Modifications:
+    - target: {fileID: 2325202645136419392, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4320994051287667853, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Convex
@@ -982,10 +1130,25 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6385155664557560266, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
       propertyPath: m_Name
       value: IceCrystal001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081861660632313073, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247391775759809359, guid: 3948c0ea49f767c44911aacfb2c6bf66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7356921398187164911, guid: 3948c0ea49f767c44911aacfb2c6bf66,
         type: 3}
