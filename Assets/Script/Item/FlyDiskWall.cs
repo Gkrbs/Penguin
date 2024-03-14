@@ -22,10 +22,18 @@ public class FlyDiskWall : MonoBehaviour
         start_pos = transform.position;
         if (_cam_tr == null)
             _cam_tr = Camera.main.transform;
-        if (_aim_tr == null)
-            _aim_tr = _cam_tr.GetChild(0);
+
+        Vector3 target_pos = _cam_tr.position + _cam_tr.forward * _max_distanse;
+        float dist = Vector3.Distance(target_pos, start_pos);
+        if (dist != _max_distanse)
+        {
+            target_pos += _cam_tr.forward * (_max_distanse - dist);
+        }
+
+        Vector3 aim_pos = target_pos;
+
         RaycastHit hit;
-        float cam_dist = Vector3.Distance(_cam_tr.position, _aim_tr.position);
+        float cam_dist = Vector3.Distance(_cam_tr.position, aim_pos);
         if (Physics.Raycast(_cam_tr.position, _cam_tr.forward, out hit, _max_distanse, _target_layer))
         {
             targetPos = hit.point;
@@ -33,7 +41,7 @@ public class FlyDiskWall : MonoBehaviour
         }
         else
         {
-            targetPos = _aim_tr.position + (_cam_tr.forward*(_max_distanse-cam_dist));
+            targetPos = aim_pos;
         }
         is_active = true;
     }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &151447689312223597
+--- !u!1 &6674605179282315180
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1377031636142919791}
-  - component: {fileID: 9144723787978652236}
+  - component: {fileID: 3088077937096341445}
+  - component: {fileID: 7211009246293699117}
   m_Layer: 0
-  m_Name: TargetPoint
+  m_Name: AimObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1377031636142919791
+--- !u!4 &3088077937096341445
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151447689312223597}
+  m_GameObject: {fileID: 6674605179282315180}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 17.87}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9144723787978652236
+--- !u!114 &7211009246293699117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151447689312223597}
+  m_GameObject: {fileID: 6674605179282315180}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6e1b582a9d003c46a4dceffc4db4590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _move_speed: 5
-  _fire_point_tr: {fileID: 0}
-  _gun: {fileID: 0}
+  _fire_point: {fileID: 0}
+  _cam_tr: {fileID: 0}

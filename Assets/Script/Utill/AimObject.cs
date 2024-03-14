@@ -4,24 +4,56 @@ using UnityEngine;
 
 public class AimObject : MonoBehaviour
 {
+    public static AimObject instanse;
+    //[SerializeField]
+    //float _move_speed = 10.0f;
     [SerializeField]
-    float _move_speed = 10.0f;
-    [SerializeField]
-    private Transform _fire_point_tr;
-    [SerializeField]
-    private GrapplingTypeGun _gun;
+    private Transform _fire_point, _cam_tr;
+    private float _max_distance = 15.0f;
+    private float _default_max_distance = 15.0f;
+    private Vector3 _aim_pos;
+    public Vector3 AIM
+    {
+        get { return _aim_pos; }
+    }
+    public void Init(float dist)
+    {
+        _default_max_distance = dist;
+        _max_distance = _default_max_distance;
+    }
+
+    public void SetMaxDistance(float dist)
+    {
+        if (dist != _max_distance)
+            _max_distance = dist;
+    }
+    private void Awake()
+    {
+        if (instanse == null)
+            instanse = GetComponent<AimObject>();
+        else
+            Destroy(gameObject);
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, _fire_point_tr.position) < (_gun.MAX_DISTANCE - 0.2f))
+        Vector3 target_pos = _cam_tr.position + _cam_tr.forward * _max_distance;
+        float dist = Vector3.Distance(target_pos, _fire_point.transform.position);
+        if (dist != _max_distance)
         {
-            transform.Translate(Vector3.forward*Time.deltaTime * _move_speed);
+            target_pos += _cam_tr.forward * (_max_distance - dist);
         }
-        else if(Vector3.Distance(transform.position, _fire_point_tr.position) > (_gun.MAX_DISTANCE + 0.2f))
-        {
-            transform.Translate(Vector3.forward*Time.deltaTime * -_move_speed);
 
-        }
+        _aim_pos = target_pos;
+        //if (Vector3.target_posDistance(transform.position, _fire_point_tr.position) < (_gun.MAX_DISTANCE - 0.2f))
+        //{
+        //    transform.Translate(Vector3.forward*Time.deltaTime * _move_speed);
+        //}
+        //else if(Vector3.Distance(transform.position, _fire_point_tr.position) > (_gun.MAX_DISTANCE + 0.2f))
+        //{
+        //    transform.Translate(Vector3.forward*Time.deltaTime * -_move_speed);
+
+        //}
     }
 }

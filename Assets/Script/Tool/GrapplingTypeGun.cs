@@ -68,6 +68,7 @@ public class GrapplingTypeGun : ActiveTool
         _min_dist = _data.f_datas[(int)INFO.MIN_DISTINCE];
         _anc_speed = _data.f_datas[(int)INFO.ANC_SPEED];
         _jump_force = _data.f_datas[(int)INFO.JUMP_FORCE];
+        AimObject.instanse.Init(_max_dist);
     }
     public override void Init(GameObject obj)
     {

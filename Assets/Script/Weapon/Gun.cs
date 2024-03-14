@@ -80,14 +80,14 @@ public class Gun : MonoBehaviour
         }
         RaycastHit hit;
         Vector3 dir;
-        float cam_dist = Vector3.Distance(_cam_tr.position, _aim_tr.position);
+        float cam_dist = Vector3.Distance(_cam_tr.position, AimObject.instanse.AIM);
         if (Physics.Raycast(_cam_tr.position, _cam_tr.forward, out hit, cam_dist, _target_layer))
         {
             dir = (hit.point - _fire_point.position).normalized;
         }
         else
         {
-            dir = (_aim_tr.position - _fire_point.position).normalized;
+            dir = (AimObject.instanse.AIM - _fire_point.position).normalized;
         }
 
         _ani.CrossFade("Shoot");
