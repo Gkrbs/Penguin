@@ -26,7 +26,6 @@ public class FlyDiskWall : MonoBehaviour
             _aim_tr = _cam_tr.GetChild(0);
         RaycastHit hit;
         float cam_dist = Vector3.Distance(_cam_tr.position, _aim_tr.position);
-        print("cam : " + cam_dist);
         if (Physics.Raycast(_cam_tr.position, _cam_tr.forward, out hit, _max_distanse, _target_layer))
         {
             targetPos = hit.point;
@@ -45,10 +44,12 @@ public class FlyDiskWall : MonoBehaviour
         Vector3 dir = targetPos - transform.position;
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed*Time.deltaTime);
         transform.rotation = Quaternion.LookRotation(dir.normalized);
+        float dist = Vector3.Distance(targetPos, transform.position);
 
-        if (Vector3.Distance(targetPos, transform.position) <= radian)
+        if (dist <= radian)
         {
             is_active = false;
+
             if (!is_complete)
             {
                 Destroy(gameObject);
