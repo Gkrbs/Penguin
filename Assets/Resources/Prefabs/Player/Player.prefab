@@ -93,7 +93,7 @@ Transform:
   m_GameObject: {fileID: 1894341268125097684}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.348, z: 0.324}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -512,15 +512,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overrideAnimatorController: 1
   runtimeAnimatorController: {fileID: 0}
-  shoot_force: 5
-  shoot_rot_force: 5
-  _shoot_pos_tr: {fileID: 0}
-  _wall_prepebs: []
-  _cam_tr: {fileID: 0}
-  _aim_tr: {fileID: 0}
-  _target_layer:
-    serializedVersion: 2
-    m_Bits: 0
+  shoot_force: 30
+  shoot_rot_force: 30
+  _shoot_pos_tr: {fileID: 8408586128874547766}
+  _wall_prepebs:
+  - {fileID: 8992719473349885466, guid: 38df06ed98ebd9f4c8bf0fd1715aab7f, type: 3}
+  - {fileID: 4570413400359951422, guid: 579ca67d3e256c540a29bc0e1be83019, type: 3}
 --- !u!1 &7434469429973856857
 GameObject:
   m_ObjectHideFlags: 0
