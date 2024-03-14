@@ -7,8 +7,8 @@ public class FlyDiskWall : MonoBehaviour
     private bool is_active = false;
     private bool is_complete = false;
     private float speed = 10.0f;
-    //[SerializeField]
-    //private float _max_distanse = 15.0f;
+    [SerializeField]
+    private float _max_distanse = 15.0f;
     private Vector3 targetPos = Vector3.zero;
     [SerializeField]
     private Transform _cam_tr, _aim_tr;
@@ -27,14 +27,14 @@ public class FlyDiskWall : MonoBehaviour
         RaycastHit hit;
         float cam_dist = Vector3.Distance(_cam_tr.position, _aim_tr.position);
         print("cam : " + cam_dist);
-        if (Physics.Raycast(_cam_tr.position, _cam_tr.forward, out hit, cam_dist, _target_layer))
+        if (Physics.Raycast(_cam_tr.position, _cam_tr.forward, out hit, _max_distanse, _target_layer))
         {
             targetPos = hit.point;
             is_complete = true;
         }
         else
         {
-            targetPos = _aim_tr.position;
+            targetPos = _aim_tr.position + (_cam_tr.forward*(_max_distanse-cam_dist));
         }
         is_active = true;
     }
