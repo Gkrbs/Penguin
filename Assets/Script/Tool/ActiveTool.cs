@@ -25,7 +25,7 @@ public class ActiveTool : MonoBehaviour, ToolInterface
     public virtual void Init(GameObject obj)
     {
         _target = obj;
-        _user = _user != null ? _user : GameObject.FindWithTag("Player"); 
+        _user = _user != null ? _user : GameObject.Find("Player"); 
     }
 
     public virtual void InitObjectInfo(ToolInfo data)

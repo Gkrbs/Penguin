@@ -98,6 +98,8 @@ public class GrapplingTypeBullet : ActiveTool
     // Update is called once per frame
     void Update()
     {
+        if(_gpgun == null)
+            _gpgun = _user.GetComponentInChildren<GrapplingTypeGun>();
         float max_dist = _gpgun.BULLET_DISTANCE;
         float limit_dist = _gpgun.MAX_DISTANCE;
         if (!_is_trigger && max_dist > limit_dist)
