@@ -19,6 +19,8 @@ public class GrapplingTypeGun : ActiveTool
     private float _min_dist = 0f;
     private float _anc_speed = 0f;
     private float _jump_force = 0f;
+    [SerializeField]
+    private LayerMask defaultLayer;
 
     public CharacterActor characterActor;
     [SerializeField]
@@ -68,6 +70,8 @@ public class GrapplingTypeGun : ActiveTool
         _min_dist = _data.f_datas[(int)INFO.MIN_DISTINCE];
         _anc_speed = _data.f_datas[(int)INFO.ANC_SPEED];
         _jump_force = _data.f_datas[(int)INFO.JUMP_FORCE];
+        characterActor = GameObject.Find("Player").GetComponent<CharacterActor>();
+        defaultLayer = characterActor.stableLayerMask;
         AimObject.instanse.Init(_max_dist);
     }
     public override void Init(GameObject obj)
@@ -102,7 +106,7 @@ public class GrapplingTypeGun : ActiveTool
         else
         {
             characterActor.alwaysNotGrounded = false;
-            characterActor.stableLayerMask = 1 << LayerMask.NameToLayer("Ground") | 1 << LayerMask.NameToLayer("Wall");
+            characterActor.stableLayerMask = defaultLayer;
         }
 
         if (Input.GetKey(KeyCode.Q))
@@ -130,7 +134,7 @@ public class GrapplingTypeGun : ActiveTool
         _bullet = null;
         _glapple_bullet = null;
         characterActor.alwaysNotGrounded = false;
-        characterActor.stableLayerMask = 1 << LayerMask.NameToLayer("Ground") | 1 << LayerMask.NameToLayer("Wall");
+        characterActor.stableLayerMask = defaultLayer;
     }
 
     public override void ActiveAction(GameObject target)
