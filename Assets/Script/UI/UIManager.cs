@@ -69,12 +69,12 @@ public class UIManager : MonoBehaviour
     {
         int hour = (int)(_time_sec / 3600f);
         int minute = (int)(_time_sec / 60f);
-        float second = _time_sec % 60f;
+        int second = (int)(_time_sec % 60f);
         string text = "";
         if(hour < 10)
-            text = "Timer - " + hour.ToString("D2") + ":" + minute.ToString("D2") + ":" + second.ToString("F2");
+            text = "Timer - " + hour.ToString("D2") + ":" + minute.ToString("D2") + ":" + second.ToString("D2");
         else
-            text = "Timer - " + hour.ToString() + ":" + minute.ToString("D2") + ":" + second.ToString("F2");
+            text = "Timer - " + hour.ToString() + ":" + minute.ToString("D2") + ":" + second.ToString("D2");
 
         _timer_text.text = text;
         _time_sec += Time.deltaTime;

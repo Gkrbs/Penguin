@@ -243,6 +243,8 @@ namespace Lightbug.CharacterControllerPro.Demo
             // delta time.
             float dt = Time.fixedDeltaTime;
 
+            if (Time.timeScale != 1.0f) return;
+
             UpdateCamera(dt);
         }
 
