@@ -23,6 +23,8 @@ public class Bullet : MonoBehaviour
     private ActiveTool _tool;
     private Magazine magazine;
     private Vector3 _hit_point = Vector3.zero;
+    [SerializeField]
+    private int _stop_delay_millisec = 100;
     public Vector3 HIT_POINT
     {
         get { return _hit_point; }
@@ -82,8 +84,13 @@ public class Bullet : MonoBehaviour
 
         if (Physics.Raycast(transform.position, GetComponent<Rigidbody>().velocity, out hit, _sphare_cast_max_dist + 0.5f))
         {
-            _tool.StopAction();
+            StopDelay();
         }
+    }
+    async void StopDelay()
+    {
+        await System.Threading.Tasks.Task.Delay(_stop_delay_millisec);
+        _tool.StopAction();
     }
 
     // Update is called once per frame
