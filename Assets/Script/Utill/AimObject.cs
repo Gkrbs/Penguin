@@ -46,14 +46,5 @@ public class AimObject : MonoBehaviour
         }
 
         _aim_pos = target_pos;
-        //if (Vector3.target_posDistance(transform.position, _fire_point_tr.position) < (_gun.MAX_DISTANCE - 0.2f))
-        //{
-        //    transform.Translate(Vector3.forward*Time.deltaTime * _move_speed);
-        //}
-        //else if(Vector3.Distance(transform.position, _fire_point_tr.position) > (_gun.MAX_DISTANCE + 0.2f))
-        //{
-        //    transform.Translate(Vector3.forward*Time.deltaTime * -_move_speed);
-
-        //}
     }
 }

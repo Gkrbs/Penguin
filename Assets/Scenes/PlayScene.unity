@@ -158,6 +158,7 @@ MonoBehaviour:
   _jetpack_img: {fileID: 1416660521}
   _create_wall_img: {fileID: 928298007}
   nm: {fileID: 1058197667}
+  code: 27
 --- !u!4 &44777893
 Transform:
   m_ObjectHideFlags: 0
@@ -2169,6 +2170,11 @@ PrefabInstance:
       propertyPath: aimImage
       value: 
       objectReference: {fileID: 1286017786}
+    - target: {fileID: 6900995035876588666, guid: bcbbf924149d42040b83c5a937147467,
+        type: 3}
+      propertyPath: _target_layer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 7777680295877185883, guid: bcbbf924149d42040b83c5a937147467,
         type: 3}
       propertyPath: m_LocalPosition.x

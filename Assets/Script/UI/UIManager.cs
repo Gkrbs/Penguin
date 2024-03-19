@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour
     private GameObject _jetpack_img, _create_wall_img;
     [SerializeField]
     private NormalMovement nm;
+    [SerializeField]
+    private KeyCode code;
 
     private void Start()
     {
@@ -31,7 +33,7 @@ public class UIManager : MonoBehaviour
 
     private void VisibleMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(code))
         {
             if (_open_menu)
             {
@@ -43,6 +45,7 @@ public class UIManager : MonoBehaviour
                 }
                 if (_menu_panel.activeSelf)
                 {
+                    _open_menu = false;
                     Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
                     _menu_panel.SetActive(false);
@@ -53,6 +56,7 @@ public class UIManager : MonoBehaviour
             {
                 if (!_menu_panel.activeSelf)
                 {
+                    _open_menu = true;
                     Cursor.lockState = CursorLockMode.Confined;
                     Cursor.visible = true;
                     _menu_panel.SetActive(true);
