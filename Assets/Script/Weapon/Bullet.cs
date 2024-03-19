@@ -77,6 +77,12 @@ public class Bullet : MonoBehaviour
             _hit_point = hit.point;
             if (_tool != null)
                 _tool.ActiveAction(hit.collider.gameObject);
+            return;
+        }
+
+        if (Physics.Raycast(transform.position, GetComponent<Rigidbody>().velocity, out hit, _sphare_cast_max_dist + 0.5f))
+        {
+            _tool.StopAction();
         }
     }
 

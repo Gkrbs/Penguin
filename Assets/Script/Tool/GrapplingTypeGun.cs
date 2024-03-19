@@ -154,7 +154,6 @@ public class GrapplingTypeGun : ActiveTool
                 if (GetComponentInParent<SpringJoint>() != null)
                 {
                     _glapple_bullet.StopAction();
-                    StopAction();
                 }
             }
         }

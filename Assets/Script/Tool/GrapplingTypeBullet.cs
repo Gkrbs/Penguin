@@ -88,6 +88,7 @@ public class GrapplingTypeBullet : ActiveTool
             _joint = null;
         }
         _magazine.SetBullet(gameObject);
+        _gpgun.StopAction();
     }
     private void Awake()
     {
@@ -105,13 +106,11 @@ public class GrapplingTypeBullet : ActiveTool
         if (!_is_trigger && max_dist > limit_dist)
         {
             StopAction();
-            _gpgun.StopAction();
         }
 
         if (!_is_trigger&&!_rd.isKinematic && _rd.velocity != default_valocity)
         {
             StopAction();
-            _gpgun.StopAction();
         }
     }
 }
