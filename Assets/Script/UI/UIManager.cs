@@ -46,11 +46,7 @@ public class UIManager : MonoBehaviour
                 }
                 if (_menu_panel.activeSelf)
                 {
-                    _open_menu = false;
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Cursor.visible = false;
-                    _menu_panel.SetActive(false);
-                    Time.timeScale = 1.0f;
+                    DisbledMenuPopUp();
                 }
             }
             else
@@ -65,6 +61,14 @@ public class UIManager : MonoBehaviour
                 }
             }
         }
+    }
+    public void DisbledMenuPopUp()
+    {
+        _open_menu = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        _menu_panel.SetActive(false);
+        Time.timeScale = 1.0f;
     }
     public void SetTimeText()
     {
