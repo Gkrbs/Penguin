@@ -16,19 +16,23 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject _setting_panel;
     [SerializeField]
-    private GameObject _timer;
-    private TMP_Text _timer_text;
-    [SerializeField]
-    private GameObject _jetpack_img, _create_wall_img;
+    private GameObject _jetpack_img, _create_wall_img ;
     [SerializeField]
     private NormalMovement nm;
     [SerializeField]
     private KeyCode code;
 
+    [SerializeField]
+    private Sprite _enable_jetpack_img, _disable_jetpack_img, _enable_create_wall_img, _disable_create_wall_img;
+
+    public float PLAY_TIME
+    {
+        get { return _time_sec; }
+    }
+
     private void Start()
     {
         _time_sec = 0.0f;
-        _timer_text = _timer.GetComponent<TMP_Text>();
     }
 
     private void VisibleMenu()
@@ -81,7 +85,6 @@ public class UIManager : MonoBehaviour
         else
             text = "Timer - " + hour.ToString() + ":" + minute.ToString("D2") + ":" + second.ToString("D2");
 
-        _timer_text.text = text;
         _time_sec += Time.deltaTime;
 
     }
@@ -90,32 +93,48 @@ public class UIManager : MonoBehaviour
     {
         if (nm.jetpackCount > 0)
         {
-            _jetpack_img.GetComponent<Image>().color = Color.white;
-            _jetpack_img.transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.6f);
+            _jetpack_img.GetComponent<Image>().sprite = _enable_jetpack_img;
         }
         else
         {
-            _jetpack_img.GetComponent<Image>().color = Color.gray;
-            _jetpack_img.transform.GetChild(0).GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 0.6f);
+            _jetpack_img.GetComponent<Image>().sprite = _disable_jetpack_img;
         }
-
         if (nm.wallCount > 0)
         {
-            _create_wall_img.GetComponent<Image>().color = Color.white;
-            _create_wall_img.transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.6f);
+            _create_wall_img.GetComponent<Image>().sprite = _enable_create_wall_img;
         }
         else
         {
-            _create_wall_img.GetComponent<Image>().color = Color.gray;
-            _create_wall_img.transform.GetChild(0).GetComponent<Image>().color = new Color(0.5f,0.5f,0.5f,0.6f);
+            _create_wall_img.GetComponent<Image>().sprite = _disable_create_wall_img;
         }
     }
-    
+    private void SelectedItem()
+    {
+        if (nm.jetpackSelected)
+        {
+            _jetpack_img.transform.GetChild(1).gameObject.SetActive(true);
+        }
+        else
+        { 
+            _jetpack_img.transform.GetChild(1).gameObject.SetActive(false);
+        }
+
+        if (nm.wallSelected)
+        {
+            _create_wall_img.transform.GetChild(1).gameObject.SetActive(true);
+        }
+        else
+        {
+            _create_wall_img.transform.GetChild(1).gameObject.SetActive(false);
+        }
+
+    }
     // Update is called once per frame
     void Update()
     {
         VisibleMenu();
         SetTimeText();
         VisibleItemImage();
+        SelectedItem();
     }
 }
