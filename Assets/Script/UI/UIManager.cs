@@ -40,7 +40,8 @@ public class UIManager : MonoBehaviour
 
                 if (_setting_panel.activeSelf)
                 {
-                    _setting_panel.SetActive(false);
+                    _menu_panel.SetActive(true);
+                    return;
 
                 }
                 if (_menu_panel.activeSelf)
