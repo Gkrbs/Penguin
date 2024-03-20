@@ -92,7 +92,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimImage: {fileID: 0}
   camTr: {fileID: 6051057477331133914}
-  targetTr: {fileID: 0}
   _target_layer:
     serializedVersion: 2
     m_Bits: 640
@@ -252,10 +251,10 @@ MonoBehaviour:
   updateYaw: 1
   yawSpeed: 360
   updatePitch: 1
-  initialPitch: 10
+  initialPitch: 7
   pitchSpeed: 360
-  maxPitchAngle: 80
-  minPitchAngle: 80
+  maxPitchAngle: 73
+  minPitchAngle: 73
   updateRoll: 0
   updateZoom: 1
   distanceToTarget: 4
@@ -268,7 +267,7 @@ MonoBehaviour:
   detectionRadius: 0.2
   layerMask:
     serializedVersion: 2
-    m_Bits: 520
+    m_Bits: 712
   considerKinematicRigidbodies: 1
   considerDynamicRigidbodies: 1
   currentDistanceToTarget: 0
