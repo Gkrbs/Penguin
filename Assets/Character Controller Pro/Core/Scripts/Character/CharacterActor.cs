@@ -64,7 +64,7 @@ namespace Lightbug.CharacterControllerPro.Core
 
         [Tooltip("The offset distance applied to the bottom of the character. A higher offset means more walkable surfaces")]
         [Min(0f)]
-        public float stepUpDistance = 0.6f;
+        public float stepUpDistance = 0.8f;
 
         [Tooltip("The distance the character is capable of detecting ground. Use this value to clamp (or not) the character to the ground.")]
         [Min(0f)]
@@ -228,7 +228,7 @@ namespace Lightbug.CharacterControllerPro.Core
             stepUpDistance = Mathf.Clamp(
                 stepUpDistance,
                 CharacterConstants.ColliderMinBottomOffset + CharacterBody.BodySize.x / 2f,
-                CharacterBody.BodySize.y - CharacterBody.BodySize.x / 2f
+                1f//CharacterBody.BodySize.y - CharacterBody.BodySize.x / 2f
             );
 
             CustomUtilities.SetPositive(ref maxGroundVelocityChange);
