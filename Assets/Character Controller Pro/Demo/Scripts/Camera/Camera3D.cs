@@ -417,8 +417,8 @@ namespace Lightbug.CharacterControllerPro.Demo
                     if (considerKinematicRigidbodies && !detectedRigidbody.isKinematic)
                         continue;
 
-                    if (considerDynamicRigidbodies && detectedRigidbody.isKinematic)
-                        continue;
+                    //if (considerDynamicRigidbodies && detectedRigidbody.isKinematic)
+                    //    continue;
 
                     if (detectedRigidbody == characterRigidbody)
                         continue;
