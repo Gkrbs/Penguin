@@ -41,8 +41,6 @@ public class Gun : MonoBehaviour
     [SerializeField]
     LayerMask _target_layer;
 
-    [SerializeField]
-    Transform _aim_tr;
     private ActiveTool _tool;
 
     private void Awake()

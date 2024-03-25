@@ -97,7 +97,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         if (is_tool_control) return;
-        CollisionObject();
+            CollisionObject();
 
     }
 }
