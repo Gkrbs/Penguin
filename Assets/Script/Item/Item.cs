@@ -8,6 +8,12 @@ namespace Lightbug.CharacterControllerPro.Demo
 {
     public class Item : CharacterDetector
     {
+        [SerializeField]
+        private bool itemActiveState = true;
+        [SerializeField]
+        private float respawnTime = 60f;
+        [SerializeField]
+        private float elapsedTime = 0f;
         public enum ITEM_TYPE
         {
             JET_PACK,
@@ -18,7 +24,26 @@ namespace Lightbug.CharacterControllerPro.Demo
         protected override void ProcessEnterAction(CharacterActor characterActor)
         {
             characterActor.GetComponentInBranch<ItemCheck>().ItemGet(currentItemType);
-            gameObject.SetActive(false);
+            ItemActive(false);
+        }
+        private void Update()
+        {
+            if (!itemActiveState)
+            {
+                elapsedTime += Time.deltaTime;
+                if (elapsedTime >= respawnTime)
+                {
+                    ItemActive(true);
+                    elapsedTime = 0;
+                }
+            }
+        }
+
+        void ItemActive(bool set)
+        {
+            gameObject.GetComponent<MeshRenderer>().enabled = set;
+            gameObject.GetComponent<BoxCollider>().enabled = set;
+            itemActiveState = set;
         }
     }
 }
