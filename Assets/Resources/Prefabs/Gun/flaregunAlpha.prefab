@@ -376,7 +376,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a825143d3fa4a404ba016a63643f8dd9, type: 2}
+  - {fileID: 2100000, guid: 5e664571483329c49826dfceee10a854, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -451,7 +451,7 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
@@ -498,6 +498,9 @@ MonoBehaviour:
   _data: {fileID: 11400000, guid: 226059875fd00644382216626564906d, type: 2}
   _target: {fileID: 0}
   _user: {fileID: 0}
+  defaultLayer:
+    serializedVersion: 2
+    m_Bits: 0
   characterActor: {fileID: 0}
   _fire_point: {fileID: 2618296220411565977}
   _bullet: {fileID: 0}
