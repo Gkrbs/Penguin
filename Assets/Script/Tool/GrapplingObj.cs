@@ -140,8 +140,8 @@ public class GrapplingObj : MonoBehaviour
             return;
         }
         _ir.enabled = true;
-        _ir.startWidth = 0.05f;
-        _ir.endWidth = 0.05f;
+        _ir.startWidth = 0.025f;
+        _ir.endWidth = 0.025f;
         _ir.SetPosition(0, _fire_point.position);
         _ir.SetPosition(1, _bullet.gameObject.transform.position);
     }
