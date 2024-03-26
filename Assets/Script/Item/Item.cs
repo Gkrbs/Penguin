@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Lightbug.CharacterControllerPro.Core;
 using Lightbug.Utilities;
+using UnityEngine.UI;
 
 namespace Lightbug.CharacterControllerPro.Demo
 {
@@ -14,13 +15,15 @@ namespace Lightbug.CharacterControllerPro.Demo
         private float respawnTime = 60f;
         [SerializeField]
         private float elapsedTime = 0f;
+        public delegate void ItemActiveDelegate(bool value);
+        public event ItemActiveDelegate ItemActiveEvent;
         public enum ITEM_TYPE
         {
             JET_PACK,
             WALL
         }
         public ITEM_TYPE currentItemType;
-        
+
         protected override void ProcessEnterAction(CharacterActor characterActor)
         {
             characterActor.GetComponentInBranch<ItemCheck>().ItemGet(currentItemType);
@@ -41,6 +44,8 @@ namespace Lightbug.CharacterControllerPro.Demo
 
         void ItemActive(bool set)
         {
+            if (ItemActiveEvent != null)
+                ItemActiveEvent(set);
             gameObject.GetComponent<MeshRenderer>().enabled = set;
             gameObject.GetComponent<BoxCollider>().enabled = set;
             itemActiveState = set;
