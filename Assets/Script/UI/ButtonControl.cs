@@ -19,6 +19,8 @@ public class ButtonControl : MonoBehaviour
     public virtual void OnClickedEvent()
     {
         SoundManager.instance.PlayOneShot(_audio, "ButtonPress");
+        if (_ani == null)
+            return;
         if(!_ani.GetCurrentAnimatorStateInfo(0).IsName("Pressed"))
             _ani.SetTrigger(_press_trigger);
 
