@@ -12335,11 +12335,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1451908412979666755, guid: 19929b281d95ac84ea4e5f3243c86b67,
-        type: 3}
-      propertyPath: _cam_tr
-      value: 
-      objectReference: {fileID: 2029356205}
     - target: {fileID: 3733560841094606053, guid: 19929b281d95ac84ea4e5f3243c86b67,
         type: 3}
       propertyPath: _cam_tr
@@ -12353,11 +12348,6 @@ PrefabInstance:
     - target: {fileID: 6355676417040418751, guid: 19929b281d95ac84ea4e5f3243c86b67,
         type: 3}
       propertyPath: movementReferenceParameters.externalReference
-      value: 
-      objectReference: {fileID: 2029356205}
-    - target: {fileID: 8369284427694593523, guid: 19929b281d95ac84ea4e5f3243c86b67,
-        type: 3}
-      propertyPath: _cam_tr
       value: 
       objectReference: {fileID: 2029356205}
     - target: {fileID: 8673601949801421678, guid: 19929b281d95ac84ea4e5f3243c86b67,
@@ -12649,6 +12639,11 @@ PrefabInstance:
       propertyPath: aimImage
       value: 
       objectReference: {fileID: 1286017786}
+    - target: {fileID: 6900995035876588666, guid: bcbbf924149d42040b83c5a937147467,
+        type: 3}
+      propertyPath: _target_layer.m_Bits
+      value: 640
+      objectReference: {fileID: 0}
     - target: {fileID: 7777680295877185883, guid: bcbbf924149d42040b83c5a937147467,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14387,7 +14382,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _fire_point
       value: 
-      objectReference: {fileID: 2133729232}
+      objectReference: {fileID: 1772791428}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14631,6 +14626,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1772791428 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6531673339049781413, guid: 19929b281d95ac84ea4e5f3243c86b67,
+    type: 3}
+  m_PrefabInstance: {fileID: 890713922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1847271408
 GameObject:
   m_ObjectHideFlags: 0
@@ -15232,12 +15233,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082004746}
   m_CullTransparentMesh: 1
---- !u!4 &2133729232 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2940076693414902323, guid: 19929b281d95ac84ea4e5f3243c86b67,
-    type: 3}
-  m_PrefabInstance: {fileID: 890713922}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
