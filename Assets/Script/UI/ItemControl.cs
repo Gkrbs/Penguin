@@ -16,11 +16,14 @@ public class ItemControl : MonoBehaviour
     private Image _item_image;
     [SerializeField]
     private GameObject canvas;
-    private Animator _ani;
+    private Animator _parent_ani;
+    private AudioSource _audio;
+
 
     private void Awake()
     {
-        _ani = GetComponentInParent<Animator>();
+        _parent_ani = GetComponentInParent<Animator>();
+        _audio = GetComponentInParent<AudioSource>();
     }
 
     private void Start()
@@ -35,9 +38,12 @@ public class ItemControl : MonoBehaviour
     private void ItemActive(bool value)
     {
         canvas.SetActive(value);
-        if(_ani != null)
-            _ani.SetBool("ACTIVE_ITEM", value);
-
+        if(_parent_ani != null)
+            _parent_ani.SetBool("ACTIVE_ITEM", value);
+        if (!value && SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayOneShot(_audio,"ItemPickUp");
+        }
     }
     void Update()
     {
