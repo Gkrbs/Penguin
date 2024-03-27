@@ -20,13 +20,13 @@ public class ItemControl : MonoBehaviour
 
     private void Awake()
     {
-        //_ani = GetComponentInParent<Animator>();
+        _ani = GetComponentInParent<Animator>();
     }
 
     private void Start()
     {
         if (item == null)
-            item = GetComponent<Item>();
+            item = GetComponentInChildren<Item>();
         if (_item_image == null)
             _item_image = GetComponentInChildren<Image>();
         item.ItemActiveEvent += ItemActive;
@@ -35,9 +35,12 @@ public class ItemControl : MonoBehaviour
     private void ItemActive(bool value)
     {
         canvas.SetActive(value);
+        if(_ani != null)
+            _ani.SetBool("ACTIVE_ITEM", value);
+
     }
     void Update()
     {
-        transform.Rotate(0f, 0f, _rot_speed * Time.deltaTime);    
+        item.gameObject.transform.Rotate(0f, 0f, _rot_speed * Time.deltaTime);    
     }
 }
