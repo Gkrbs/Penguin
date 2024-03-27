@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager instance;
     private bool _open_menu = false;
     private float _time_sec = 0.0f;
     //private const int disable_img_cod = 858585;
@@ -24,12 +25,21 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private Sprite _enable_jetpack_img, _disable_jetpack_img, _enable_create_wall_img, _disable_create_wall_img;
-
+    public bool OPEN_MENU
+    {
+        get { return _open_menu;  }
+    }
     public float PLAY_TIME
     {
         get { return _time_sec; }
     }
-
+    private void Awake()
+    {
+        if (instance == null)
+            instance = GetComponent<UIManager>();
+        else
+            Destroy(gameObject);
+    }
     private void Start()
     {
         _time_sec = 0.0f;

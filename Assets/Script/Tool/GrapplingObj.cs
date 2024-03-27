@@ -65,6 +65,9 @@ public class GrapplingObj : MonoBehaviour
     }
     public void Shoot()
     {
+        if (UIManager.instance != null && UIManager.instance.OPEN_MENU)
+            return;
+
         if (_is_delay) return;
 
         _is_delay = true;
