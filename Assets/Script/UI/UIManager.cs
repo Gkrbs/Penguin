@@ -9,8 +9,6 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
     private bool _open_menu = false;
-    private float _time_sec = 0.0f;
-    //private const int disable_img_cod = 858585;
 
     [SerializeField]
     private GameObject _menu_panel;
@@ -29,10 +27,7 @@ public class UIManager : MonoBehaviour
     {
         get { return _open_menu;  }
     }
-    public float PLAY_TIME
-    {
-        get { return _time_sec; }
-    }
+
     private void Awake()
     {
         if (instance == null)
@@ -42,7 +37,11 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
-        _time_sec = 0.0f;
+        if (Timer.instance != null)
+        {
+            Timer.instance.ResetTimer();
+            Timer.instance.StartTimer();
+        }
     }
 
     private void VisibleMenu()
@@ -85,20 +84,7 @@ public class UIManager : MonoBehaviour
         _menu_panel.SetActive(false);
         Time.timeScale = 1.0f;
     }
-    public void SetTimeText()
-    {
-        int hour = (int)(_time_sec / 3600f);
-        int minute = (int)(_time_sec / 60f);
-        int second = (int)(_time_sec % 60f);
-        string text = "";
-        if(hour < 10)
-            text = "Timer - " + hour.ToString("D2") + ":" + minute.ToString("D2") + ":" + second.ToString("D2");
-        else
-            text = "Timer - " + hour.ToString() + ":" + minute.ToString("D2") + ":" + second.ToString("D2");
 
-        _time_sec += Time.deltaTime;
-
-    }
 
     private void VisibleItemImage()
     {
@@ -144,7 +130,6 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         VisibleMenu();
-        SetTimeText();
         VisibleItemImage();
         SelectedItem();
     }
