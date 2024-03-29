@@ -22,6 +22,9 @@ namespace Lovatto.SceneLoader
         /// </summary>
         public void LoadScene()
         {
+            if (Time.timeScale != 1.0f)
+                Time.timeScale = 1.0f;
+
             if (byName)
             {
                 if (string.IsNullOrEmpty(sceneName)) return;
