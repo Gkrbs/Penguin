@@ -6015,15 +6015,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1292255337}
     m_Modifications:
+    - target: {fileID: 716762855962741224, guid: 41923cbe4626a134793ad7cfe544b26b,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1512842721849805649, guid: 41923cbe4626a134793ad7cfe544b26b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1292255338}
-    - target: {fileID: 1512842721849805649, guid: 41923cbe4626a134793ad7cfe544b26b,
+    - target: {fileID: 3127748067286298967, guid: 41923cbe4626a134793ad7cfe544b26b,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Exit
+      propertyPath: m_UpdateMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4143823954438143693, guid: 41923cbe4626a134793ad7cfe544b26b,
         type: 3}
