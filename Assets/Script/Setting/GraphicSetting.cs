@@ -48,8 +48,8 @@ public class GraphicSetting : MonoBehaviour
         {
             resolutionDropdown.value = currentResolutionIndex;
             SetResolution(currentResolutionIndex);
-            //SetQuality(2);
-            //SetFullScreen(true);
+            SetQuality(2);
+            SetFullScreen(true);
             RefreshSetting();
         }
     }
@@ -69,18 +69,18 @@ public class GraphicSetting : MonoBehaviour
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
-        //PlayerPrefs.SetInt("Quality", qualityIndex);
+        PlayerPrefs.SetInt("Quality", qualityIndex);
     }
     // 전체화면 설정. 체크박스를 체크할때 적용
     public void SetFullScreen(bool isFull)
     {
         Screen.fullScreen = isFull;
-        //PlayerPrefs.SetInt("ScreenMode", System.Convert.ToInt32(isFull));
+        PlayerPrefs.SetInt("ScreenMode", System.Convert.ToInt32(isFull));
     }
     private void LoadValue()
     {
         resolutionDropdown.value = PlayerPrefs.GetInt("Resolution");
-        //qualityDropdown.value = PlayerPrefs.GetInt("Quality");
-        //screenMode.isOn = System.Convert.ToBoolean(PlayerPrefs.GetInt("ScreenMode"));
+        QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("Quality"));
+        Screen.fullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("ScreenMode"));
     }
 }
