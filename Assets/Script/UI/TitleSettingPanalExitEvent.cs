@@ -9,7 +9,8 @@ public class TitleSettingPanalExitEvent : MonoBehaviour
     public KeyCode code; 
     public void Exit()
     {
-        _setting_panel.SetActive(false);
+        if(_setting_panel.activeSelf)
+            _setting_panel.SetActive(false);
     }
     // Update is called once per frame
     void Update()
