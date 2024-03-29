@@ -22,7 +22,7 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         foreach(AudioClip clip in clips)
         {
