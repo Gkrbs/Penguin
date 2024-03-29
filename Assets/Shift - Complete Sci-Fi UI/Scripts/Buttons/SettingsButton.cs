@@ -34,25 +34,25 @@ namespace Michsky.UI.Shift
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (enableIconPreview == true)
-            {
-                detailImage.gameObject.SetActive(false);
-                detailIcon.gameObject.SetActive(true);
-                detailBackground.gameObject.SetActive(true);
-                detailIcon.sprite = iconSprite;
-                detailBackground.sprite = iconBackground;
-            }
+            //if (enableIconPreview == true)
+            //{
+            //    detailImage.gameObject.SetActive(false);
+            //    detailIcon.gameObject.SetActive(true);
+            //    detailBackground.gameObject.SetActive(true);
+            //    detailIcon.sprite = iconSprite;
+            //    detailBackground.sprite = iconBackground;
+            //}
 
-            else
-            {
-                detailImage.gameObject.SetActive(true);
-                detailIcon.gameObject.SetActive(false);
-                detailBackground.gameObject.SetActive(false);
-                detailImage.sprite = imageSprite;
-            }
+            //else
+            //{
+            //    detailImage.gameObject.SetActive(true);
+            //    detailIcon.gameObject.SetActive(false);
+            //    detailBackground.gameObject.SetActive(false);
+            //    detailImage.sprite = imageSprite;
+            //}
 
-            detailTitle.text = title;
-            detailDescription.text = description;
+            //detailTitle.text = title;
+            //detailDescription.text = description;
         }
     }
 }

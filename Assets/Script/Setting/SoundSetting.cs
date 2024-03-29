@@ -14,17 +14,17 @@ public class SoundSetting : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey("masterVolume"))
-        {
-            LoadVolume();
-        }
-        else
-        {
-            SetMaster();
-            SetBackground();
-            SetEffect();
-            SetCharacter();
-        }
+        //if (PlayerPrefs.HasKey("masterVolume"))
+        //{
+        //    LoadVolume();
+        //}
+        //else
+        //{
+        //    SetMaster();
+        //    SetBackground();
+        //    SetEffect();
+        //    SetCharacter();
+        //}
         //Play("background");
     }
 
@@ -32,35 +32,35 @@ public class SoundSetting : MonoBehaviour
     {
         float volume = masterSlider.value;
         audioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("masterVolume", volume);
+        //PlayerPrefs.SetFloat("masterVolume", volume);
     }
     public void SetBackground()
     {
         float volume = BackgroundSlider.value;
         audioMixer.SetFloat("Background", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("BackgroundVolume", volume);
+        //PlayerPrefs.SetFloat("BackgroundVolume", volume);
     }
     public void SetEffect()
     {
         float volume = EffectSlider.value;
         audioMixer.SetFloat("Effect", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("EffectVolume", volume);
+        //PlayerPrefs.SetFloat("EffectVolume", volume);
     }
     public void SetCharacter()
     {
         float volume = CharacterSlider.value;
         audioMixer.SetFloat("Character", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("CharacterVolume", volume);
+        //PlayerPrefs.SetFloat("CharacterVolume", volume);
     }
-    private void LoadVolume()
-    {
-        masterSlider.value = PlayerPrefs.GetFloat("masterVolume");
-        BackgroundSlider.value = PlayerPrefs.GetFloat("BackgroundVolume");
-        EffectSlider.value = PlayerPrefs.GetFloat("EffectVolume");
-        CharacterSlider.value = PlayerPrefs.GetFloat("CharacterVolume");
-        SetMaster();
-        SetBackground();
-        SetEffect();
-        SetCharacter();
-    }
+    //private void LoadVolume()
+    //{
+    //    masterSlider.value = PlayerPrefs.GetFloat("masterVolume");
+    //    BackgroundSlider.value = PlayerPrefs.GetFloat("BackgroundVolume");
+    //    EffectSlider.value = PlayerPrefs.GetFloat("EffectVolume");
+    //    CharacterSlider.value = PlayerPrefs.GetFloat("CharacterVolume");
+    //    SetMaster();
+    //    SetBackground();
+    //    SetEffect();
+    //    SetCharacter();
+    //}
 }
