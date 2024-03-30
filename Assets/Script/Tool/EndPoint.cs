@@ -17,24 +17,23 @@ public class EndPoint : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (_fadeout_panel != null)
-            {
-                _fadeout_panel.SetActive(true);
-                _fadeout_ani = _fadeout_panel.GetComponent<Animation>();
-                _fadeout_ani.Play();
+
+                Timer.instance?.StopTimer();
+                _fadeout_panel?.SetActive(true);
+                _fadeout_ani ??= _fadeout_panel.GetComponent<Animation>();
+                _fadeout_ani?.Play();
                 _collision_player = true;
-            }
-            else
-            {
-                bl_SceneLoaderManager.LoadScene(SceneName);
-            }
         }
     }
     private void Update()
     {
-        if (_fadeout_panel)
+        if (_collision_player)
         {
-            if (_fadeout_ani != null&& !_fadeout_ani.isPlaying)
+            if (_fadeout_ani != null && !_fadeout_ani.isPlaying)
+            {
+                bl_SceneLoaderManager.LoadScene(SceneName);
+            }
+            if (_fadeout_ani == null)
             {
                 bl_SceneLoaderManager.LoadScene(SceneName);
             }
