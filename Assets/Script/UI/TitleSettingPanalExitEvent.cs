@@ -6,7 +6,14 @@ public class TitleSettingPanalExitEvent : MonoBehaviour
 {
     [SerializeField]
     private GameObject _setting_panel;
-    public KeyCode code; 
+    public KeyCode code;
+
+    void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+    }
+
     public void Exit()
     {
         if(_setting_panel.activeSelf)

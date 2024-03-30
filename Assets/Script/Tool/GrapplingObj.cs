@@ -150,6 +150,9 @@ public class GrapplingObj : MonoBehaviour
     }
     private void ReloadControl()
     {
+        if (UIManager.instance != null && UIManager.instance.OPEN_MENU)
+            return;
+
         if (!_bullet.IS_ACTIVE) return;
 
 
