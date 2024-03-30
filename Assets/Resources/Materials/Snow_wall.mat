@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Winterwall01
+  m_Name: Snow_wall
   m_Shader: {fileID: 4800000, guid: 516e1d638296ed84a8111eeac2e687e3, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -57,7 +57,7 @@ Material:
         m_Scale: {x: 15, y: 15}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
-        m_Texture: {fileID: 2800000, guid: 6fa0402d1ff8970429cb68954d778e0b, type: 3}
+        m_Texture: {fileID: 2800000, guid: ca5e317756e13454dad69a18991b9f62, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormal:
@@ -65,7 +65,7 @@ Material:
         m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
-        m_Texture: {fileID: 2800000, guid: 56c1ddb3fe77bb94c8009ccb7909c80f, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 15, y: 15}
         m_Offset: {x: 0, y: 0}
     - _DetailTex:
@@ -93,11 +93,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 954a65b2aaa6cca46915fc11973727f6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 58a4914b8245e074da29b5ada4959dd8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 954a65b2aaa6cca46915fc11973727f6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 58a4914b8245e074da29b5ada4959dd8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetalnessTop:
@@ -105,7 +105,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 6fa0402d1ff8970429cb68954d778e0b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 58a4914b8245e074da29b5ada4959dd8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Oclussion:
@@ -170,14 +170,14 @@ Material:
     - _EnvironmentReflections: 1
     - _Gloss: 0.017857144
     - _GlossMapScale: 1
-    - _Glossiness: 0.68
+    - _Glossiness: 0
     - _GlossinessTop: 1
     - _GlossyReflections: 1
     - _HeightPower: 0.01
     - _InvertTranslucent: 1
     - _MainTiling: 1
     - _MasterTile: 1
-    - _Metallic: 1
+    - _Metallic: 0
     - _MetallicTop: 1
     - _Mode: 0
     - _OcclusionStrength: 0.5
