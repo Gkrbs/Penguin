@@ -15,6 +15,7 @@ public class GraphicSetting : MonoBehaviour
 
     private void Awake()
     {
+
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
@@ -52,6 +53,7 @@ public class GraphicSetting : MonoBehaviour
             SetFullScreen(true);
             RefreshSetting();
         }
+
     }
     public void RefreshSetting()
     {
