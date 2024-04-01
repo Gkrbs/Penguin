@@ -1457,13 +1457,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678042634559647684}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7450184, z: -0, w: -0.667044}
-  m_LocalPosition: {x: 193.82523, y: 295.3281, z: 191.67859}
-  m_LocalScale: {x: 2, y: 2.8, z: 2}
+  m_LocalRotation: {x: -0, y: -0.3743315, z: 0, w: -0.9272949}
+  m_LocalPosition: {x: -13.68, y: 41.08, z: 2.22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6275393533074301319}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 43.966, z: 0}
 --- !u!65 &1628448877971781112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1483,7 +1483,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.4, y: 1, z: 8.77}
+  m_Size: {x: 2.38, y: 1, z: 13.09}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1488837789069015462
 MonoBehaviour:
@@ -1497,7 +1497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712e079003580924abb30f51fec2959d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 7838265919334412714}
+  anim: {fileID: 2555429415226547779}
+  isUp: 1
 --- !u!1 &692161012240219922
 GameObject:
   m_ObjectHideFlags: 0
@@ -7599,7 +7600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3542057274447456553}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.051864013, z: -0, w: -0.9986542}
+  m_LocalRotation: {x: -0, y: -0.051865794, z: 0, w: -0.99865407}
   m_LocalPosition: {x: -24.19, y: 2.11, z: -35.13}
   m_LocalScale: {x: 2, y: 2.8, z: 2}
   m_ConstrainProportionsScale: 0
@@ -10749,8 +10750,8 @@ Transform:
   m_GameObject: {fileID: 4998855022345813302}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.66703963, w: -0.7450223}
-  m_LocalPosition: {x: -197.3912, y: 213.79308, z: 258.52856}
-  m_LocalScale: {x: 2, y: 2, z: 2.7999997}
+  m_LocalPosition: {x: 0, y: -0, z: 1.39}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6082582463936061568}
@@ -10767,7 +10768,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb5eec618a8018e43a65cbf9cd1e1416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 7838265919334412714}
+  anim: {fileID: 2555429415226547779}
+  elevatorCheck: {fileID: 1488837789069015462}
 --- !u!65 &2209102514773631835
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16971,6 +16973,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4192580469043885602}
   - component: {fileID: 7838265919334412714}
+  - component: {fileID: 2555429415226547779}
+  - component: {fileID: 5617519741673170342}
   m_Layer: 3
   m_Name: elevator
   m_TagString: Untagged
@@ -17045,6 +17049,54 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &2555429415226547779
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238888239720732785}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 6234510843852800090, guid: 01e2d437cbec03046848d08f6591c4b0, type: 3}
+  - {fileID: 6641085478485924818, guid: 01e2d437cbec03046848d08f6591c4b0, type: 3}
+  - {fileID: -6788666626592393668, guid: 01e2d437cbec03046848d08f6591c4b0, type: 3}
+  - {fileID: -5059006814000262888, guid: 01e2d437cbec03046848d08f6591c4b0, type: 3}
+  - {fileID: 1702301948168947093, guid: 01e2d437cbec03046848d08f6591c4b0, type: 3}
+  - {fileID: 9093586079265926502, guid: 01e2d437cbec03046848d08f6591c4b0, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!54 &5617519741673170342
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238888239720732785}
+  serializedVersion: 4
+  m_Mass: 1000
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &8254337065984512630
 GameObject:
   m_ObjectHideFlags: 0

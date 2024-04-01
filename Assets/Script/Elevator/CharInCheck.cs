@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class CharInCheck : MonoBehaviour
 {
-    public Animator anim;
-
+    public Animation anim;
+    public ElevatorCheck elevatorCheck;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            anim.SetTrigger("Out");
+            anim.CrossFade("GoUp");
+            elevatorCheck.isUp = true;
         }
     }
 }

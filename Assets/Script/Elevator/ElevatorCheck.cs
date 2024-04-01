@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class ElevatorCheck : MonoBehaviour
 {
-    public Animator anim;
-
+    public Animation anim;
+    public bool isUp = true;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            anim.SetBool("First", true);
-            anim.SetTrigger("Out");
+            if(isUp)
+            {
+                anim.CrossFade("GoDown");
+                isUp = false;
+            }
         }
     }
 }
