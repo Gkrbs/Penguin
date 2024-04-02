@@ -34,6 +34,7 @@ public class SoundManager : MonoBehaviour
     {
         AudioClip clip = null;
         clipsDict.TryGetValue(name, out clip);
+        Debug.Log(name);
         if (clip == null)
         {
             Debug.Log("no clip name");

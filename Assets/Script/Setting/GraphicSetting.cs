@@ -51,6 +51,7 @@ public class GraphicSetting : MonoBehaviour
             SetResolution(currentResolutionIndex);
             SetQuality(2);
             SetFullScreen(true);
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
             RefreshSetting();
         }
 

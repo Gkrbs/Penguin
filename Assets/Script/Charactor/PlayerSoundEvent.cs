@@ -8,9 +8,21 @@ public class PlayerSoundEvent : MonoBehaviour
 
     public void SoundEvent(string clipName)
     {
-        Debug.Log("SoundEvent" + clipName);
         SoundManager.instance.PlayOneShot(audio, clipName);
     }
 
-
+    public void FootStepSoundEvent()
+    {
+        int ran = Random.Range(1, 6);
+        SoundManager.instance.PlayOneShot(audio, "Light_Snow_footsteps_" + ran);
+    }
+    public void JumpSoundEvent()
+    {
+        SoundManager.instance.PlayOneShot(audio, "Light_Snow_footsteps_");
+    }
+    public void WingSoundEvent()
+    {
+        int ran = Random.Range(4, 6);
+        SoundManager.instance.PlayOneShot(audio, "Chicken_flapping_wings_" + ran);
+    }
 }
