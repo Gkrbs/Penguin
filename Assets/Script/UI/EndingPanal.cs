@@ -15,13 +15,15 @@ public class EndingPanal : MonoBehaviour
     private TMPro.TMP_Text _play_time_text;
     [SerializeField]
     private string SceneName;
+    private AudioSource _audio;
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.name.Equals("CresditText"))
         {
             other.gameObject.SetActive(false);
             _end_credit = true;
-            if(Timer.instance != null)
+            if (Timer.instance != null)
                 _play_time_text.text = "PLAY TIME : " + Timer.instance.PLAY_TIME;
             _ending_text_obj.SetActive(true);
         }
@@ -31,9 +33,16 @@ public class EndingPanal : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
-
+        _audio = GetComponent<AudioSource>();
     }
-
+    private void Start()
+    {
+        if (_audio != null)
+        {
+            _audio.loop = true;
+            _audio.Play();
+        }
+    }
     // Update is called once per frame
     void Update()
     {
