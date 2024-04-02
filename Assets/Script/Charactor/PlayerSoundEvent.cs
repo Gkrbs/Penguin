@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerSoundEvent : MonoBehaviour
 {
     public AudioSource audio;
+    public float start_time = 0.0f;
 
     public void SoundEvent(string clipName)
     {
@@ -23,6 +24,6 @@ public class PlayerSoundEvent : MonoBehaviour
     public void WingSoundEvent()
     {
         int ran = Random.Range(4, 6);
-        SoundManager.instance.PlayOneShot(audio, "Chicken_flapping_wings_" + ran);
+        SoundManager.instance.PlayOneShot(audio, "Chicken_flapping_wings_" + ran, start_time);
     }
 }

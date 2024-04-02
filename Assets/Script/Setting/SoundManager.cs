@@ -30,7 +30,7 @@ public class SoundManager : MonoBehaviour
                 clipsDict.Add(clip.name, clip);
         }
     }
-    public void PlayOneShot(AudioSource audio, string name)
+    public void PlayOneShot(AudioSource audio, string name, float time = 0.0f)
     {
         AudioClip clip = null;
         clipsDict.TryGetValue(name, out clip);
@@ -42,6 +42,7 @@ public class SoundManager : MonoBehaviour
         }
         audio.clip = clip;
         audio.loop = false;
+        audio.time = time;
         audio.PlayOneShot(clip);
     }
     public void PlayLoop(AudioSource audio, string name)
