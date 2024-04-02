@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class TitleSettingPanalExitEvent : MonoBehaviour
 {
+    public KeyCode code;
     [SerializeField]
     private GameObject _setting_panel;
-    public KeyCode code;
-
+    private AudioSource _audio;
     void Awake()
     {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
+        _audio = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+    
+        SoundManager.instance?.PlayLoop(_audio,"TitleTema");
+    }
     public void Exit()
     {
         if(_setting_panel.activeSelf)
