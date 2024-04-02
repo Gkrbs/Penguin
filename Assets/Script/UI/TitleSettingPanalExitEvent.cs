@@ -7,18 +7,21 @@ public class TitleSettingPanalExitEvent : MonoBehaviour
     public KeyCode code;
     [SerializeField]
     private GameObject _setting_panel;
+    [SerializeField]
     private AudioSource _audio;
+    [SerializeField]
+    private AudioSource _effect_audio;
     void Awake()
     {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
-        _audio = GetComponent<AudioSource>();
     }
 
     private void Start()
     {
     
         SoundManager.instance?.PlayLoop(_audio,"TitleTema");
+        SoundManager.instance?.PlayLoop(_effect_audio, "WindSound");
     }
     public void Exit()
     {
