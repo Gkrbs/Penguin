@@ -20,7 +20,7 @@ public class GrapplingTrainngRoom : MonoBehaviour
     void Start()
     {
         _max_dist = Vector3.Distance(_end_pos.position, _start_pos.position); 
-        _point_text.text = "";
+        _point_text.text = "0 POINT";
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,7 +32,7 @@ public class GrapplingTrainngRoom : MonoBehaviour
             float currer_dist = Vector3.Distance(new Vector3(_start_pos.position.x,
                 _start_pos.position.y,
                 other.transform.position.z), _start_pos.position);
-            _point_text.text = ((int)( currer_dist/ _max_dist*100f)).ToString() + "POINT";
+            _point_text.text = ((int)( currer_dist/ _max_dist*100f)).ToString() + " POINT";
         }
     }
 }
