@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ButtonControl : MonoBehaviour
 {
+    [SerializeField]
     protected AudioSource _audio;
     protected Animator _ani;
     private readonly int _press_trigger = Animator.StringToHash("Pressed");
 
     private void Awake()
     {
-        _audio = GetComponent<AudioSource>();
         _ani = GetComponent<Animator>();
     }
     private void Start()
