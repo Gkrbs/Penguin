@@ -11,11 +11,13 @@ public class UIManager : MonoBehaviour
     private bool _open_menu = false;
 
     [SerializeField]
+    private GameObject _easy_level_contol_key_text;
+    [SerializeField]
     private GameObject _menu_panel;
     [SerializeField]
     private GameObject _setting_panel;
     [SerializeField]
-    private GameObject _jetpack_img, _create_wall_img ;
+    private GameObject _jetpack_img, _create_wall_img;
     [SerializeField]
     private NormalMovement nm;
     [SerializeField]
@@ -25,7 +27,7 @@ public class UIManager : MonoBehaviour
     private Sprite _enable_jetpack_img, _disable_jetpack_img, _enable_create_wall_img, _disable_create_wall_img;
     public bool OPEN_MENU
     {
-        get { return _open_menu;  }
+        get { return _open_menu; }
     }
 
     private void Awake()
@@ -37,11 +39,13 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
-        if (Timer.instance != null)
-        {
-            Timer.instance.ResetTimer();
-            Timer.instance.StartTimer();
-        }
+        Timer.instance?.ResetTimer();
+        Timer.instance?.StartTimer();
+        _easy_level_contol_key_text.SetActive(false);
+
+        if (GameManager.instance == null) return;
+        if (GameManager.instance.SELECTED_LEVEL == GameManager.LEVELS.EASY)
+            _easy_level_contol_key_text.SetActive(true);
     }
 
     private void VisibleMenu()
@@ -112,7 +116,7 @@ public class UIManager : MonoBehaviour
             _jetpack_img.transform.GetChild(1).gameObject.SetActive(true);
         }
         else
-        { 
+        {
             _jetpack_img.transform.GetChild(1).gameObject.SetActive(false);
         }
 

@@ -21,7 +21,10 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         if (instance == null)
+        { 
             instance = GetComponent<GameManager>();
+            DontDestroyOnLoad(gameObject);
+        }
         else
             Destroy(gameObject);
     }
