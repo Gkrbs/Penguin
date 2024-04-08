@@ -9,6 +9,8 @@ public class GrapplingTrainngRoom : MonoBehaviour
     [SerializeField]
     private TMP_Text _point_text;
     [SerializeField]
+    private Transform _player_start_pos;
+    [SerializeField]
     private Transform _start_pos;
     [SerializeField]
     private Transform _end_pos;
@@ -33,6 +35,17 @@ public class GrapplingTrainngRoom : MonoBehaviour
                 _start_pos.position.y,
                 other.transform.position.z), _start_pos.position);
             _point_text.text = ((int)( currer_dist/ _max_dist*100f)).ToString() + " POINT";
+            position_init(other.gameObject);
         }
+    }
+
+    private async void position_init(GameObject player)
+    {
+        await System.Threading.Tasks.Task.Delay(1000);
+        player.SetActive(false);
+        player.transform.position = _player_start_pos.position;
+        player.transform.rotation = _player_start_pos.rotation;
+        player.SetActive(true);
+
     }
 }
