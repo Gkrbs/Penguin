@@ -7,23 +7,22 @@ public class SaveLoad : MonoBehaviour
 {
     Vector3 position;
     public CharacterActor characterActor;
+    public GameObject player;
     // Update is called once per frame
     void Update()
     {
-        //if(GameManager.gamemode == hard) return;
+        if(GameManager.instance.SELECTED_LEVEL == GameManager.LEVELS.NORMAL) gameObject.SetActive(false);
 
         if(Input.GetKeyDown(KeyCode.T) && characterActor.IsGrounded)
         {
-            position = transform.position;
-            Debug.Log("save" + position);
+            position = player.transform.position;
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            gameObject.SetActive(false);
-            transform.position = position;
-            Debug.Log("load" + position);
-            gameObject.SetActive(true);
+            player.gameObject.SetActive(false);
+            player.transform.position = position;
+            player.gameObject.SetActive(true);
         }
     }
 }
