@@ -14,8 +14,8 @@ public class PlayerSoundEvent : MonoBehaviour
 
     public void FootStepSoundEvent()
     {
-        int ran = Random.Range(1, 6);
-        SoundManager.instance.PlayOneShot(audio, "Light_Snow_footsteps_" + ran);
+        int ran = Random.Range(1, 3);
+        SoundManager.instance.PlayOneShot(audio, "FootStep_" + ran);
     }
     public void JumpSoundEvent()
     {
