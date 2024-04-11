@@ -680,7 +680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &199549329
 Transform:
   m_ObjectHideFlags: 0
@@ -1997,7 +1997,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 444071951}
-  - component: {fileID: 444071954}
   - component: {fileID: 444071953}
   - component: {fileID: 444071952}
   m_Layer: 0
@@ -2072,37 +2071,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!205 &444071954
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444071950}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0.40127188, z: 0.025614306}
-  m_Size: 0.80238354
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.09162759
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 447062371}
-  - screenRelativeHeight: 0.036223833
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1832484368}
-  - screenRelativeHeight: 0.016013231
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1617031221}
-  - screenRelativeHeight: 0.002256439
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 199549330}
-  m_Enabled: 1
 --- !u!1 &447062369
 GameObject:
   m_ObjectHideFlags: 0
@@ -5838,7 +5806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1617031220
 Transform:
   m_ObjectHideFlags: 0
@@ -7349,7 +7317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1832484367
 Transform:
   m_ObjectHideFlags: 0
