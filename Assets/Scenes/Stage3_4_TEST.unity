@@ -176,12 +176,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage4ArcticFoxJetPack
       objectReference: {fileID: 0}
+    - target: {fileID: 5135587194496121097, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282423452346122381, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7835052726229635281, guid: 189b607ae836a9943970600cd475dc50,
         type: 3}
       propertyPath: currentItemType
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8446372068438332486, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9170686166161059356, guid: 189b607ae836a9943970600cd475dc50, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1921,6 +1937,7 @@ Transform:
   - {fileID: 182036172}
   - {fileID: 750071824}
   - {fileID: 1800276060}
+  - {fileID: 8761667720965192021}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &906986759
@@ -1976,7 +1993,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage3ArcticFoxWall
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5135587194496121097, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282423452346122381, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446372068438332486, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9170686166161059356, guid: 189b607ae836a9943970600cd475dc50, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3307,7 +3340,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage4ArcticFoxWall
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5135587194496121097, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282423452346122381, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446372068438332486, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9170686166161059356, guid: 189b607ae836a9943970600cd475dc50, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3578,12 +3627,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage3ArcticFoxJetPack
       objectReference: {fileID: 0}
+    - target: {fileID: 5135587194496121097, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282423452346122381, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7835052726229635281, guid: 189b607ae836a9943970600cd475dc50,
         type: 3}
       propertyPath: currentItemType
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8446372068438332486, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9170686166161059356, guid: 189b607ae836a9943970600cd475dc50, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4471,6 +4536,85 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a1a99e0e1493f4d8ab627780fffe25, type: 3}
+--- !u!1001 &8180828701950706043
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 903225441}
+    m_Modifications:
+    - target: {fileID: 8807991546474804214, guid: 31c5fee91d552ab41b7e1565ef726a30,
+        type: 3}
+      propertyPath: st_pos
+      value: 
+      objectReference: {fileID: 1821841889}
+    - target: {fileID: 8833524334530834916, guid: 31c5fee91d552ab41b7e1565ef726a30,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 354.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833524334530834916, guid: 31c5fee91d552ab41b7e1565ef726a30,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 459.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833524334530834916, guid: 31c5fee91d552ab41b7e1565ef726a30,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 297.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833524334530834916, guid: 31c5fee91d552ab41b7e1565ef726a30,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833524334530834916, guid: 31c5fee91d552ab41b7e1565ef726a30,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833524334530834916, guid: 31c5fee91d552ab41b7e1565ef726a30,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833524334530834916, guid: 31c5fee91d552ab41b7e1565ef726a30,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833524334530834916, guid: 31c5fee91d552ab41b7e1565ef726a30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833524334530834916, guid: 31c5fee91d552ab41b7e1565ef726a30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833524334530834916, guid: 31c5fee91d552ab41b7e1565ef726a30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835871642607193181, guid: 31c5fee91d552ab41b7e1565ef726a30,
+        type: 3}
+      propertyPath: m_Name
+      value: StagePotal
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 31c5fee91d552ab41b7e1565ef726a30, type: 3}
+--- !u!4 &8761667720965192021 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8833524334530834916, guid: 31c5fee91d552ab41b7e1565ef726a30,
+    type: 3}
+  m_PrefabInstance: {fileID: 8180828701950706043}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
