@@ -5514,12 +5514,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage2ArcticFoxWall
       objectReference: {fileID: 0}
+    - target: {fileID: 1604913291892717467, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5135587194496121097, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282423452346122381, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446372068438332486, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9170686166161059356, guid: 189b607ae836a9943970600cd475dc50,
         type: 3}
       propertyPath: m_LODs.Array.data[3].screenRelativeHeight
       value: 0.26324221
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9170686166161059356, guid: 189b607ae836a9943970600cd475dc50, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6083,12 +6104,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage2ArcticFoxJetPack
       objectReference: {fileID: 0}
+    - target: {fileID: 5135587194496121097, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282423452346122381, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7835052726229635281, guid: 189b607ae836a9943970600cd475dc50,
         type: 3}
       propertyPath: currentItemType
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8446372068438332486, guid: 189b607ae836a9943970600cd475dc50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9170686166161059356, guid: 189b607ae836a9943970600cd475dc50, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
