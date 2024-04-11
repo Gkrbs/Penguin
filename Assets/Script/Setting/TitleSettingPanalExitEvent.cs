@@ -6,7 +6,7 @@ public class TitleSettingPanalExitEvent : MonoBehaviour
 {
     public KeyCode code;
     [SerializeField]
-    private GameObject _setting_panel, _level_panel;
+    private GameObject _setting_panel, _level_panel, _stage_panel;
     [SerializeField]
     private AudioSource _audio;
     [SerializeField]
@@ -29,6 +29,11 @@ public class TitleSettingPanalExitEvent : MonoBehaviour
             _setting_panel.SetActive(false);
         else if (_level_panel.activeSelf)
             _level_panel.SetActive(false);
+        else if (_stage_panel != null && _stage_panel.activeSelf)
+        { 
+            _stage_panel.SetActive(false);
+            _level_panel.SetActive(true);
+        }
     }
     // Update is called once per frame
     void Update()
