@@ -5,13 +5,15 @@ using UnityEngine;
 public class CharInCheck : MonoBehaviour
 {
     public Animation anim;
-    public ElevatorCheck elevatorCheck;
+    public ElevatorIsUpCheck elevatorIsUpCheck;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            anim.CrossFade("GoUp");
-            elevatorCheck.isUp = true;
+            if (!elevatorIsUpCheck.isUp)
+            {
+                anim.CrossFade("GoUp");
+            }
         }
     }
 }
