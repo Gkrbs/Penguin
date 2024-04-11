@@ -16,16 +16,14 @@ public class EndingPanal : MonoBehaviour
     [SerializeField]
     private string SceneName;
     private AudioSource _audio;
+    [SerializeField]
+    private KeyCode _code;
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.name.Equals("CresditText"))
         {
-            other.gameObject.SetActive(false);
-            _end_credit = true;
-            if (Timer.instance != null)
-                _play_time_text.text = "PLAY TIME : " + Timer.instance.PLAY_TIME;
-            _ending_text_obj.SetActive(true);
+            credit_end();
         }
     }
 
@@ -43,14 +41,26 @@ public class EndingPanal : MonoBehaviour
             _audio.Play();
         }
     }
+
+    private void credit_end()
+    {
+        _credit_text_obj.gameObject.SetActive(false);
+        _end_credit = true;
+        if (Timer.instance != null)
+            _play_time_text.text = "PLAY TIME : " + Timer.instance.PLAY_TIME;
+        _ending_text_obj.SetActive(true);
+    }
     // Update is called once per frame
     void Update()
     {
+
         float current_speed = _speed;
         if (Input.GetMouseButton(0))
         {
             current_speed *= 3;
         }
+        
+      
 
         if (_end_credit)
         {
@@ -62,6 +72,10 @@ public class EndingPanal : MonoBehaviour
         else
         {
             _credit_text_obj.transform.Translate(0f, Time.deltaTime * current_speed, 0f);
+            if (Input.GetKeyDown(_code))
+            {
+                credit_end();
+            }
         }
     }
 }
