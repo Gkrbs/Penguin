@@ -82,7 +82,6 @@ public class Tongue : MonoBehaviour
 
         if (Physics.Raycast(transform.position, GetComponent<Rigidbody>().velocity, out hit, _cast_max_dist))
         {
-            print(hit.collider.gameObject.name);
             StopDelay();
         }
     }
