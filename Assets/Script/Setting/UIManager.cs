@@ -39,8 +39,11 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
-        Timer.instance?.ResetTimer();
-        Timer.instance?.StartTimer();
+        if (Timer.instance != null)
+        {
+            Timer.instance?.ResetTimer();
+            Timer.instance?.StartTimer();
+        }
         _easy_level_contol_key_text.SetActive(false);
 
         if (GameManager.instance == null) return;
