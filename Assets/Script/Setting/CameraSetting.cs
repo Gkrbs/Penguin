@@ -14,21 +14,21 @@ public class CameraSetting : MonoBehaviour
     [SerializeField] float defaultXAxis;
     [SerializeField] float defaultYAxis;
 
-    //private void Start()
-    //{
-    //    if (PlayerPrefs.HasKey("XSpeed"))
-    //    {
-    //        LoadValue();
-    //    }
-    //    else
-    //    {
-    //        if(came3d != null)
-    //        {
-    //            SetXAxisSpeed();
-    //            SetYAxisSpeed();
-    //        }
-    //    }
-    //}
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("XSpeed"))
+        {
+            LoadValue();
+        }
+        else
+        {
+            if (came3d != null)
+            {
+                SetXAxisSpeed();
+                SetYAxisSpeed();
+            }
+        }
+    }
 
     public void SetXAxisSpeed()
     {
@@ -36,7 +36,7 @@ public class CameraSetting : MonoBehaviour
         if (came3d != null)
             came3d.yawSpeed = defaultXAxis * value;
         //cinemachineFreeLook.m_XAxis.m_MaxSpeed = defaultXAxis * value;
-        //PlayerPrefs.SetFloat("XSpeed", value);
+        PlayerPrefs.SetFloat("XSpeed", value);
     }
     public void SetYAxisSpeed()
     {
@@ -44,7 +44,7 @@ public class CameraSetting : MonoBehaviour
         if (came3d != null)
             came3d.pitchSpeed = defaultYAxis * value;
         //cinemachineFreeLook.m_YAxis.m_MaxSpeed = defaultYAxis * value;
-        //PlayerPrefs.SetFloat("YSpeed", value);
+        PlayerPrefs.SetFloat("YSpeed", value);
     }
     private void LoadValue()
     {
