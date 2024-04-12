@@ -25,6 +25,7 @@ public class SaveLoad : MonoBehaviour
         {
             player.gameObject.SetActive(false);
             player.transform.position = position;
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
             player.gameObject.SetActive(true);
         }
     }

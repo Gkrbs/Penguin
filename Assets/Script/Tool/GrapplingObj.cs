@@ -198,9 +198,13 @@ public class GrapplingObj : MonoBehaviour
             if (joint.maxDistance > _max_dist)
                 joint.maxDistance = _max_dist;
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.R))
         {
-
+            if (GetComponentInParent<SpringJoint>() != null)
+            {
+                _bullet.Stop();
+                StopGrappling();
+            }
         }
     }
     private void LateUpdate()
