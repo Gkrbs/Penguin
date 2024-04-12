@@ -21,7 +21,7 @@ public class Tongue : MonoBehaviour
     private Vector3 _hit_point = Vector3.zero;
     private Vector3 default_valocity = Vector3.zero;
 
-
+    private AudioSource _audio;
     private Rigidbody _rd;
     public delegate void StartGrapplingDelegate(Vector3 pos);
     public event StartGrapplingDelegate StartGrapplingEvent;
@@ -49,6 +49,7 @@ public class Tongue : MonoBehaviour
     private void Awake()
     {
         _rd = GetComponent<Rigidbody>();
+        _audio = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -72,6 +73,8 @@ public class Tongue : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, GetComponent<Rigidbody>().velocity, out hit, _cast_max_dist, _layer_mask))
         {
+            if (SoundManager.instance != null)
+                SoundManager.instance.PlayOneShot(_audio, "Hitting_Nail_with_hammer");
             _hit_point = hit.point;
             _rd.isKinematic = true;
             transform.position = hit.point;

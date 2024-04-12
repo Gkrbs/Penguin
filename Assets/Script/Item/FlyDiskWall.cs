@@ -9,14 +9,15 @@ public class FlyDiskWall : MonoBehaviour
     private float speed = 10.0f;
     [SerializeField]
     private float _max_distanse = 15.0f;
+    [SerializeField]
+    [Range(0.0f, 5.0f)] private float radian = 0.5f;
     private Vector3 targetPos = Vector3.zero;
     [SerializeField]
     private Transform _cam_tr, _aim_tr;
     private Vector3 start_pos = Vector3.zero;
     [SerializeField]
     LayerMask _target_layer;
-    [SerializeField]
-    [Range(0.0f, 5.0f)] private float radian = 0.5f;
+
     private void OnEnable()
     {
         start_pos = transform.position;
@@ -50,7 +51,7 @@ public class FlyDiskWall : MonoBehaviour
     {
         if (!is_active) return;
         Vector3 dir = targetPos - transform.position;
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed*Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
         transform.rotation = Quaternion.LookRotation(dir.normalized);
         float dist = Vector3.Distance(targetPos, transform.position);
 
@@ -63,6 +64,6 @@ public class FlyDiskWall : MonoBehaviour
                 Destroy(gameObject);
             }
             is_complete = false;
-        }        
+        }
     }
 }

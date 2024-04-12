@@ -9,6 +9,8 @@ public class ItemControl : MonoBehaviour
     [SerializeField]
     private float _rot_speed = 10.0f;
     [SerializeField]
+    string _sound_name = "";
+    [SerializeField]
     private Item item;
     [SerializeField]
     private Sprite[] _item_icons;
@@ -42,7 +44,7 @@ public class ItemControl : MonoBehaviour
             _parent_ani.SetBool("ACTIVE_ITEM", value);
         if (!value && SoundManager.instance != null)
         {
-            SoundManager.instance.PlayOneShot(_audio,"ItemPickUp");
+            SoundManager.instance.PlayOneShot(_audio, _sound_name);
         }
     }
     void Update()
