@@ -460,7 +460,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 1, z: 15}
+  m_Size: {x: 10, y: 5, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &112926157
 Transform:
@@ -471,7 +471,7 @@ Transform:
   m_GameObject: {fileID: 112926153}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 171.59615, y: 632.279, z: 296.88998}
+  m_LocalPosition: {x: 171.59615, y: 632.279, z: 305.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1394,6 +1394,21 @@ PrefabInstance:
       propertyPath: movementReferenceParameters.externalReference
       value: 
       objectReference: {fileID: 2029356205}
+    - target: {fileID: 7299923217644307488, guid: 19929b281d95ac84ea4e5f3243c86b67,
+        type: 3}
+      propertyPath: _sound_names.Array.data[1]
+      value: Excellent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7299923217644307488, guid: 19929b281d95ac84ea4e5f3243c86b67,
+        type: 3}
+      propertyPath: _sound_names.Array.data[2]
+      value: Yay
+      objectReference: {fileID: 0}
+    - target: {fileID: 7299923217644307488, guid: 19929b281d95ac84ea4e5f3243c86b67,
+        type: 3}
+      propertyPath: _sound_names.Array.data[3]
+      value: AiVoice
+      objectReference: {fileID: 0}
     - target: {fileID: 8673601949801421678, guid: 19929b281d95ac84ea4e5f3243c86b67,
         type: 3}
       propertyPath: m_LocalPosition.x
