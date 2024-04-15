@@ -1449,6 +1449,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19929b281d95ac84ea4e5f3243c86b67, type: 3}
+--- !u!114 &890713923 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3733560841094606053, guid: 19929b281d95ac84ea4e5f3243c86b67,
+    type: 3}
+  m_PrefabInstance: {fileID: 890713922}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30168ed0a25a8bb4cbb43c59e3ec6b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &928298007
 GameObject:
   m_ObjectHideFlags: 0
@@ -4953,11 +4965,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3535879492892886331, guid: 65445985225c2e64e92671a03e6dc037,
+        type: 3}
+      propertyPath: selectorTag
+      value: GrappleMode
+      objectReference: {fileID: 0}
     - target: {fileID: 7775814876735914866, guid: 65445985225c2e64e92671a03e6dc037,
         type: 3}
       propertyPath: came3d
       value: 
       objectReference: {fileID: 2029356207}
+    - target: {fileID: 7775814876735914866, guid: 65445985225c2e64e92671a03e6dc037,
+        type: 3}
+      propertyPath: grapplingObj
+      value: 
+      objectReference: {fileID: 890713923}
     - target: {fileID: 8552521981927000637, guid: 65445985225c2e64e92671a03e6dc037,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
