@@ -34,9 +34,9 @@ public class SoundManager : MonoBehaviour
     {
         AudioClip clip = null;
         clipsDict.TryGetValue(name, out clip);
-        if (clip == null)
+        if (clip == null || audio == null)
         {
-            Debug.Log("no clip name");
+            Debug.Log("No Audio or Clip");
             return;
         }
         audio.clip = clip;
@@ -48,9 +48,9 @@ public class SoundManager : MonoBehaviour
     {
         AudioClip clip = null;
         clipsDict.TryGetValue(name, out clip);
-        if (clip == null)
+        if (clip == null || audio == null)
         {
-            Debug.Log("no clip name");
+            Debug.Log("No Audio or Clip");
             return;
         }
         audio.clip = clip;
