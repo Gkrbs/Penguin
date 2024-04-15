@@ -15,7 +15,11 @@ public class Fall : MonoBehaviour
     private NormalMovement _nm;
     [SerializeField]
     private AudioSource _audio;
-
+    private Rigidbody _rd;
+    private void Start()
+    {
+        _rd = GetComponent<Rigidbody>();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag.Equals("StageGround"))
@@ -33,6 +37,7 @@ public class Fall : MonoBehaviour
         {
             if (_fall_time >= 2.0f)
             {
+                print(_fall_time);
                 int idx = (int)_fall_time - 2;
                 if (idx > _sound_names.Length)
                     idx = _sound_names.Length - 1;

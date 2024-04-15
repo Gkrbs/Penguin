@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0634673, g: 0.12206262, b: 0.26529348, a: 1}
+  m_IndirectSpecularColor: {r: 0.06346727, g: 0.1220626, b: 0.26529348, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -842,6 +842,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1608792511012768138, guid: 729c104ab0f558b4ba04ead9bad04f8f,
+        type: 3}
+      propertyPath: m_TagString
+      value: StageGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293315047509087120, guid: 729c104ab0f558b4ba04ead9bad04f8f,
+        type: 3}
+      propertyPath: m_TagString
+      value: StageGround
+      objectReference: {fileID: 0}
     - target: {fileID: 3355130456643920333, guid: 729c104ab0f558b4ba04ead9bad04f8f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4818,6 +4828,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3789109570679501163, guid: afe9aec4ba7c69c4aa703fed86a106d6,
+        type: 3}
+      propertyPath: m_TagString
+      value: StageGround
+      objectReference: {fileID: 0}
     - target: {fileID: 4731187999773395573, guid: afe9aec4ba7c69c4aa703fed86a106d6,
         type: 3}
       propertyPath: m_Name
@@ -5004,6 +5019,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3866521401442707805, guid: 7ad6f45180a3560438d64adc05bf7fb0,
+        type: 3}
+      propertyPath: m_TagString
+      value: StageGround
+      objectReference: {fileID: 0}
     - target: {fileID: 6773406185409845165, guid: 7ad6f45180a3560438d64adc05bf7fb0,
         type: 3}
       propertyPath: m_Name
