@@ -22,22 +22,25 @@ public class Fall : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag.Equals("StageGround"))
+        if (collision.gameObject.tag.Equals("JumpGround"))
+        {
+            _fall_time = -5.0f;
+        }
+        else if (collision.gameObject.tag.Equals("StageGround"))
         {
             if (_fall_time >= 1.5f)
             {
-                int idx = (int)_fall_time-1;
+                int idx = (int)_fall_time - 1;
                 if (idx > _sound_names.Length)
                     idx = _sound_names.Length - 1;
                 SoundManager.instance.PlayOneShot(_audio, _sound_names[idx]);
             }
             _fall_time = 0.0f;
         }
-        else if(collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             if (_fall_time >= 2.0f)
             {
-                print(_fall_time);
                 int idx = (int)_fall_time - 2;
                 if (idx > _sound_names.Length)
                     idx = _sound_names.Length - 1;
