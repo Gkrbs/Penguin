@@ -6,31 +6,38 @@ using UnityEngine;
 
 public class Fall : MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody _rd;
     private float _fall_time = 0.0f;
+    [SerializeField]
+    private string[] _sound_names;
     [SerializeField]
     private CharacterActor _actor;
     [SerializeField]
     private NormalMovement _nm;
-    // Start is called before the first frame update
-    void Start()
-    {
-        _rd = GetComponent<Rigidbody>();
-    }
+    [SerializeField]
+    private AudioSource _audio;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag.Equals("StageGround"))
         {
             if (_fall_time >= 1.5f)
             {
-                
+                int idx = (int)_fall_time-1;
+                if (idx > _sound_names.Length)
+                    idx = _sound_names.Length - 1;
+                SoundManager.instance.PlayOneShot(_audio, _sound_names[idx]);
             }
             _fall_time = 0.0f;
         }
         else if(collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            print("time : " + _fall_time);
+            if (_fall_time >= 2.0f)
+            {
+                int idx = (int)_fall_time - 2;
+                if (idx > _sound_names.Length)
+                    idx = _sound_names.Length - 1;
+                SoundManager.instance.PlayOneShot(_audio, _sound_names[idx]);
+            }
             _fall_time = 0.0f;
         }
     }
