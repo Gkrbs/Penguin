@@ -11,8 +11,11 @@ public class CameraSetting : MonoBehaviour
     public Camera3D came3d;
     public Slider xAxisSlider;
     public Slider yAxisSlider;
+    
     public TMP_Text xAxisValue;
     public TMP_Text yAxisValue;
+
+    public GrapplingObj grapplingObj;
 
     [SerializeField] float defaultXAxis;
     [SerializeField] float defaultYAxis;
@@ -49,9 +52,17 @@ public class CameraSetting : MonoBehaviour
             came3d.pitchSpeed = defaultYAxis * value;
         PlayerPrefs.SetFloat("YSpeed", value);
     }
+    public void SetGrappleMode(bool isHolding)
+    {
+        if(grapplingObj !=null)
+            grapplingObj.ToHolding = isHolding;
+        PlayerPrefs.SetInt("GrappleMode", System.Convert.ToInt32(isHolding));
+    }
     private void LoadValue()
     {
         xAxisSlider.value = PlayerPrefs.GetFloat("XSpeed");
         yAxisSlider.value = PlayerPrefs.GetFloat("YSpeed");
+        if (grapplingObj != null)
+            grapplingObj.ToHolding = System.Convert.ToBoolean(PlayerPrefs.GetInt("GrappleMode"));
     }
 }
