@@ -59,6 +59,7 @@ public class GrapplingObj : MonoBehaviour
     public NormalMovement normalMovement;
     public CharacterActor characterActor;
 
+    public bool ToHolding = false;
     public float BULLET_DISTANCE
     {
         get { return Vector3.Distance(_fire_point.position, _bullet.gameObject.transform.position); }
@@ -215,12 +216,29 @@ public class GrapplingObj : MonoBehaviour
     }
     private void Update()
     {
-    
-        if (Input.GetMouseButtonDown(0))
+        if (!ToHolding)
         {
-            if (!_bullet.IS_SHOOT)
-                Shoot();
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (!_bullet.IS_SHOOT)
+                    Shoot();
+            }
         }
-  
+        else if (ToHolding)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                if (!_bullet.IS_SHOOT)
+                    Shoot();
+            }
+            else
+            {
+                if (GetComponentInParent<SpringJoint>() != null)
+                {
+                    _bullet.Stop();
+                    StopGrappling();
+                }
+            }
+        }
     }
 }
