@@ -23,7 +23,10 @@ namespace Lightbug.CharacterControllerPro.Demo
         protected float duration = 1f;
 
         protected bool _do_jetpack = false;
-
+        public bool DO_JETPACK
+        {
+            get { return _do_jetpack; }
+        }
         [SerializeField]
         protected int delayTime = 3000;
 

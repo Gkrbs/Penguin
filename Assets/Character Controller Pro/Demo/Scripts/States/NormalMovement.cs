@@ -93,7 +93,10 @@ namespace Lightbug.CharacterControllerPro.Demo
         public bool wallSelected = false;
         public int jetpackCount = 0;
         public int wallCount = 0;
-
+        public bool DO_JETPACK
+        {
+            get { return GetComponent<JetPackAlpha>().DO_JETPACK; }
+        }
         protected override void Awake()
         {
             base.Awake();
