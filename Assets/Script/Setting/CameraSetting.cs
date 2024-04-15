@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using Cinemachine;
 using Lightbug.CharacterControllerPro.Demo;
 
@@ -10,6 +11,8 @@ public class CameraSetting : MonoBehaviour
     public Camera3D came3d;
     public Slider xAxisSlider;
     public Slider yAxisSlider;
+    public TMP_Text xAxisValue;
+    public TMP_Text yAxisValue;
 
     [SerializeField] float defaultXAxis;
     [SerializeField] float defaultYAxis;
@@ -33,17 +36,17 @@ public class CameraSetting : MonoBehaviour
     public void SetXAxisSpeed()
     {
         float value = xAxisSlider.value;
+        xAxisValue.text = (Mathf.Floor(value * 100f) / 100f).ToString("F2");
         if (came3d != null)
             came3d.yawSpeed = defaultXAxis * value;
-        //cinemachineFreeLook.m_XAxis.m_MaxSpeed = defaultXAxis * value;
         PlayerPrefs.SetFloat("XSpeed", value);
     }
     public void SetYAxisSpeed()
     {
         float value = yAxisSlider.value;
+        yAxisValue.text = (Mathf.Floor(value * 100f) / 100f).ToString("F2");
         if (came3d != null)
             came3d.pitchSpeed = defaultYAxis * value;
-        //cinemachineFreeLook.m_YAxis.m_MaxSpeed = defaultYAxis * value;
         PlayerPrefs.SetFloat("YSpeed", value);
     }
     private void LoadValue()
