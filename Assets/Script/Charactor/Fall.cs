@@ -24,7 +24,7 @@ public class Fall : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("JumpGround"))
         {
-            _fall_time = -5.0f;
+            _fall_time = -2.0f;
         }
         else if (collision.gameObject.tag.Equals("StageGround"))
         {
