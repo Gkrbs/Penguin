@@ -174,12 +174,8 @@ public class GrapplingObj : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                if (GetComponentInParent<SpringJoint>() != null)
-                {
                     _bullet.Stop();
                     StopGrappling();
-
-                }
             }
         }
 
@@ -188,12 +184,11 @@ public class GrapplingObj : MonoBehaviour
     {
         if (!_bullet.IS_ACTIVE) return;
 
-        SpringJoint joint = transform.GetComponentInParent<SpringJoint>();
 
-        if (joint == null)
+        if (_joint == null)
             return;
 
-        if (joint.maxDistance < BULLET_DISTANCE && characterActor.IsGrounded)
+        if (_joint.maxDistance < BULLET_DISTANCE && characterActor.IsGrounded)
         {
             characterActor.alwaysNotGrounded = true;
             characterActor.stableLayerMask = 0;
@@ -206,23 +201,20 @@ public class GrapplingObj : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Q))
         {
-            joint.maxDistance -= Time.deltaTime * _anc_speed;
-            if (joint.maxDistance < _min_dist)
-                joint.maxDistance = _min_dist;
+            _joint.maxDistance -= Time.deltaTime * _anc_speed;
+            if (_joint.maxDistance < _min_dist)
+                _joint.maxDistance = _min_dist;
         }
         else if (Input.GetKey(KeyCode.E))
         {
-            joint.maxDistance += Time.deltaTime * _anc_speed;
-            if (joint.maxDistance > _max_dist)
-                joint.maxDistance = _max_dist;
+            _joint.maxDistance += Time.deltaTime * _anc_speed;
+            if (_joint.maxDistance > _max_dist)
+                _joint.maxDistance = _max_dist;
         }
         else if (Input.GetKeyDown(KeyCode.R))
         {
-            if (GetComponentInParent<SpringJoint>() != null)
-            {
                 _bullet.Stop();
                 StopGrappling();
-            }
         }
     }
     private void LateUpdate()
