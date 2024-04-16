@@ -45,11 +45,6 @@ public class Tongue : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        _rd = GetComponent<Rigidbody>();
-    }
-
     private void OnEnable()
     {
         default_valocity = _rd.velocity;
@@ -57,11 +52,12 @@ public class Tongue : MonoBehaviour
 
     public void Shoot(Transform tire_point, Vector3 dir, float force)
     {
+        if (_rd == null)
+            _rd = GetComponent<Rigidbody>();
         _is_shoot = true;
-        Rigidbody bullet_rd = GetComponent<Rigidbody>();
         transform.position = tire_point.position;
         transform.rotation = tire_point.rotation;
-        bullet_rd.velocity = dir * force;
+        _rd.velocity = dir * force;
         gameObject.SetActive(true);
         transform.parent = null;
     }
