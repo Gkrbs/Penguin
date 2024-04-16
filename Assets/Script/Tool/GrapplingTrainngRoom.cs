@@ -28,7 +28,7 @@ public class GrapplingTrainngRoom : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!triger.is_trigger) return;
-        if (other.gameObject.tag.Equals("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             triger.is_trigger = false;
             float currer_dist = Vector3.Distance(new Vector3(_start_pos.position.x,

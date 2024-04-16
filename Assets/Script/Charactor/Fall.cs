@@ -22,11 +22,11 @@ public class Fall : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag.Equals("JumpGround"))
+        if (collision.gameObject.CompareTag("JumpGround"))
         {
             _fall_time = -2.0f;
         }
-        else if (collision.gameObject.tag.Equals("StageGround"))
+        else if (collision.gameObject.CompareTag("StageGround"))
         {
             if (_fall_time >= 1.5f)
             {

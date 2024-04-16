@@ -9,7 +9,7 @@ public class GrapplingTrainingTriger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals(equals_tag))
+        if (other.gameObject.CompareTag(equals_tag))
             is_trigger = true;
     }
 }
