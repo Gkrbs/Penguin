@@ -20,11 +20,19 @@ public class SaveLoad : MonoBehaviour
         }
         if(PlayerPrefs.HasKey("autoSaveX"))
         {
-            GameManager.instance.autoSavePosition = new(PlayerPrefs.GetFloat("autoSaveX"),
+            GameManager.instance.autoSavePosition = new Vector3(PlayerPrefs.GetFloat("autoSaveX"),
                                                         PlayerPrefs.GetFloat("autoSaveY"),
                                                         PlayerPrefs.GetFloat("autoSaveZ"));
             LoadPosition(GameManager.instance.autoSavePosition);
         }
+        if (GameManager.instance.ezClear)
+        {
+            LoadPosition(GameManager.instance.defaultPos);
+            GameManager.instance.SavePosToDefault();
+            position = GameManager.instance.defaultPos;
+            GameManager.instance.ezClear = false;
+        }
+        position = GameManager.instance.autoSavePosition;
     }
     // Update is called once per frame
     void Update()

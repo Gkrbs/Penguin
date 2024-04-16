@@ -18,6 +18,7 @@ public class EndPoint : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             GameManager.instance?.SelectLevel(GameManager.LEVELS.NONE);
+            GameManager.instance?.SavePosToDefault();
             Timer.instance?.StopTimer();
             if (_fadeout_panel != null)
             {

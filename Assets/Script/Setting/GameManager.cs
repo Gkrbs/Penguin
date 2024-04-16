@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public Vector3 defaultPos = new Vector3(-7.7f, -5.56f, -4.36f);
     public Vector3 autoSavePosition;
+    public bool ezClear = false;
     public enum LEVELS
     {
         NONE,
@@ -28,10 +30,19 @@ public class GameManager : MonoBehaviour
         }
         else
             Destroy(gameObject);
+        autoSavePosition = defaultPos;
     }
 
     public void SelectLevel(LEVELS level)
     {
         _selected_level = level;
+    }
+    public void SavePosToDefault()
+    {
+        autoSavePosition = defaultPos;
+        ezClear = true;
+        PlayerPrefs.SetFloat("autoSaveX", defaultPos.x);
+        PlayerPrefs.SetFloat("autoSaveY", defaultPos.y);
+        PlayerPrefs.SetFloat("autoSaveZ", defaultPos.z);
     }
 }
