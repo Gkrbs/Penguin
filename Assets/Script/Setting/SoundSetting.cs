@@ -12,11 +12,13 @@ public class SoundSetting : MonoBehaviour
     public Slider BackgroundSlider;
     public Slider EffectSlider;
     public Slider CharacterSlider;
+    public Slider VoiceSlider;
 
     public TMP_Text masterValue;
     public TMP_Text BackgroundValue;
     public TMP_Text EffectValue;
     public TMP_Text CharacterValue;
+    public TMP_Text VoiceValue;
     private void Start()
     {
         if (PlayerPrefs.HasKey("masterVolume"))
@@ -61,15 +63,24 @@ public class SoundSetting : MonoBehaviour
         CharacterValue.text = (volume * 100).ToString("F0");
         PlayerPrefs.SetFloat("CharacterVolume", volume);
     }
+    public void SetVoice()
+    {
+        float volume = VoiceSlider.value;
+        audioMixer.SetFloat("Voice", Mathf.Log10(volume) * 20);
+        VoiceValue.text = (volume * 100).ToString("F0");
+        PlayerPrefs.SetFloat("VoiceVolume", volume);
+    }
     private void LoadVolume()
     {
         masterSlider.value = PlayerPrefs.GetFloat("masterVolume");
         BackgroundSlider.value = PlayerPrefs.GetFloat("BackgroundVolume");
         EffectSlider.value = PlayerPrefs.GetFloat("EffectVolume");
         CharacterSlider.value = PlayerPrefs.GetFloat("CharacterVolume");
+        VoiceSlider.value = PlayerPrefs.GetFloat("VoiceVolume");
         SetMaster();
         SetBackground();
         SetEffect();
         SetCharacter();
+        SetVoice();
     }
 }

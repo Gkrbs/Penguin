@@ -19,6 +19,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-6244982381931382523
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 927c6ccdbee3e4f4bb7e54b79df3f455
+  m_EffectName: Attenuation
+  m_MixLevel: 0c35eb38c44bb4942b7a27b7ad1949cb
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-4920889662911820503
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -95,12 +109,15 @@ AudioMixerController:
     name: Effect
   - guid: e39c9f9d01a4b954cb07a24ab83ee7e1
     name: Master
+  - guid: 2e2e613f3c5efbe42b163178abe57958
+    name: Voice
   m_AudioMixerGroupViews:
   - guids:
     - 220267b7eb9bef941ad6078ad5a27431
     - c2291aa6dc13e57439a354e497bee082
     - e2cd7c7e334395f45b2a0ca9302ef009
     - 587025df5d3ba304a9db37f2d67f56d7
+    - 81dee9d9f623bae43b04ac9bb0aa4d6f
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -117,6 +134,7 @@ AudioMixerGroupController:
   - {fileID: -1988319926176824120}
   - {fileID: -6873481623704947865}
   - {fileID: -4920889662911820503}
+  - {fileID: 5765997482252656215}
   m_Volume: e39c9f9d01a4b954cb07a24ab83ee7e1
   m_Pitch: 3cbecc3a748905440a2f87b11f56fcf9
   m_Send: 00000000000000000000000000000000
@@ -154,6 +172,7 @@ AudioMixerSnapshotController:
     c5e95e04b3a8ab4448391acb3a138848: -5.7224774
     838380790f47ff542b0aaedb1fa7f9ea: -3.5090396
     e39c9f9d01a4b954cb07a24ab83ee7e1: -0.27209902
+    2e2e613f3c5efbe42b163178abe57958: -0.8840523
   m_TransitionOverrides: {}
 --- !u!244 &18619709581791597
 AudioMixerEffectController:
@@ -183,3 +202,22 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &5765997482252656215
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Voice
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 81dee9d9f623bae43b04ac9bb0aa4d6f
+  m_Children: []
+  m_Volume: 2e2e613f3c5efbe42b163178abe57958
+  m_Pitch: 9cb9a67caa6ce724c84f06b21ddbcc5f
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -6244982381931382523}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
