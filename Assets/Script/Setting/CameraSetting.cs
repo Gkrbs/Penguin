@@ -55,7 +55,7 @@ public class CameraSetting : MonoBehaviour
     public void SetGrappleMode(bool isHolding)
     {
         if(grapplingObj !=null)
-            grapplingObj.ToHolding = isHolding;
+            grapplingObj.IS_HOLDING = isHolding;
         PlayerPrefs.SetInt("GrappleMode", System.Convert.ToInt32(isHolding));
     }
     private void LoadValue()
@@ -63,6 +63,6 @@ public class CameraSetting : MonoBehaviour
         xAxisSlider.value = PlayerPrefs.GetFloat("XSpeed");
         yAxisSlider.value = PlayerPrefs.GetFloat("YSpeed");
         if (grapplingObj != null)
-            grapplingObj.ToHolding = System.Convert.ToBoolean(PlayerPrefs.GetInt("GrappleMode"));
+            grapplingObj.IS_HOLDING = System.Convert.ToBoolean(PlayerPrefs.GetInt("GrappleMode"));
     }
 }

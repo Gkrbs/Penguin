@@ -26,7 +26,7 @@ public class GrapplingObj : MonoBehaviour
     private float _mass_scale = 7f;
     [SerializeField]
     private float _jump_force = 800f;
-    
+
     [Header("Shoot")]
     [SerializeField]
     private int _cool_time = 500;
@@ -59,7 +59,12 @@ public class GrapplingObj : MonoBehaviour
     public NormalMovement normalMovement;
     public CharacterActor characterActor;
 
-    public bool ToHolding = false;
+    private bool _is_holding = false;
+    public bool IS_HOLDING
+    {
+        set { _is_holding = value; }
+    }
+
     public float BULLET_DISTANCE
     {
         get { return Vector3.Distance(_fire_point.position, _bullet.gameObject.transform.position); }
@@ -78,7 +83,7 @@ public class GrapplingObj : MonoBehaviour
         float cam_dist = Vector3.Distance(_cam_tr.position, AimObject.instanse.AIM);
         if (Physics.Raycast(_cam_tr.position, _cam_tr.forward, out hit, cam_dist, _target_layer))
         {
-              dir = (hit.point - _fire_point.position).normalized;
+            dir = (hit.point - _fire_point.position).normalized;
         }
         else
         {
@@ -154,18 +159,30 @@ public class GrapplingObj : MonoBehaviour
         if (UIManager.instance != null && UIManager.instance.OPEN_MENU)
             return;
 
-        if (!_bullet.IS_ACTIVE) return;
-
-
-        if (Input.GetMouseButtonDown(0))
+        if (_is_holding)
         {
-            if (GetComponentInParent<SpringJoint>() != null)
+            if (Input.GetMouseButtonUp(0))
             {
                 _bullet.Stop();
                 StopGrappling();
 
             }
         }
+        else
+        {
+            if (!_bullet.IS_ACTIVE) return;
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (GetComponentInParent<SpringJoint>() != null)
+                {
+                    _bullet.Stop();
+                    StopGrappling();
+
+                }
+            }
+        }
+
     }
     public void GrapplingControl()
     {
@@ -216,29 +233,10 @@ public class GrapplingObj : MonoBehaviour
     }
     private void Update()
     {
-        if (!ToHolding)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (!_bullet.IS_SHOOT)
-                    Shoot();
-            }
-        }
-        else if (ToHolding)
-        {
-            if (Input.GetMouseButton(0))
-            {
-                if (!_bullet.IS_SHOOT)
-                    Shoot();
-            }
-            else
-            {
-                if (GetComponentInParent<SpringJoint>() != null)
-                {
-                    _bullet.Stop();
-                    StopGrappling();
-                }
-            }
+            if (!_bullet.IS_SHOOT)
+                Shoot();
         }
     }
 }
