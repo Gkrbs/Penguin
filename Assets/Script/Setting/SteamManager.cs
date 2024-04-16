@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Steamworks;
 public class SteamManager : MonoBehaviour
 {
     public uint appId;
 
     public static SteamManager instance;
+    private void OnDisable()
+    {
+        SteamClient.Shutdown();
+    }
     void Awake()
     {
         if (instance == null)
@@ -18,19 +22,22 @@ public class SteamManager : MonoBehaviour
             Destroy(gameObject);
         try
         {
-            Steamworks.SteamClient.Init(appId, true);// steam is running
+            SteamClient.Init(appId, true);// steam is running
         }
         catch(System.Exception e)
         {
             Debug.Log(e.Message);
         }
     }
-
+    private void Update()
+    {
+        //SteamUserStats.GetAchievements(true);
+    }
     private void OnApplicationQuit()
     {
         try
         {
-            Steamworks.SteamClient.Shutdown();
+            SteamClient.Shutdown();
         }
         catch
         {
