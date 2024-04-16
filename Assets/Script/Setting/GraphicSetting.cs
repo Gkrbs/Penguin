@@ -54,7 +54,7 @@ public class GraphicSetting : MonoBehaviour
             Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
             RefreshSetting();
         }
-
+        Application.targetFrameRate = 120;
     }
     public void RefreshSetting()
     {
@@ -65,8 +65,10 @@ public class GraphicSetting : MonoBehaviour
     {
         Resolution resolution = res[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Application.targetFrameRate = 120;
         RefreshSetting();
         PlayerPrefs.SetInt("Resolution", resolutionIndex);
+
     }
     // 그래픽 설정 low standard high 기본 유니티 제공
     public void SetQuality(int qualityIndex)
