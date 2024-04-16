@@ -7,10 +7,10 @@ public class SteamManager : MonoBehaviour
     public uint appId;
 
     public static SteamManager instance;
-    private void OnDisable()
-    {
-        SteamClient.Shutdown();
-    }
+    //private void OnDisable()
+    //{
+    //    SteamClient.Shutdown();
+    //}
     void Awake()
     {
         if (instance == null)
