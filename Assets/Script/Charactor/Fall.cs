@@ -37,7 +37,9 @@ public class Fall : MonoBehaviour
             }
             _fall_time = 0.0f;
         }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Ground")||
+            collision.gameObject.layer == LayerMask.NameToLayer("DynamicGround") ||
+            collision.gameObject.layer == LayerMask.NameToLayer("Can Hook Ground"))
         {
             if (_fall_time >= 2.0f)
             {
