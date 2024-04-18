@@ -847,6 +847,21 @@ PrefabInstance:
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
       value: 0.41500753
       objectReference: {fileID: 0}
+    - target: {fileID: 3327442267513730116, guid: 729c104ab0f558b4ba04ead9bad04f8f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -161.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327442267513730116, guid: 729c104ab0f558b4ba04ead9bad04f8f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 45.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327442267513730116, guid: 729c104ab0f558b4ba04ead9bad04f8f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.232
+      objectReference: {fileID: 0}
     - target: {fileID: 3355130456643920333, guid: 729c104ab0f558b4ba04ead9bad04f8f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -902,10 +917,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 996779733616067901, guid: 729c104ab0f558b4ba04ead9bad04f8f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3787287704418613953, guid: 729c104ab0f558b4ba04ead9bad04f8f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 967486919}
   m_SourcePrefab: {fileID: 100100000, guid: 729c104ab0f558b4ba04ead9bad04f8f, type: 3}
 --- !u!225 &426955915 stripped
 CanvasGroup:
@@ -1898,6 +1918,133 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &967486914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3787287704418613953, guid: 729c104ab0f558b4ba04ead9bad04f8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 423041002}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &967486919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967486914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baeca6f82cd801f4a80f106d5ca41d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawHandles: 1
+  move: 1
+  rotate: 0
+  actionsList:
+  - position: {x: 0, y: 0, z: 0}
+    eulerAngles: {x: 0, y: 0, z: 0}
+    movementCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    rotationCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    targetTime: 1
+  - position: {x: -12, y: 0, z: 0}
+    eulerAngles: {x: 0, y: 0, z: 0}
+    movementCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    rotationCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    targetTime: 1
+  sequenceType: 1
+  positiveSequenceDirection: 1
+  globalSpeedModifier: 0.6
 --- !u!1 &970196279
 GameObject:
   m_ObjectHideFlags: 0
