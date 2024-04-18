@@ -44,7 +44,7 @@ public class Fall : MonoBehaviour
             if (_fall_time >= 2.0f)
             {
                 int idx = (int)_fall_time - 2;
-                if (idx > _sound_names.Length)
+                if (idx >= _sound_names.Length)
                     idx = _sound_names.Length - 1;
                 SoundManager.instance.PlayOneShot(_audio, _sound_names[idx]);
             }
@@ -58,6 +58,7 @@ public class Fall : MonoBehaviour
         {
             _fall_time = 0.0f;
         }
+
         if (!_actor.IsGrounded && !_nm.verticalMovementParameters.isGrappled && !_nm.DO_JETPACK)
         { 
             _fall_time += Time.deltaTime;
