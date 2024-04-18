@@ -31,6 +31,7 @@ public class SaveLoad : MonoBehaviour
             GameManager.instance.SavePosToDefault();
             position = GameManager.instance.defaultPos;
             GameManager.instance.ezClear = false;
+            PlayerPrefs.SetInt("ezClear", 0);
         }
         position = GameManager.instance.autoSavePosition;
     }

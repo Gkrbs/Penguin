@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
         autoSavePosition = defaultPos;
+        ezClear = System.Convert.ToBoolean(PlayerPrefs.GetInt("ezClear"));
     }
 
     public void SelectLevel(LEVELS level)
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         autoSavePosition = defaultPos;
         ezClear = true;
+        PlayerPrefs.SetInt("ezClear", 1);
         PlayerPrefs.SetFloat("autoSaveX", defaultPos.x);
         PlayerPrefs.SetFloat("autoSaveY", defaultPos.y);
         PlayerPrefs.SetFloat("autoSaveZ", defaultPos.z);
