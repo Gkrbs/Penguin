@@ -31,6 +31,7 @@ public class SteamManager : MonoBehaviour
     }
     private void Update()
     {
+        
         //SteamUserStats.GetAchievements(true);
     }
     private void OnApplicationQuit()
@@ -41,7 +42,25 @@ public class SteamManager : MonoBehaviour
         }
         catch
         {
-
+            
         }
+    }
+
+    public bool isThisAchievementUnlocked(string id)
+    {
+        var ach = new Steamworks.Data.Achievement(id);
+        return ach.State;
+    }
+
+    public void UnlockedAchievement(string id)
+    { 
+        var ach = new Steamworks.Data.Achievement(id);
+        ach.Trigger();
+    }
+
+    public void ClearAchievementStatus(string id)
+    { 
+        var ach = new Steamworks.Data.Achievement(id);
+        ach.Clear();
     }
 }
