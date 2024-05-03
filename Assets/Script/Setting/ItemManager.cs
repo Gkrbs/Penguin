@@ -21,7 +21,6 @@ public class ItemManager : MonoBehaviour
         {
             AchievePoint ac = item.GetComponent<AchievePoint>();
             if (ac == null) continue;
-            print(ac.id.ToString());
             if (SteamManager.instance.achieve.isThisAchievementUnlocked((int)ac.id))
                 item.SetActive(false);
         }
