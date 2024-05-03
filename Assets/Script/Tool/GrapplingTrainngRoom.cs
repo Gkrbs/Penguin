@@ -16,13 +16,23 @@ public class GrapplingTrainngRoom : MonoBehaviour
     private Transform _end_pos;
     [SerializeField]
     private GrapplingTrainingTriger triger;
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
-        _max_dist = Vector3.Distance(_end_pos.position, _start_pos.position); 
+        _max_dist = Vector3.Distance(_end_pos.position, _start_pos.position);
         _point_text.text = "0 POINT";
+    }
+    private void set_achievements()
+    {
+        if (GameManager.instance == null || SteamManager.instance == null) return;
+
+
+        if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.GRAPPLING_TRAINING_MAX_POINT))
+        {
+            SteamManager.instance.achieve.UnlockedAchievement((int)AchievementManager.IDS.GRAPPLING_TRAINING_MAX_POINT);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,7 +44,12 @@ public class GrapplingTrainngRoom : MonoBehaviour
             float currer_dist = Vector3.Distance(new Vector3(_start_pos.position.x,
                 _start_pos.position.y,
                 other.transform.position.z), _start_pos.position);
-            _point_text.text = ((int)( currer_dist/ _max_dist*100f)).ToString() + " POINT";
+            int point = ((int)(currer_dist / _max_dist * 100f));
+            _point_text.text = point.ToString() + " POINT";
+            if (point >= 121)
+            {
+                set_achievements();
+            }
             position_init(other.gameObject);
         }
     }

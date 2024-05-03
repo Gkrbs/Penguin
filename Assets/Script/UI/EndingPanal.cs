@@ -41,13 +41,28 @@ public class EndingPanal : MonoBehaviour
             _audio.Play();
         }
     }
+    private void set_achievements()
+    {
+        if (GameManager.instance == null || SteamManager.instance == null) return;
 
+        if (GameManager.instance.SELECTED_LEVEL == GameManager.LEVELS.NORMAL)
+        {
+            if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TIME_ATTACK))
+            {
+                SteamManager.instance.achieve.UnlockedAchievement((int)AchievementManager.IDS.TIME_ATTACK);
+            }
+        }
+    }
     private void credit_end()
     {
         _credit_text_obj.gameObject.SetActive(false);
         _end_credit = true;
         if (Timer.instance != null)
+        { 
             _play_time_text.text = "PLAY TIME : " + Timer.instance.PLAY_TIME;
+            if (Timer.instance.F_PLAY_TIME <= SteamManager.instance.achieve.time_attack_limit_time)
+                set_achievements();
+        }
         _ending_text_obj.SetActive(true);
     }
     // Update is called once per frame

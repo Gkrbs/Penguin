@@ -20,6 +20,17 @@ public class Fall : MonoBehaviour
     {
         _rd = GetComponent<Rigidbody>();
     }
+    private void set_achievements()
+    {
+        if (GameManager.instance == null || SteamManager.instance == null) return;
+
+
+        if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.LONGEST_DROP_TIME))
+        {
+            SteamManager.instance.achieve.UnlockedAchievement((int)AchievementManager.IDS.LONGEST_DROP_TIME);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("JumpGround"))
@@ -34,6 +45,8 @@ public class Fall : MonoBehaviour
                 if (idx > _sound_names.Length)
                     idx = _sound_names.Length - 1;
                 SoundManager.instance.PlayOneShot(_audio, _sound_names[idx]);
+                if (_fall_time >= SteamManager.instance.achieve.longest_drop_time)
+                    set_achievements();
             }
             _fall_time = 0.0f;
         }
@@ -47,6 +60,8 @@ public class Fall : MonoBehaviour
                 if (idx >= _sound_names.Length)
                     idx = _sound_names.Length - 1;
                 SoundManager.instance.PlayOneShot(_audio, _sound_names[idx]);
+                if (_fall_time >= SteamManager.instance.achieve.longest_drop_time)
+                    set_achievements();
             }
             _fall_time = 0.0f;
         }

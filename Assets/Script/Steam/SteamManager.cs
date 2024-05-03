@@ -4,36 +4,50 @@ using UnityEngine;
 using Steamworks;
 public class SteamManager : MonoBehaviour
 {
+    private bool _is_init = false;
     public uint appId;
-
+    public AchievementManager achieve;
     public static SteamManager instance;
-    //private void OnDisable()
-    //{
-    //    SteamClient.Shutdown();
-    //}
+
+    public bool IS_INIT
+    {
+        get { return _is_init; }
+    }
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            achieve = GetComponent<AchievementManager>();
             DontDestroyOnLoad(gameObject);
         }
         else
             Destroy(gameObject);
         try
         {
-            SteamClient.Init(appId, true);// steam is running
+
+            // steam is running
+            SteamClient.Init(appId, true);
+            _is_init = true;
         }
-        catch(System.Exception e)
+        catch (System.Exception e)
         {
             Debug.Log(e.Message);
+            _is_init = false;
         }
     }
     private void Update()
     {
-        
-        //SteamUserStats.GetAchievements(true);
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        { 
+        }
+
     }
+    
     private void OnApplicationQuit()
     {
         try
@@ -42,25 +56,8 @@ public class SteamManager : MonoBehaviour
         }
         catch
         {
-            
+
         }
     }
 
-    public bool isThisAchievementUnlocked(string id)
-    {
-        var ach = new Steamworks.Data.Achievement(id);
-        return ach.State;
-    }
-
-    public void UnlockedAchievement(string id)
-    { 
-        var ach = new Steamworks.Data.Achievement(id);
-        ach.Trigger();
-    }
-
-    public void ClearAchievementStatus(string id)
-    { 
-        var ach = new Steamworks.Data.Achievement(id);
-        ach.Clear();
-    }
 }

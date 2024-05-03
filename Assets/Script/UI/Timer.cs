@@ -8,6 +8,10 @@ public class Timer : MonoBehaviour
 
     private bool _start_timer = false;
     private float _time_sec = 0.0f;
+    public float F_PLAY_TIME
+    {
+        get { return _time_sec; }
+    }
     public string PLAY_TIME
     {
         get
