@@ -1,3 +1,4 @@
+using Steamworks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,6 +48,7 @@ public class AchievementManager : MonoBehaviour
     public float time_attack_limit_time = 7200f;
     public float longest_drop_time = 4f;
     public string[] arc_id;
+    public string[] stat_id;
     public bool isThisAchievementUnlocked(int id)
     {
         if (!SteamManager.instance.IS_INIT)
@@ -54,7 +56,15 @@ public class AchievementManager : MonoBehaviour
         var ach = new Steamworks.Data.Achievement(arc_id[id]);
         return ach.State;
     }
-
+    public bool AchievementCount(int id)
+    {
+        if (!SteamManager.instance.IS_INIT)
+            return false;
+        int current_cnt = SteamUserStats.GetStatInt(stat_id[id]) + 1;
+        bool res = SteamUserStats.SetStat(stat_id[id], current_cnt);
+        SteamUserStats.StoreStats();
+        return res;
+    }
     public void UnlockedAchievement(int id)
     {
         if (!SteamManager.instance.IS_INIT)

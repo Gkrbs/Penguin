@@ -72,6 +72,9 @@ public class Tongue : MonoBehaviour
             transform.position = hit.point;
             _is_active = true;
             StartGrapplingEvent(_hit_point);
+            //도전과제
+            if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_GRAPPLING_COUNT))
+                SteamManager.instance.achieve.AchievementCount((int)AchievementManager.IDS.TOTAL_GRAPPLING_COUNT);
             return;
         }
 

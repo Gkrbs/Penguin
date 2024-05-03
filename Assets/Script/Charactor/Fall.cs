@@ -16,9 +16,28 @@ public class Fall : MonoBehaviour
     [SerializeField]
     private AudioSource _audio;
     private Rigidbody _rd;
+
+    private void jump_event()
+    {
+        if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_JUMP_COUNT))
+            SteamManager.instance.achieve.AchievementCount((int)AchievementManager.IDS.TOTAL_JUMP_COUNT);
+    }
+    private void jetpack_event()
+    {
+        if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_JECTPACK_COUNT))
+            SteamManager.instance.achieve.AchievementCount((int)AchievementManager.IDS.TOTAL_JECTPACK_COUNT);
+    }
+    private void create_wall_event()
+    {
+        if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_CREATE_WALL_COUNT))
+            SteamManager.instance.achieve.AchievementCount((int)AchievementManager.IDS.TOTAL_CREATE_WALL_COUNT);
+    }
     private void Start()
     {
         _rd = GetComponent<Rigidbody>();
+        _nm.JumpEvent += jump_event;
+        _nm.JetpackEvent += jetpack_event;
+        _nm.CreateWallEvent += create_wall_event;
     }
     private void set_achievements()
     {
@@ -47,6 +66,10 @@ public class Fall : MonoBehaviour
                 SoundManager.instance.PlayOneShot(_audio, _sound_names[idx]);
                 if (_fall_time >= SteamManager.instance.achieve.longest_drop_time)
                     set_achievements();
+                //도전과제
+                if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_ACTIVE_VOICE_COUNT))
+                    SteamManager.instance.achieve.AchievementCount((int)AchievementManager.IDS.TOTAL_ACTIVE_VOICE_COUNT);
+
             }
             _fall_time = 0.0f;
         }
@@ -62,6 +85,9 @@ public class Fall : MonoBehaviour
                 SoundManager.instance.PlayOneShot(_audio, _sound_names[idx]);
                 if (_fall_time >= SteamManager.instance.achieve.longest_drop_time)
                     set_achievements();
+                //도전과제
+                if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_ACTIVE_VOICE_COUNT))
+                    SteamManager.instance.achieve.AchievementCount((int)AchievementManager.IDS.TOTAL_ACTIVE_VOICE_COUNT);
             }
             _fall_time = 0.0f;
         }

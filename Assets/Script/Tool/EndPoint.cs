@@ -32,6 +32,11 @@ public class EndPoint : MonoBehaviour
                 SteamManager.instance.achieve.UnlockedAchievement((int)AchievementManager.IDS.CLEAR_NORMAL_MODE);
             }
         }
+
+        if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_CLEARCOUNT))
+        {
+            SteamManager.instance.achieve.AchievementCount((int)AchievementManager.IDS.TOTAL_CLEARCOUNT);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

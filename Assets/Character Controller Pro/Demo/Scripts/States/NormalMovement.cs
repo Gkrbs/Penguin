@@ -93,6 +93,12 @@ namespace Lightbug.CharacterControllerPro.Demo
         public bool wallSelected = false;
         public int jetpackCount = 0;
         public int wallCount = 0;
+
+        public delegate void AchieveDelegate();
+        public event AchieveDelegate JumpEvent;
+        public event AchieveDelegate JetpackEvent;
+        public event AchieveDelegate CreateWallEvent;
+        
         public bool DO_JETPACK
         {
             get { return GetComponent<JetPackAlpha>().DO_JETPACK; }
@@ -167,11 +173,13 @@ namespace Lightbug.CharacterControllerPro.Demo
                     CharacterStateController.Animator.SetFloat(horizontalAxisParameter, 0);
                     CharacterStateController.Animator.SetFloat(verticalAxisParameter, 0);
                     jetpackCount = 0;
+                    JetpackEvent();
                 }
                 else if (wallCount >= 1 && wallSelected)
                 {
                     CharacterStateController.EnqueueTransition<CreateWall>();
                     wallCount = 0;
+                    CreateWallEvent();
                 }
             }
             else if (CharacterActions.dash.Started)
@@ -627,8 +635,9 @@ namespace Lightbug.CharacterControllerPro.Demo
                 switch (jumpResult)
                 {
                     case JumpResult.Grounded:
+                        //점프 카운트 넣을 곳
                         groundedJumpAvailable = false;
-
+                        JumpEvent();
                         break;
                     case JumpResult.NotGrounded:
                         notGroundedJumpsLeft--;

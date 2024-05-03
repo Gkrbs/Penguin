@@ -45,11 +45,15 @@ public class SaveLoad : MonoBehaviour
         {
             anim.SetTrigger("Save");
             position = player.transform.position;
+            if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_SAVE_COUNT))
+                SteamManager.instance.achieve.AchievementCount((int)AchievementManager.IDS.TOTAL_SAVE_COUNT);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             LoadPosition(position);
+            if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_LOAD_COUNT))
+                SteamManager.instance.achieve.AchievementCount((int)AchievementManager.IDS.TOTAL_LOAD_COUNT);
         }
     }
     void LoadPosition(Vector3 position)
