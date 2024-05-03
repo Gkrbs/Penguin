@@ -36,18 +36,18 @@ public class SteamManager : MonoBehaviour
             _is_init = false;
         }
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.A))
+    //    {
 
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        { 
-        }
+    //    }
+    //    else if (Input.GetKeyDown(KeyCode.S))
+    //    { 
+    //    }
 
-    }
-    
+    //}
+
     private void OnApplicationQuit()
     {
         try
