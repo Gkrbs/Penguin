@@ -12,8 +12,8 @@ public class AchievementManager : MonoBehaviour
     타임어택                4
     그래플링연습장 121점    5
     떨어진 최대 시간        6
-    3스테이로
-    2스테이지로
+    3스테이로               7
+    2스테이지로             8
     점프 횟수
     그래플 횟수
     제트팩 사용 횟수
