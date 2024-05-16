@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AchievementManager : MonoBehaviour
+public class AchievementManagerTest : MonoBehaviour
 {
     /*
     이지 입장               0
@@ -51,14 +51,14 @@ public class AchievementManager : MonoBehaviour
     public string[] stat_id;
     public bool isThisAchievementUnlocked(int id)
     {
-        if (!SteamManager.instance.IS_INIT)
+        if (!SteamManagerTest.instance.IS_INIT)
             return false;
         var ach = new Steamworks.Data.Achievement(arc_id[id]);
         return ach.State;
     }
     public bool AchievementCount(int id)
     {
-        if (!SteamManager.instance.IS_INIT)
+        if (!SteamManagerTest.instance.IS_INIT)
             return false;
         int current_cnt = SteamUserStats.GetStatInt(stat_id[id]) + 1;
         bool res = SteamUserStats.SetStat(stat_id[id], current_cnt);
@@ -67,7 +67,7 @@ public class AchievementManager : MonoBehaviour
     }
     public void UnlockedAchievement(int id)
     {
-        if (!SteamManager.instance.IS_INIT)
+        if (!SteamManagerTest.instance.IS_INIT)
             return;
         var ach = new Steamworks.Data.Achievement(arc_id[id]);
         ach.Trigger();
@@ -75,7 +75,7 @@ public class AchievementManager : MonoBehaviour
 
     public void ClearAchievementStatus(int id)
     {
-        if (!SteamManager.instance.IS_INIT)
+        if (!SteamManagerTest.instance.IS_INIT)
             return;
         var ach = new Steamworks.Data.Achievement(arc_id[id]);
         ach.Clear();
@@ -83,14 +83,14 @@ public class AchievementManager : MonoBehaviour
 
     public bool isThisAchievementUnlocked(string id)
     {
-        if (!SteamManager.instance.IS_INIT)
+        if (!SteamManagerTest.instance.IS_INIT)
             return false;
         var ach = new Steamworks.Data.Achievement(id);
         return ach.State;
     }
     public bool AchievementCount(string id)
     {
-        if (!SteamManager.instance.IS_INIT)
+        if (!SteamManagerTest.instance.IS_INIT)
             return false;
         int current_cnt = SteamUserStats.GetStatInt(id) + 1;
         bool res = SteamUserStats.SetStat(id, current_cnt);
@@ -99,7 +99,7 @@ public class AchievementManager : MonoBehaviour
     }
     public void UnlockedAchievement(string id)
     {
-        if (!SteamManager.instance.IS_INIT)
+        if (!SteamManagerTest.instance.IS_INIT)
             return;
         var ach = new Steamworks.Data.Achievement(id);
         ach.Trigger();
@@ -107,7 +107,7 @@ public class AchievementManager : MonoBehaviour
 
     public void ClearAchievementStatus(string id)
     {
-        if (!SteamManager.instance.IS_INIT)
+        if (!SteamManagerTest.instance.IS_INIT)
             return;
         var ach = new Steamworks.Data.Achievement(id);
         ach.Clear();
