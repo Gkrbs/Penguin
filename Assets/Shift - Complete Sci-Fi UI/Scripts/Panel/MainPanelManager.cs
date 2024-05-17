@@ -189,5 +189,11 @@ namespace Michsky.UI.Shift
                 panels[i].panelObject.gameObject.SetActive(false);
             }
         }
+
+        public void OnResetButtonClicked()
+        {
+            if (GameManager.instance == null) return;
+            GameManager.instance.SavePosToDefault();
+        }
     }
 }
