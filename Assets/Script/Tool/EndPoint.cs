@@ -46,9 +46,9 @@ public class EndPoint : MonoBehaviour
             GameManager.instance?.SelectLevel(GameManager.LEVELS.NONE);
             GameManager.instance?.SavePosToDefault();
             Timer.instance?.StopTimer();
+            set_achievements();
             if (_fadeout_panel != null)
             {
-                set_achievements();
                 _fadeout_panel?.SetActive(true);
                 _fadeout_ani ??= _fadeout_panel.GetComponent<Animation>();
                 _fadeout_ani?.Play();
