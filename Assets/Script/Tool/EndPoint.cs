@@ -43,10 +43,10 @@ public class EndPoint : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            set_achievements();
             GameManager.instance?.SelectLevel(GameManager.LEVELS.NONE);
             GameManager.instance?.SavePosToDefault();
             Timer.instance?.StopTimer();
-            set_achievements();
             if (_fadeout_panel != null)
             {
                 _fadeout_panel?.SetActive(true);
