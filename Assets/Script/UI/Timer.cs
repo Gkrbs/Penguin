@@ -47,6 +47,10 @@ public class Timer : MonoBehaviour
         _start_timer = false;
     }
 
+    public void SetTimerStartTime(float time)
+    {
+        _time_sec += time;
+    }
     public void ResetTimer()
     {
         _time_sec = 0.0f;
