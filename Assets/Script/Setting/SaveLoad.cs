@@ -72,5 +72,9 @@ public class SaveLoad : MonoBehaviour
             PlayerPrefs.SetFloat("autoSaveY", player.transform.position.y);
             PlayerPrefs.SetFloat("autoSaveZ", player.transform.position.z);
         }
+        if (Timer.instance != null&& Timer.instance.DO_TIMER)
+        {
+            PlayerPrefs.SetFloat("ezExitTime", Timer.instance.F_PLAY_TIME);
+        }
     }
 }

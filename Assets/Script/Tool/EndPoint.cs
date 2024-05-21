@@ -8,11 +8,6 @@ public class EndPoint : MonoBehaviour
 
     [SerializeField]
     private string SceneName = "";
-    [SerializeField]
-    private GameObject _fadeout_panel;
-
-    private Animation _fadeout_ani;
-
 
     private void set_achievements()
     {
@@ -44,15 +39,14 @@ public class EndPoint : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             set_achievements();
-            GameManager.instance?.SelectLevel(GameManager.LEVELS.NONE);
-            GameManager.instance?.SavePosToDefault();
-            Timer.instance?.StopTimer();
-            if (_fadeout_panel != null)
+            if (Timer.instance != null)
+                Timer.instance?.StopTimer();
+            if (GameManager.instance != null)
             {
-                _fadeout_panel?.SetActive(true);
-                _fadeout_ani ??= _fadeout_panel.GetComponent<Animation>();
-                _fadeout_ani?.Play();
+                GameManager.instance?.SelectLevel(GameManager.LEVELS.NONE);
+                GameManager.instance?.SavePosToDefault();
             }
+
             _collision_player = true;
         }
     }
@@ -61,14 +55,7 @@ public class EndPoint : MonoBehaviour
     {
         if (_collision_player)
         {
-            if (_fadeout_ani != null && !_fadeout_ani.isPlaying)
-            {
-                bl_SceneLoaderManager.LoadScene(SceneName);
-            }
-            if (_fadeout_ani == null)
-            {
-                bl_SceneLoaderManager.LoadScene(SceneName);
-            }
+            bl_SceneLoaderManager.LoadScene(SceneName);
         }
     }
 }

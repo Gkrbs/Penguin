@@ -22,6 +22,11 @@ public class Timer : MonoBehaviour
             return time;
         }
     }
+    public bool DO_TIMER
+    {
+        get { return _start_timer; }
+    }
+
     private void Awake()
     {
         if (instance == null)
