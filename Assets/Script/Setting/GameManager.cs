@@ -47,13 +47,4 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat("autoSaveY", defaultPos.y);
         PlayerPrefs.SetFloat("autoSaveZ", defaultPos.z);
     }
-
-    public void SaveEasyModeExitTime(float time)
-    {
-        PlayerPrefs.SetFloat("ezExitTime",time);
-    }
-    public float LoadEasyModeExitTime()
-    { 
-        return PlayerPrefs.GetFloat("ezExitTime");
-    }
 }
