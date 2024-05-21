@@ -44,8 +44,15 @@ public class EndPoint : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             set_achievements();
-            GameManager.instance?.SelectLevel(GameManager.LEVELS.NONE);
-            GameManager.instance?.SavePosToDefault();
+            if (GameManager.instance != null)
+            {
+                if (GameManager.instance.SELECTED_LEVEL == GameManager.LEVELS.EASY)
+                    GameManager.instance.SaveEasyModeExitTime(0.0f);
+                GameManager.instance?.SelectLevel(GameManager.LEVELS.NONE);
+                GameManager.instance?.SavePosToDefault();
+            }
+            //2024.05.22 Ãß°¡
+
             Timer.instance?.StopTimer();
             if (_fadeout_panel != null)
             {
