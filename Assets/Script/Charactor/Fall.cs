@@ -19,16 +19,22 @@ public class Fall : MonoBehaviour
 
     private void jump_event()
     {
+        if (SteamManager.instance == null)
+            return;
         if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_JUMP_COUNT))
             SteamManager.instance.achieve.AchievementCount((int)AchievementManager.IDS.TOTAL_JUMP_COUNT);
     }
     private void jetpack_event()
     {
+        if (SteamManager.instance == null)
+            return;
         if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_JECTPACK_COUNT))
             SteamManager.instance.achieve.AchievementCount((int)AchievementManager.IDS.TOTAL_JECTPACK_COUNT);
     }
     private void create_wall_event()
     {
+        if (SteamManager.instance == null)
+            return;
         if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_CREATE_WALL_COUNT))
             SteamManager.instance.achieve.AchievementCount((int)AchievementManager.IDS.TOTAL_CREATE_WALL_COUNT);
     }
