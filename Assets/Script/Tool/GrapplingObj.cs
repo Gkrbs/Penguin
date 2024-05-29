@@ -124,6 +124,8 @@ public class GrapplingObj : MonoBehaviour
         {
             MonoBehaviour.Destroy(_joint);
             normalMovement.Grappling(false);
+            characterActor.alwaysNotGrounded = false;
+            characterActor.stableLayerMask = defaultLayer;
             _joint = null;
         }
     }

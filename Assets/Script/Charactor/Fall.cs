@@ -70,7 +70,7 @@ public class Fall : MonoBehaviour
                 if (idx > _sound_names.Length)
                     idx = _sound_names.Length - 1;
                 SoundManager.instance.PlayOneShot(_audio, _sound_names[idx]);
-                if (_fall_time >= SteamManager.instance.achieve.longest_drop_time)
+                if (SteamManager.instance!=null&&_fall_time >= SteamManager.instance.achieve.longest_drop_time)
                     set_achievements();
                 //도전과제
                 if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_ACTIVE_VOICE_COUNT))
@@ -89,7 +89,7 @@ public class Fall : MonoBehaviour
                 if (idx >= _sound_names.Length)
                     idx = _sound_names.Length - 1;
                 SoundManager.instance.PlayOneShot(_audio, _sound_names[idx]);
-                if (_fall_time >= SteamManager.instance.achieve.longest_drop_time)
+                if (SteamManager.instance!=null&&_fall_time >= SteamManager.instance.achieve.longest_drop_time)
                     set_achievements();
                 //도전과제
                 if (!SteamManager.instance.achieve.isThisAchievementUnlocked((int)AchievementManager.IDS.TOTAL_ACTIVE_VOICE_COUNT))
